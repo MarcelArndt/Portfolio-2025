@@ -1,0 +1,127 @@
+
+@use './../../styles/index.scss' as *;
+.hero-section{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    min-height: calc( 100vh - $headline-height);
+    background-color: $hero-section-background;
+    padding: $padding;
+    overflow: hidden;
+    z-index: 1;
+
+    &::after {
+        z-index: 98;
+        content: "";
+        position: absolute;
+        bottom:calc(-50% + 32px);
+        left: 0;
+        width: 100%;
+        height: 460px; 
+        background: $red; 
+        transform: skewY(-5deg);
+        transform-origin: left bottom;
+    }
+
+    
+    &::before {
+        z-index: 99;
+        content: "";
+        position: absolute;
+        bottom:-50%;
+        left: 0;
+        width: 100%;
+        height: 460px; 
+        background: #f4f4f4; 
+        transform: skewY(-5deg);
+        transform-origin: left bottom;
+    }
+}
+
+.background-element{
+    z-index: 1;
+    pointer-events: none; 
+    user-select: none;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 0;
+}
+
+p{
+    max-width: max(33%, 540px);
+}
+
+.portrait{
+    z-index: 3;
+    position: absolute;
+    right: $border-padding;
+    bottom:4.5vw;
+    pointer-events: none; 
+    user-select: none;
+}
+
+
+.text-layer{
+    box-sizing: border-box;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: -40px;
+    z-index: 10; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-column{
+    margin: calc($border-padding - 40px);
+}
+
+button{
+    margin: 32px 40px
+}
+
+
+
+nav {
+    margin-top: 4vh;
+    margin-left: 40px;
+    ul{
+        display: flex;
+        flex-wrap: nowrap;
+        list-style: none;
+        align-items: center;
+        li{
+            margin: 16px;
+            scale:1.0;
+            transition: scale $transition-timer ease-in-out;
+        }
+        li:last-child{
+            margin-right: 0px;
+        }
+        li:first-child{
+            margin-left: 0px;
+        }
+        li:hover{
+        scale:1.1;
+        transition: scale $transition-timer ease-in-out;
+    }
+    }
+
+    a{
+    color: $white-text-color;  
+    text-decoration: none;
+    }
+
+}
+
+.moveableObject{
+    transition: transform 0.1s ease-out;
+}
+
+.darken{
+   filter: brightness(0.0) blur(12px);;
+}

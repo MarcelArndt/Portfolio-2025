@@ -1,0 +1,21 @@
+<section #spotlightSection class="hero-section" (mousemove)="onMouseMove($event)">
+    <app-following-spotlight [section]="spotlightSection"></app-following-spotlight>
+    <img class="background-element moveableObject" src="./assets/hero-background.png">
+    <img #moveableObject class="portrait moveableObject darken" src="./assets/person.png" data-speed="6">
+    <img #moveableObject class="portrait moveableObject" src="./assets/person.png" data-speed="16">
+    <div class="text-layer">
+        <div #moveableObject class="text-column moveableObject" data-speed="4">
+            <p>Hi I’am Marcel Arndt</p>
+            <h1>Web & App<br>Developer</h1>
+            <p>Mit Angular und Django setzte ich meine Projekte in die Realität um. Dabei ist Programmieren längst mehr gewurden als nur ein Hobby.</p>
+            <button>Mehr über mich!</button>
+            <nav>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/profil-marcel-arndt/" target="_blank"><img src="./assets/linkedIn.svg"></a></li>
+                    <li><a href="https://github.com/MarcelArndt" target="_blank"><img src="./assets/github.svg"></a></li>
+                    <li><a href="mailto:info@arndt-marcel.de">info@arndt-marcel.de</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>

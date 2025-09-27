@@ -1,0 +1,184 @@
+@use "../../styles/index.scss" as *;
+
+
+.headline-wrapper{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+    background: $hero-section-background;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    align-items: center;
+    box-sizing: border-box;
+    padding: $padding;
+    height: $headline-height;
+}
+
+.logo{
+    max-width: $logo-max-width;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+#mobil-menu-toggle{
+    display: none;
+    padding: 16px;
+}
+
+.mobil-menu-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+}
+
+.mobil-menu-button span {
+  height: 3px;
+  background: $white-text-color;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+
+nav{
+    display: flex;
+    flex-wrap: nowrap;
+    color: $white-text-color;
+    align-items: center;
+}
+
+
+
+.main-nav{
+    margin: 0px 32px;
+    font-size: $running-text;
+     ul{
+        display: flex;
+        list-style: none;
+        transform-origin: top center;
+
+        li{
+
+            margin: 0px 24px;
+            display: flex;
+            position: relative;
+            min-width: 36px;
+            justify-content: center;
+            align-items: center;
+            font-size: $running-text;
+
+            &:hover{
+               color: $hover;
+               cursor: pointer;
+               scale: 1.1;
+               transition: scale $transition-timer ease-in-out, color $transition-timer ease-in-out;
+        }
+    }
+ }
+ }
+
+.language-nav{
+
+         li{
+            margin:0px;
+            display: flex;
+            position: relative;
+            min-width: 36px;
+            padding:2px;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+
+            &:hover{
+               color: $hover;
+               cursor: pointer;
+               scale: 1.1;
+               transition: scale $transition-timer ease-in-out, color $transition-timer ease-in-out;
+            }
+
+            &::before{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                border: 1px solid $white;
+                width: calc(100% + 8px);
+                box-sizing: border-box;
+                aspect-ratio: 1 / 1;
+                flex-shrink: 0;
+            }
+
+        }
+}
+
+@media screen and (max-width:1240px){
+
+    .mobil-menu-button {
+        display: flex;
+    }
+
+    .main-nav{
+        position: relative;
+    }
+
+    .main-nav{
+        ul{
+            display: block;
+            transform: scale(1, 0) translateX(-50%);
+            flex-direction: column;
+            list-style: none;
+            position: absolute;
+            top: 46px;
+            left: 50%;
+            background: $white;
+            color: $black-text-color;
+            width: 200px;
+            padding: 10px;
+            transition: transform 0.25s ease-in-out;
+            li{
+                margin: 12px 0px;
+            }
+        }
+    }
+
+    #mobil-menu-toggle:checked + .mobil-menu-button span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #mobil-menu-toggle:checked + .mobil-menu-button span:nth-child(2) {
+    opacity: 0;
+    }
+
+    #mobil-menu-toggle:checked + .mobil-menu-button span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .menu {
+    list-style: none;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    }
+
+    #mobil-menu-toggle:checked ~ .menu{
+        transform: scale(1, 1) translateX(-50%);
+        transition: transform 0.25s ease-in-out;
+    }
+
+}
