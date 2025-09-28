@@ -8,6 +8,7 @@ $button-color: #14C587;
 $button-hover-color: #2BE67F;
 $gradient: linear-gradient(125deg, #ffaa92, #bd0048);
 $body-background: linear-gradient(45deg, #FB877F, #D30A50);
+$shadow: rgba(0,0,0,0.2);
 
 
 $hero-section-background: #290509;
@@ -22,5 +23,6 @@ $logo-max-width: 220px;
 $transition-timer : 0.25s;
 
 $running-text : 1.31rem;
-$h1 : 7.75rem;
-$h2 : 7.75rem;
+
+$h1 : clamp(1.5rem, 12vw, 7.75rem);
+$h2 : clamp(1.5rem, 12vw, 7.75rem);

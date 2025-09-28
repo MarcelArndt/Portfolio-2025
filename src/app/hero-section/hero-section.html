@@ -1,9 +1,14 @@
-<section #spotlightSection class="hero-section" (mousemove)="onMouseMove($event)">
+<section #heroSection #spotlightSection class="hero-section" (mousemove)="onMouseMove($event)">
     <app-following-spotlight [section]="spotlightSection"></app-following-spotlight>
     <img class="background-element moveableObject" src="./assets/hero-background.png">
     <img #moveableObject class="portrait moveableObject darken" src="./assets/person.png" data-speed="6">
     <img #moveableObject class="portrait moveableObject" src="./assets/person.png" data-speed="16">
     <div class="text-layer">
+
+        <div class="mobil-title">  
+            <h1>Marcel Arndt<br>Web & App<br>Developer</h1>
+        </div>
+
         <div #moveableObject class="text-column moveableObject" data-speed="4">
             <p>Hi I’am Marcel Arndt</p>
             <h1>Web & App<br>Developer</h1>
@@ -18,4 +23,11 @@
             </nav>
         </div>
     </div>
+
 </section>
+
+<div #redOverlay class="overlay red"></div>
+<div #whiteOverlay class="overlay white"></div>
+
+
+
