@@ -9,6 +9,8 @@ import { heroSectionAnimation } from './gsap';
   styleUrl: './hero-section.scss'
 })
 export class HeroSection {
+
+  constructor(public elementRef: ElementRef){}
   @Input() aboutMeSection!:ElementRef;
 
   @ViewChild('spotlightSection') spotlightSection!: ElementRef;
@@ -32,13 +34,13 @@ ngAfterViewInit() {
     });
 
 
-    const obj = {
+    const gsapObj = {
       'redOverlay' : this.redOverlay.nativeElement,
       'whiteOverlay' : this.whiteOverlay.nativeElement,
       'heroSection': this.heroSection.nativeElement,
       'aboutMe': this.aboutMeSection.nativeElement,
     }
-    heroSectionAnimation(obj);
+    heroSectionAnimation(gsapObj);
 
   }
 
@@ -69,5 +71,9 @@ ngAfterViewInit() {
     });
 
     this.animationFrameId = null;
+  }
+
+  get nativeElement(): HTMLElement {
+    return this.elementRef.nativeElement;
   }
 }

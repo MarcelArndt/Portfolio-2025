@@ -1,7 +1,9 @@
 
-<section #aboutMe  class="about-me-wrapper">
+<section #aboutMe class="about-me-wrapper">
 
-  <div class="about-me-content-wrapper">
+  <div #whitebox class="whitebox"></div>
+
+  <div #textbox class="about-me-content-wrapper">
       <div class="button-container">
         <button (click)="changeTextIndex(0)" [ngClass]="{'active': textIndex === 0}"><icon>person_pin_circle</icon><span>I am Marcel</span></button>
         <button (click)="changeTextIndex(1)" [ngClass]="{'active': textIndex === 1}"><icon>cooking</icon><span>My interests</span></button>

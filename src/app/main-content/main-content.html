@@ -1,4 +1,5 @@
 
 
-<app-hero-section [aboutMeSection]="aboutMe" ></app-hero-section>
-<app-about-me #aboutMe></app-about-me>
+<app-hero-section #heroSection [aboutMeSection]="aboutMe" ></app-hero-section>
+<app-about-me #aboutMe [heroSection]="heroSection"></app-about-me>
+<app-skills [aboutMeSection]="aboutMe"></app-skills>
