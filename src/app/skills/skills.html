@@ -1,11 +1,14 @@
 <section #skillbox class="skills-wrapper">
-    <div class="white-triangle"></div>
+    <div class="black-triangle-shape"></div>
+    <div class="vs-code-picture"><img src="./assets/vs-background.jpg"></div>
     <div #textbox class="skills-content-wrapper">
-        <p>I work with</p>
-        <h2>My Skills</h2>
 
+        <div  #skillSectionBox>
+            <p>I work with</p>
+            <h2>My Skills</h2>
+        </div>
 
-        <div class="skill-category-wrapper">
+        <div #skillSectionBox class="skill-category-wrapper">
             <h3>Frontend</h3>
             <div class="skill-category-container">
                 <ul #frontend >
@@ -18,7 +21,7 @@
             </div>
         </div>
 
-         <div class="skill-category-wrapper">
+         <div #skillSectionBox class="skill-category-wrapper">
             <h3>Backend</h3>
             <div class="skill-category-container">
                 <ul #backend >
@@ -29,7 +32,7 @@
             </div>
         </div>
 
-         <div class="skill-category-wrapper">
+         <div #skillSectionBox class="skill-category-wrapper">
             <h3>Tools</h3>
             <div class="skill-category-container">
                 <ul #backend >
@@ -40,15 +43,24 @@
             </div>
         </div>
 
-        <div class="skill-category-wrapper">
+        <div #skillSectionBox class="skill-category-wrapper">
             <h3>Extras</h3>
             <div class="skill-category-container">
                 <ul #backend >
                     <li><img src="./assets/technology/unity.svg">Unity</li>
-                    <li><img src="./assets/technology/c_scharp.svg">c#</li>
+                    <li><img src="./assets/technology/c_scharp.svg">C#</li>
                 </ul>
             </div>
         </div>
+
+        <div #skillSectionBox class="flex-box">
+                    <p>
+        Doesn’t found your Skill your need?<br>No Problem, We can talk and discuss your Wishes.
+        </p>
+
+        <button>Contact me</button>   
+        </div>
+
 
     </div>
 </section>

@@ -2,27 +2,64 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-export function SkillSectionAnimation(obj:Record<string, HTMLElement>) {
+export function SkillSectionAnimation(obj:Record<string, HTMLElement | HTMLElement[]>) {
 
-    gsap.set(obj['textbox'], { 
-        y: "300px"
+    gsap.set(obj['skillboxSection'], { 
+        y: "+=20vh"
     });
 
     let tlOne = gsap.timeline({
         scrollTrigger: {
-            trigger: obj['aboutMeSection'],
-            start: 'center center',
+            trigger: obj['skillboxSection'],
+            start: '-0% 70%',
             endTrigger: obj['skillboxSection'],
-            end: 'bottom bottom', 
-            scrub: 0.7,
-
+            end: '40% bottom',
+            scrub: 1, 
         }
     });
 
-    tlOne.to(obj['textbox'], {
-        y: "-10%",    
-        ease: "power1.out"
+    tlOne.from(obj['skillSectionsArray'], {
+      opacity: 0,
+      y: 75,
+      stagger: 1.75,
+      duration: 1.25,
+      ease: "power2.out"
+    }, "-=0.3");
+
+
+    let tlTwo = gsap.timeline({
+        scrollTrigger: {
+            trigger: obj['skillboxSection'],
+            start: '5% 70%',
+            endTrigger: obj['skillboxSection'],
+            end: '35% bottom',
+            scrub:1,
+        }
     });
 
+    tlTwo.from(
+      document.querySelectorAll('.skill-category-wrapper ul li'), 
+      {
+        opacity: 0,
+        y: 30,
+        stagger: 0.75,
+        duration: 1.25,
+        ease: "power2.out"
+      }, "-=0.3");
 
+    
+
+    let tlThree = gsap.timeline({
+        scrollTrigger: {
+            trigger: obj['aboutMeSection'],
+            start: '-25% center',
+            endTrigger: obj['skillboxSection'],
+            end: 'bottom bottom', 
+            scrub: 0.7,
+        }
+    });
+
+    tlThree.to(obj['skillboxSection'], { 
+        y: "-100vh"
+    });
 }

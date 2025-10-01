@@ -6,6 +6,10 @@ export function whiteboxGrowAnimation(obj:Record<string, HTMLElement>){
         height: "0px"
     });
 
+    gsap.set(obj['skillSection'], { 
+        y:"-300px",
+    });
+
     let tlOne = gsap.timeline({
         scrollTrigger: {
             trigger: obj['heroSection'],

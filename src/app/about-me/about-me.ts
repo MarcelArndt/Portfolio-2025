@@ -17,6 +17,7 @@ export class AboutMe {
   @ViewChild("aboutMe")aboutMe!:ElementRef;
   @ViewChild("textbox")textbox!:ElementRef;
   @Input()heroSection!:ElementRef;
+  @Input()skillSection!:ElementRef;
 
   ngAfterViewInit(): void {
     const gsapObj = {
@@ -24,6 +25,7 @@ export class AboutMe {
       'aboutMe' : this.aboutMe.nativeElement,
       'heroSection' : this.heroSection.nativeElement,
       'textbox' : this.textbox.nativeElement,
+      'skillSection' : this.skillSection.nativeElement,
     };
     whiteboxGrowAnimation(gsapObj);
   }
