@@ -1,8 +1,42 @@
+@use './../../styles/index.scss' as *;
+
 .portfolio-transition-wrapper{
+    z-index: 500;
+    width: 100%;
+    height: 75vh;
+
+    p{
+        color: $black-text-color;
+    }
+}
+
+.mouse-animation{
+    width: 2.25rem;
+    height: 3.75rem;
+    border-radius: 100vh;
+    border: 0.125rem solid $grey;
+    margin: 24px 0px;
+    position: relative;
+}
+
+.arrow{
+    width: 0.25rem;
+    height: 0.25rem;
+    border: solid $red;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%, -50%) rotate(45deg);
+}
+
+.textbox{
+    padding-top: 200px;
+    position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    width: 100%;
-    z-index: 400;
-
 }
