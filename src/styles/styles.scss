@@ -106,3 +106,33 @@ button{
     }
 }
 
+.triangle-shape{
+    z-index: 302;
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    transform: skewY(-5deg);
+}
+
+.black{
+    background-color: $grey;
+}
+
+.white{
+   background-color: $white; 
+}
+
+.red{
+   background-color: $red; 
+}
+
+.set-triangle-top{
+    top: -100px;
+    left: 0px;
+}
+
+.set-triangle-bottom{
+    bottom: -100px;
+    left: 0px;
+}
+

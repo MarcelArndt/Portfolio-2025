@@ -19,7 +19,6 @@
         width: 100%;
         bottom: -12vh;
         left: 0px;
-        transform: skewY(-5deg);
         transform-origin: left top;
     }
 }
@@ -177,7 +176,7 @@ nav {
 
 .white{ 
     background-color: $white;
-    height: 600px; 
+    height: 400px; 
     &::after {
        background: $white;  
     }

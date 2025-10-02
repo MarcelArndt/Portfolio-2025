@@ -1,6 +1,10 @@
 @use "./../../styles/index.scss" as *;
 
 
+.skills-container{
+    background-color: bisque;
+}
+
 .skills-wrapper{
     z-index: 400;
     transform: translate(0px, 0px);
@@ -9,6 +13,7 @@
 }
 
 .vs-code-picture{
+    z-index: 302;
     position: absolute;
     width: 33vw;
     right: 0vw;
@@ -29,17 +34,16 @@
         object-position: center 30%;
         object-fit: cover;
         transform: translateX(0%); 
-     border-radius: 24px;
-
+        border-radius: 24px;
     }
 }
 
 .skills-content-wrapper{
-    padding: 260px 0px;
+    padding: 100px 0px 120px 0px;
     margin-left: calc($border-padding - 40px);
     @media screen and (max-width:1200px) {
         margin-left: 0px;
-        padding: 130px 0px;
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -52,17 +56,6 @@ button{
     @media screen and (max-width:1200px) {
         margin-left: 0px;  
     }
-}
-
-.black-triangle-shape{
-    z-index: 302;
-    position: absolute;
-    top: -100px;
-    height: 200px;
-    width: 100%;
-    left: 0px;
-    background-color: $grey;
-    transform: skewY(-5deg);
 }
 
 .skill-category-wrapper{
@@ -92,9 +85,9 @@ button{
 
         @media screen and (max-width:1200px) {
             padding-left: 0px;
-             display: flex;
-             align-items: center;
-             flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
 
@@ -133,6 +126,7 @@ button{
         }
 
     .flex-box{
+        width: 90%;
         display: flex;
         align-items: center;
         flex-direction: column;

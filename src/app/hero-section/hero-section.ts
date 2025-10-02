@@ -14,8 +14,7 @@ export class HeroSection {
   @Input() aboutMeSection!:ElementRef;
 
   @ViewChild('spotlightSection') spotlightSection!: ElementRef;
-  @ViewChild('redOverlay', { static:false }) redOverlay!: ElementRef;
-  @ViewChild('whiteOverlay', { static:false }) whiteOverlay!: ElementRef;
+
   @ViewChild('heroSection', { static:false }) heroSection !: ElementRef;
 
   @ViewChildren('moveableObject') moveableObjects!: QueryList<ElementRef<HTMLElement>>;
@@ -35,8 +34,6 @@ ngAfterViewInit() {
 
 
     const gsapObj = {
-      'redOverlay' : this.redOverlay.nativeElement,
-      'whiteOverlay' : this.whiteOverlay.nativeElement,
       'heroSection': this.heroSection.nativeElement,
       'aboutMe': this.aboutMeSection.nativeElement,
     }

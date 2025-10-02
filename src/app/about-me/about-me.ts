@@ -13,19 +13,24 @@ import { whiteboxGrowAnimation } from './gsap';
 export class AboutMe {
   constructor(public elementRef: ElementRef) {}
   textIndex:number = 0;
-  @ViewChild("whitebox")whitebox!:ElementRef;
   @ViewChild("aboutMe")aboutMe!:ElementRef;
   @ViewChild("textbox")textbox!:ElementRef;
+  @ViewChild("blackTransition")blackTransition!:ElementRef;
+  @ViewChild("whiteTransition")whiteTransition!:ElementRef;
+  @ViewChild("redTransition")redTransition!:ElementRef;
   @Input()heroSection!:ElementRef;
   @Input()skillSection!:ElementRef;
 
   ngAfterViewInit(): void {
     const gsapObj = {
-      'whitebox' : this.whitebox.nativeElement,
+
       'aboutMe' : this.aboutMe.nativeElement,
       'heroSection' : this.heroSection.nativeElement,
       'textbox' : this.textbox.nativeElement,
       'skillSection' : this.skillSection.nativeElement,
+      'blackTransition' : this.blackTransition.nativeElement,
+      'whiteTransition' : this.whiteTransition.nativeElement,
+      'redTransition' : this.redTransition.nativeElement,
     };
     whiteboxGrowAnimation(gsapObj);
   }

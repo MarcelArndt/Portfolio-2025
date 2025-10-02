@@ -8,12 +8,13 @@ export function SkillSectionAnimation(obj:Record<string, HTMLElement | HTMLEleme
         y: "+=20vh"
     });
 
+
     let tlOne = gsap.timeline({
         scrollTrigger: {
             trigger: obj['skillboxSection'],
-            start: '-0% 70%',
+            start: '0% 70%',
             endTrigger: obj['skillboxSection'],
-            end: '40% bottom',
+            end: '85% bottom',
             scrub: 1, 
         }
     });
@@ -30,9 +31,9 @@ export function SkillSectionAnimation(obj:Record<string, HTMLElement | HTMLEleme
     let tlTwo = gsap.timeline({
         scrollTrigger: {
             trigger: obj['skillboxSection'],
-            start: '5% 70%',
+            start: '0% 70%',
             endTrigger: obj['skillboxSection'],
-            end: '35% bottom',
+            end: '85% bottom',
             scrub:1,
         }
     });
@@ -48,18 +49,22 @@ export function SkillSectionAnimation(obj:Record<string, HTMLElement | HTMLEleme
       }, "-=0.3");
 
     
-
+    
     let tlThree = gsap.timeline({
         scrollTrigger: {
-            trigger: obj['aboutMeSection'],
-            start: '-25% center',
+            trigger: obj['skillboxSection'],
+            start: '0% center',
             endTrigger: obj['skillboxSection'],
-            end: 'bottom bottom', 
-            scrub: 0.7,
+            end: '35% bottom',
+            scrub:1,
         }
     });
 
-    tlThree.to(obj['skillboxSection'], { 
-        y: "-100vh"
-    });
+    tlThree.from(obj['picture'] ,  {
+        opacity: 0,
+        x:"+=300",
+        ease: "circle.out",
+      });
+
+
 }

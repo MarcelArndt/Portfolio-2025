@@ -2,12 +2,15 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export function whiteboxGrowAnimation(obj:Record<string, HTMLElement>){
-    gsap.set(obj['whitebox'], { 
-        height: "0px"
+
+
+
+    gsap.set(obj['aboutMe'], { 
+        height: "+=30vh"
     });
 
     gsap.set(obj['skillSection'], { 
-        y:"-300px",
+        y:"-200px",
     });
 
     let tlOne = gsap.timeline({
@@ -15,15 +18,16 @@ export function whiteboxGrowAnimation(obj:Record<string, HTMLElement>){
             trigger: obj['heroSection'],
             start: 'top top',
             endTrigger : obj['aboutMe'],
-            end: 'top center', 
-            scrub: 0.7,
+            end: 'bottom center', 
+            scrub: 1,
         }
     });
 
-    tlOne.to(obj['whitebox'], {
-        height: "100vh",
-        ease: "power1.out"
+    tlOne.to(obj['whiteTransition'], {
+        y: "-70vh",
+        ease: "circle.out"
     });
+
 
 
     let tlTow = gsap.timeline({
@@ -41,4 +45,34 @@ export function whiteboxGrowAnimation(obj:Record<string, HTMLElement>){
         ease: "power1.out"
     });
 
+    let tlThree = gsap.timeline({
+        scrollTrigger: {
+            trigger: obj['aboutMe'],
+            start: '-10% center',
+            endTrigger : obj['aboutMe'],
+            end: 'bottom 60%', 
+            scrub: 1,
+        }
+    });
+
+    tlThree.to(obj['aboutMe'], {
+        height:"-=40vh",
+        ease: "power1.out"
+    });
+
+
+    let tlfour = gsap.timeline({
+        scrollTrigger: {
+            trigger: obj['heroSection'],
+            start: 'top top',
+            endTrigger : obj['aboutMe'],
+            end: 'bottom center', 
+            scrub: 1,
+        }
+    });
+
+    tlfour.to(obj['redTransition'], {
+        y: "-=70vh",
+        ease: "power4.out"
+    });
 }

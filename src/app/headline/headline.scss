@@ -15,10 +15,21 @@
     box-sizing: border-box;
     padding: $padding;
     height: $headline-height;
+    transform-origin: top center;
+    opacity: 1;
+    transform: translateY(0%);
+    transition: opacity $transition-timer ease-in-out, transform $transition-timer ease-in-out;
 
     @media screen and (max-width:1200px) {
         padding: 0px 16px;
     }
+}
+
+
+.shrink{
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity $transition-timer ease-in-out, transform $transition-timer ease-in-out;
 }
 
 .logo{
