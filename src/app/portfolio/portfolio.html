@@ -1,1 +1,26 @@
-<p>portfolio works!</p>
+<main #projectContainer class="project-container">
+
+
+     <div #transistionTextBlock class="transistionTextBlock">
+        <h2>Portfolio</h2>
+        <p>Some random text over here.</p>
+        <div #mouseSymbol class="mouse-animation">
+            <div #arrowSymbol class="arrow"></div>
+        </div>
+    </div>
+
+
+<section #projectOne  class="project project-one">
+   <app-project-template [technology]="['angular', 'django', 'docker', ]"></app-project-template>
+</section>
+
+<section #projectTwo class="project project-two">
+<app-project-template [technology]="['javascript', 'sass', 'firebase', ]"></app-project-template>
+</section>
+
+<section #projectThree class="project project-three">
+<app-project-template [technology]="['typescript', 'sass']"></app-project-template>
+</section>
+
+</main>
+

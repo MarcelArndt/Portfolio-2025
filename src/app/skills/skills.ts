@@ -35,4 +35,5 @@ export class Skills {
     return this.elementRef.nativeElement;
   }
 
+
 }

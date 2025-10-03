@@ -1,0 +1,21 @@
+<div class="project-wrapper">
+    <div class="project-info-wrapper">
+        <p>Watch it first on</p>
+        <h2>Videoflix</h2>
+        <p class="text-wrapper">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. <br><br>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.  adipiscing elit. Aenean commodo ligula eget dolor. </p>
+        <div class="icon-wrapper">
+            <ul class="used-tech">
+                @for(usedTech of technology; track usedTech){
+                    <li><img [src]="iconsUrlCatalog[usedTech]"></li>
+                }
+            </ul>
+        </div>
+        <div class="button-wrapper"><button>Demo</button><button class="github-button">GitHub</button></div>
+    </div>         
+
+    <div class="project-picture-wrapper">
+        <img src="./assets/projects/project_one/thumbnail.png">
+    </div>
+
+
+</div>

@@ -1,0 +1,108 @@
+@use "./../../styles/index.scss" as *;
+
+.project{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+    color: $white-text-color;
+    }
+}
+
+
+.project-one{
+   
+    background-color: #240422;
+    &::before{
+        z-index: -1;
+        content: '';
+        position: absolute;
+        left: -150px;
+        top: 0px;
+        height: 100%;
+        width: 300px;
+        background-color: #240422;
+        transform: skewx(-5deg);
+    }
+}
+
+.project-two{
+ 
+    background-color: #040D24;
+        &::before{
+        content: '';
+        position: absolute;
+        right: -150px;
+        top: 0px;
+        height: 100%;
+        width: 300px;
+        background-color: #040D24;
+        transform: skewx(-5deg);
+    }
+}
+
+.project-three{
+  
+    background-color: #271705;
+
+     &::before{
+        content: '';
+        position: absolute;
+        right: 0px;
+        top: -150px;
+        height: 300px;
+        width: 100%;
+        background-color: #271705;
+        transform: skewY(-5deg);
+    }
+}
+
+.project-container{
+
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mouse-animation{
+    width: 2.25rem;
+    height: 3.75rem;
+    border-radius: 100vh;
+    border: 0.125rem solid $grey;
+    margin: 24px 0px;
+    position: relative;
+}
+
+.arrow{
+    width: 0.25rem;
+    height: 0.25rem;
+    border: solid $red;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.transistionTextBlock{
+
+    height: 0vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    p{
+     color: black;   
+    }
+}

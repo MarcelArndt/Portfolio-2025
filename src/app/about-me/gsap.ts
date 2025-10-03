@@ -1,6 +1,4 @@
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 export function whiteboxGrowAnimation(obj:Record<string, HTMLElement>){
 
 
@@ -58,7 +56,9 @@ export function whiteboxGrowAnimation(obj:Record<string, HTMLElement>){
     tlThree.to(obj['aboutMe'], {
         height:"-=40vh",
         ease: "power1.out"
-    });
+    })
+
+
 
 
     let tlfour = gsap.timeline({
@@ -75,4 +75,23 @@ export function whiteboxGrowAnimation(obj:Record<string, HTMLElement>){
         y: "-=70vh",
         ease: "power4.out"
     });
+
+
+    let tlfive = gsap.timeline({
+        scrollTrigger: {
+            trigger: obj['aboutMe'],
+            start: '0% 70%',
+            endTrigger : obj['aboutMe'],
+            end: '30% bottom', 
+            scrub: 1,
+        }
+    });
+
+
+    tlfive.from( document.querySelectorAll('.button-container button'),{
+        opacity:0,
+        y:"+=50px",
+        stagger: 0.75,
+    });
+
 }

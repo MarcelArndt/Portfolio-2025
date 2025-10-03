@@ -1,0 +1,64 @@
+@use "./../../styles/index.scss" as *;
+
+.email-button{
+    display: flex;
+    align-items: center;
+    background-color: $light-grey;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px $button-grey;
+    margin-left: 40px;
+    width: max-content;
+
+    p span{
+        transition: color $transition-timer ease-in-out;
+    }
+
+    icon{
+        border-radius: 12px;
+        padding: 12px;
+        font-size: 2rem;
+        color: $white-text-color;
+        background-color: $button-grey;
+    }
+
+    &:hover p span {
+        color: $button-hover-color;
+        transition: color $transition-timer ease-in-out;
+    }
+}
+
+.contact-box-wrapper{
+    height: 100vh;
+    padding: 96px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.text-wrapper{
+    box-sizing: border-box;
+    padding-left: 80px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+
+.text-block{
+    p{
+        color: $black-text-color;
+    }
+}
+.flex-button{
+    p{
+        text-align: start;
+        color: $black-text-color;
+    }
+    span{
+        color:$red
+    }
+}

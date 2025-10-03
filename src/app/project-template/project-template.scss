@@ -1,0 +1,80 @@
+@use "./../../styles/index.scss" as *;
+
+
+:host {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.project-wrapper{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 40px 40px;
+    max-width: 1800px;
+}
+
+h2{
+    color: $white-text-color;
+}
+
+.project-info-wrapper{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+
+    p{
+        max-width: 55ch;
+    }
+
+}
+
+.project-picture-wrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-right: 40px;
+
+    img{
+        box-shadow: -20px -20px 0px #490945;
+    }
+}
+
+button{
+    padding: 12px 48px 12px 48px;
+    margin-right: 8px;
+    margin-left: 40px;
+}
+
+.github-button{
+    background-color: $github-color ;
+    color:$white-text-color;
+    font-weight: 300;
+}
+
+.used-tech{
+    margin: 40px 0px 16px 0px;
+    padding-left: 40px;
+    display: flex;
+    list-style: none;
+    li{
+        margin-right: 32px;
+    }
+}

@@ -32,6 +32,7 @@ ul{
 }
 
 p{
+    font-family: $font-set-one;
     font-size: $running-text;
     color: $white-text-color;
     margin-block-start: 0em;
@@ -43,6 +44,7 @@ p{
 }
 
 h1{
+    font-family: $font-set-one;
     line-height: 125%;
     box-sizing: border-box;
     padding: 0px 40px;
@@ -62,6 +64,7 @@ h1{
 }
 
 h2{
+    font-family: $font-set-one;
     box-sizing: border-box;
     padding: 0px 40px;
     font-weight: 400;
@@ -76,6 +79,7 @@ h2{
 
 
 h3{
+    font-family: $font-set-one;
     box-sizing: border-box;
     padding: 0px 40px;
     font-weight: 400;
@@ -90,6 +94,8 @@ h3{
 }
 
 button{
+    font-family: $font-set-one;
+    letter-spacing: 0.05ch;
     background-color: $button-color;
     padding: 12px 16px;
     color: $black-text-color;

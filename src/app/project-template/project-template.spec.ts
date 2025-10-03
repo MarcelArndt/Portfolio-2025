@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PortfolioTransition } from './portfolio-transition';
+import { ProjectTemplate } from './project-template';
 
-describe('PortfolioTransition', () => {
-  let component: PortfolioTransition;
-  let fixture: ComponentFixture<PortfolioTransition>;
+describe('ProjectTemplate', () => {
+  let component: ProjectTemplate;
+  let fixture: ComponentFixture<ProjectTemplate>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PortfolioTransition]
+      imports: [ProjectTemplate]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PortfolioTransition);
+    fixture = TestBed.createComponent(ProjectTemplate);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
