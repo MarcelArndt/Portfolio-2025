@@ -1,4 +1,6 @@
 import { Component, HostListener, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
+import { gsapScrollToSection } from './gsap';
+import { GsapScrollToSectionType } from './gsap';
 
 @Component({
   selector: 'app-hambuger-menu',
@@ -12,14 +14,29 @@ export class HambugerMenu {
 
 @HostListener('document:click', ['$event'])
 onDocumentClick(event: MouseEvent) {
+    this.closeMenu(event, false)
+  }
+
+  closeMenu(event: MouseEvent | null, force:boolean){
     if (!this.navigation.nativeElement || !this.menuToggle.nativeElement) {
-      return; // noch nicht initialisiert
+      return; 
     }
     const naviElement = this.navigation.nativeElement;
     const toggleElement = this.menuToggle.nativeElement;
-    const clickedInsideNav = naviElement.contains(event.target as Node);
-    if (!clickedInsideNav && toggleElement.checked) {
+    if(event){
+      const clickedInsideNav = naviElement.contains(event.target as Node);
+      if (!clickedInsideNav && toggleElement.checked) {
+        toggleElement.checked = false; 
+      } 
+    }
+    else if (force) {
       toggleElement.checked = false; 
     }
   }
+
+  toScrollToSection(obj:GsapScrollToSectionType){
+    gsapScrollToSection(obj);
+    this.closeMenu(null, true)
+  }
+
 }

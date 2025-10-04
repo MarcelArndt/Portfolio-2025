@@ -1,5 +1,10 @@
 @use 'index.scss' as *;
 
+
+*{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: $font-set-one;
     margin: 0px;
@@ -9,6 +14,12 @@ body{
     background-attachment: fixed;
     background-size: cover; 
     font-weight: 350;
+}
+
+.add-padding{
+    padding-top: 96px;
+    border-radius: 24px;
+    padding-bottom: 96px;
 }
 
 .main-wrapper{

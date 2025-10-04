@@ -23,7 +23,8 @@ export function whiteboxGrowAnimation(obj:Record<string, HTMLElement>){
 
     tlOne.to(obj['whiteTransition'], {
         y: "-70vh",
-        ease: "circle.out"
+        ease: "circle.out",
+        duration: 10,
     });
 
 
@@ -73,7 +74,8 @@ export function whiteboxGrowAnimation(obj:Record<string, HTMLElement>){
 
     tlfour.to(obj['redTransition'], {
         y: "-=70vh",
-        ease: "power4.out"
+        ease: "power4.out",
+        duration: 10,
     });
 
 

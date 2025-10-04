@@ -18,27 +18,31 @@ gsap.set(sections[2], { y: 250, yPercent:100});
     }
   });
 
-     tl.to({}, { duration: 0.5 }) 
+     tl.to({}, {duration: 5,}) 
+      .to(obj['skillSection'], {
+      opacity:0,
+      duration: 0,
+      }) 
      .to(sections[0], { 
         xPercent:0,
         x: 0, 
-        duration: 1,
+        duration: 11,
         ease: 'power1.Out'
     })
-    .to({}, { duration: 2 }) 
+    .to({}, { duration: 5 }) 
     .to(sections[1], { 
         xPercent:0,
         x: 0, 
-        duration: 1,
+        duration: 11,
         ease: 'power1.out'
     })
-    .to({}, { duration: 2 })
+    .to({}, { duration: 5 })
     .to(sections[2], { 
         y: 0, 
         yPercent:0,
-        duration: 1,
+        duration: 14,
         ease: 'power1.out'
-    });
+    }).to({}, { duration: 5 });
 
 
       gsap.set(obj['arrowSymbol'],{
@@ -59,8 +63,9 @@ gsap.set(sections[2], { y: 250, yPercent:100});
             trigger: obj['skillSection'],
             start: '100% 50% ',
             endTrigger : obj['projectContainer'],
-            end: '50% bottom', 
+            end: '60% bottom', 
             scrub: 1,
+
         }
     });
 

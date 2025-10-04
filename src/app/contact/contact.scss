@@ -14,8 +14,11 @@
     }
 
     icon{
+        display: flex;
+        flex-shrink: 0;
+        aspect-ratio:  1 / 1;
         border-radius: 12px;
-        padding: 12px;
+        padding: 16px;
         font-size: 2rem;
         color: $white-text-color;
         background-color: $button-grey;
@@ -25,6 +28,19 @@
         color: $button-hover-color;
         transition: color $transition-timer ease-in-out;
     }
+
+    @media screen and (max-width:1200px){
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+
+        icon{
+            font-size: 1.75rem;
+            padding: 8px;
+        }
+    }
+
+
 }
 
 .contact-box-wrapper{
@@ -45,6 +61,11 @@
     flex-direction: column;
     justify-content: space-around;
 
+    @media screen and (max-width:1200px){
+        padding-left: 0px;
+        text-align: center;
+    }
+
 }
 
 
@@ -54,11 +75,22 @@
     }
 }
 .flex-button{
+
+    @media screen and (max-width:1200px){
+        p{
+        margin: 0px;
+        padding: 0px 12px;
+        }
+    }
+
     p{
         text-align: start;
         color: $black-text-color;
     }
     span{
+        display: flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
         color:$red
     }
 }

@@ -1,5 +1,7 @@
 @use "../../styles/index.scss" as *;
-
+:host {
+    background: $hero-section-background;
+}
 
 .headline-wrapper{
     display: flex;
@@ -18,7 +20,7 @@
     transform-origin: top center;
     opacity: 1;
     transform: translateY(0%);
-    transition: opacity $transition-timer ease-in-out, transform $transition-timer ease-in-out;
+    transition: opacity 0.25s ease-in-out, transform 0s ease-in-out;
 
     @media screen and (max-width:1200px) {
         padding: 0px 16px;

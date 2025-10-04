@@ -1,6 +1,5 @@
 import { Component,ViewChild,ElementRef, ViewChildren, QueryList, Input} from '@angular/core';
 import { FollowingSpotlight } from '../utility/following-spotlight/following-spotlight';
-import { heroSectionAnimation } from './gsap';
 
 @Component({
   selector: 'app-hero-section',
@@ -31,14 +30,6 @@ ngAfterViewInit() {
     this.moveableObjects.forEach(obj => {
       obj.nativeElement.style.transform = `translate(0px, 0px)`;
     });
-
-
-    const gsapObj = {
-      'heroSection': this.heroSection.nativeElement,
-      'aboutMe': this.aboutMeSection.nativeElement,
-    }
-    heroSectionAnimation(gsapObj);
-
   }
 
   onMouseMove(event: MouseEvent) {
