@@ -1,0 +1,130 @@
+@use "./../../styles/index.scss" as *;
+
+footer{
+    height: 240px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 40px;
+    display: flex;
+    align-items: center;
+    background-color: $footer-background;
+}
+
+.footer-wrapper{
+    box-sizing: border-box;
+    padding: 0px 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+
+    p{
+        padding: 0;
+        padding-top: 6px;
+        text-align: start;
+    }
+}
+
+
+.footer-navi{
+    display: flex;
+    flex-grow: 0;
+     ul{
+        
+        list-style: none;
+        display: flex;
+        align-items: start;
+
+        li:last-child{
+            margin-right: 0px;
+        }
+
+        li{
+            color: $white-text-color;
+            font-family: $font-set-one;
+            font-size: $running-text;
+            font-weight: 400;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 24px;
+            transition: color $transition-timer ease-in-out;
+        }
+
+        li:first-child::before, li:last-child::before{
+            content:'-';
+            padding-right: 24px;
+        }
+
+        
+        li:first-child::after, li:last-child::after{
+            content:'-';
+            padding-left: 24px;
+        }
+
+    }
+}
+
+a{
+    text-decoration: none;
+    color: $white-text-color;
+    font-family: $font-set-one;
+    font-size: $running-text;
+    font-weight: 400;
+    flex-shrink: 0;
+
+    &:hover{
+        cursor: pointer;
+        color: $red;
+        transition: color $transition-timer ease-in-out;
+    }
+}
+
+.footer-social-navi{
+    ul{
+        list-style: none;
+        display: flex;
+
+        li:last-child{
+            margin-right: 0px;
+        }
+
+        li{
+            width: 33px;
+            height: 33px;
+            aspect-ratio:  1 / 1;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 24px;
+            transition: scale $transition-timer ease-in-out;
+
+            &:hover{
+                scale:1.25;
+                cursor: pointer;
+                border-color: $button-hover-color;
+                transition: scale $transition-timer ease-in-out;
+            }
+
+
+
+            img{
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                aspect-ratio:  1 / 1;
+                width: 32px;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+    }
+}

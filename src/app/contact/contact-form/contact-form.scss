@@ -1,0 +1,98 @@
+@use "./../../../styles/index.scss" as *;
+
+
+:host{
+    width: min(50vw, 600px);
+}
+
+input, input:hover, input:focus, input:active{
+    outline: none;
+}
+
+
+input{
+    padding: 0px 16px;
+    font-family: $font-set-one;
+    font-size: 1.125rem;
+    font-weight: 400;
+    height: 44px;
+    color: $black-text-color;
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: $button-grey;
+    margin-bottom: 24px;
+
+    &::placeholder{
+    font-family: $font-set-one;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color:$button-grey;
+   } 
+
+   &:hover{
+    border-color:$button-hover-color;
+   }
+
+
+   &:active, &:focus{
+    border-color:$button-color;
+   }
+
+}
+
+textarea, textarea:active, textarea:focus, textarea:hover{
+    outline: none;
+}
+
+textarea{
+    resize: none;
+    padding: 8px 16px;
+    font-family: $font-set-one;
+    font-size: 1.125rem;
+    font-weight: 400;
+    height: 124px;
+    color: $black-text-color;
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: $button-grey;
+
+    &::placeholder{
+    font-family: $font-set-one;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color:$button-grey;
+   } 
+
+   &:hover{
+    border-color:$button-hover-color;
+   }
+
+
+   &:active, &:focus{
+    border-color:$button-color;
+   }
+}
+
+form{
+    box-sizing: border-box;
+    height: min-content;
+    border-radius: 8px;
+    padding: 32px 56px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $form-gbackground;
+    box-shadow: 1px 2px 4px $shadow;
+
+    p{
+        margin: 16px 0pc;
+        color: $black-text-color;
+        padding: 0 0;
+    }
+}
+
+button{
+    color: $white-text-color;
+    padding: 12px 32px;
+    width: max-content;
+}

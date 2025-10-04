@@ -1,4 +1,4 @@
-<section #heroSection #spotlightSection class="hero-section" (mousemove)="onMouseMove($event)">
+<section #heroSection #spotlightSection class="hero-section" (mousemove)="onMouseMove($event)" id="hero-section">
     <app-following-spotlight [section]="spotlightSection"></app-following-spotlight>
     <img class="background-element moveableObject" src="./assets/hero-background.png">
     <img #moveableObject class="portrait moveableObject darken" src="./assets/person.png" data-speed="6">
