@@ -12,7 +12,7 @@ gsap.set(sections[2], { y: 250, yPercent:100});
     scrollTrigger: {
       trigger: obj['projectContainer'],
       start: 'top top',
-      end: () => `+=${sections.length * 200}vh`,
+      end: () => `+=${(sections.length + 1) * 200}vh`,
       scrub: 1,
       pin: true,
     }
@@ -26,23 +26,32 @@ gsap.set(sections[2], { y: 250, yPercent:100});
      .to(sections[0], { 
         xPercent:0,
         x: 0, 
-        duration: 11,
+        duration: 20,
         ease: 'power1.Out'
     })
     .to({}, { duration: 5 }) 
     .to(sections[1], { 
         xPercent:0,
         x: 0, 
-        duration: 11,
+        duration: 20,
         ease: 'power1.out'
     })
-    .to({}, { duration: 5 })
+    .to({}, { duration: 10 })
     .to(sections[2], { 
         y: 0, 
         yPercent:0,
-        duration: 14,
+        duration: 20,
         ease: 'power1.out'
-    }).to({}, { duration: 5 });
+    }).to({}, { duration: 5 })
+    .to(obj['whiteOverlay'], { 
+      height:"+=150vh", 
+      duration: 10 ,
+      ease: "circ.in",
+    }).to(obj['redOverlay'], { 
+      height:"+=150vh", 
+      duration: 10 ,
+      ease: "power2.in",
+    }, "<");
 
 
       gsap.set(obj['arrowSymbol'],{

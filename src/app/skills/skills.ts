@@ -10,10 +10,12 @@ import gsap from 'gsap';
 })
 export class Skills {
   constructor(public elementRef: ElementRef) {}
-  @Input('aboutMeSection')aboutMeSection!:ElementRef;
+  @Input()aboutMeSection!:ElementRef;
+  @Input()portfolioSection!:ElementRef;
   @ViewChild('textbox')textbox!:ElementRef;
   @ViewChild('skillbox')skillboxSection!:ElementRef;
   @ViewChild('picture')picture!:ElementRef;
+  @ViewChild('pictureContainer')pictureContainer!:ElementRef;
   @ViewChild('skillsContainer')skillsContainer!:ElementRef;
   @ViewChildren('skillSectionBox') skillSections!: QueryList<ElementRef>;
   gsapObj!:Record<string, HTMLElement | HTMLElement[]>;
@@ -23,9 +25,11 @@ export class Skills {
   ngAfterViewInit(){
     const gsapObj = {
       'skillboxSection' : this.skillboxSection.nativeElement,
+      'portfolioSection' : this.portfolioSection.nativeElement,
       'aboutMeSection' : this.aboutMeSection.nativeElement,
       'textbox' : this.textbox.nativeElement,
       'picture' : this.picture.nativeElement,
+      'pictureContainer' : this.pictureContainer.nativeElement,
       'skillSectionsArray' : this.skillSections.map(eachElement => eachElement.nativeElement)
     }
     SkillSectionAnimation(gsapObj);

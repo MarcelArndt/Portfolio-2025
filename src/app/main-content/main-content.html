@@ -2,7 +2,7 @@
 
 <app-hero-section #heroSection [aboutMeSection]="aboutMe" ></app-hero-section>
 <app-about-me #aboutMe [heroSection]="heroSection" [skillSection]="skillSection"></app-about-me>
-<app-skills #skillSection [aboutMeSection]="aboutMe"></app-skills>
-<app-portfolio [skillSection]="skillSection "></app-portfolio>
-<app-contact></app-contact>
+<app-skills #skillSection [portfolioSection]="portfolioSection " [aboutMeSection]="aboutMe"></app-skills>
+<app-portfolio #portfolioSection [contactSection]="contactSection" [skillSection]="skillSection"></app-portfolio>
+<app-contact #contactSection></app-contact>
 <app-footer></app-footer>

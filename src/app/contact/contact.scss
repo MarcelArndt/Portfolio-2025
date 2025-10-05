@@ -1,5 +1,9 @@
 @use "./../../styles/index.scss" as *;
 
+.contact-wrapper{
+    width: 100%;
+}
+
 .email-button{
     display: flex;
     align-items: center;
@@ -48,7 +52,11 @@
     padding: 96px 0px;
     display: flex;
     flex-grow: 1;
+    position: relative;
 }
+
+
+
 
 .form-wrapper{
     width: 50%;
