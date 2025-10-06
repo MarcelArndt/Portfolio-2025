@@ -3,6 +3,9 @@
 
 :host{
     width: min(50vw, 600px);
+    @media screen and (max-width:1200px){
+         width: 90%;
+    }
 }
 
 input, input:hover, input:focus, input:active{
@@ -89,10 +92,39 @@ form{
         color: $black-text-color;
         padding: 0 0;
     }
+
+    @media screen and (max-width:512px){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0pc;
+        text-align: center;
+        padding: 32px 16px;
+    }
 }
 
 button{
     color: $white-text-color;
     padding: 12px 32px;
     width: max-content;
+}
+
+button:disabled
+{
+   color: grey;
+   background-color: $button-grey; 
+
+   &:hover{
+    cursor: not-allowed;
+    scale: 1;
+   }
+}
+.error-container{
+    margin: 16px 0px;
+    min-height: calc( 2 * $running-text );
+    p{
+        margin: 0px;
+        color: $red;
+    
+    }
 }

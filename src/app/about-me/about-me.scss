@@ -61,6 +61,12 @@ button{
     white-space: nowrap;
     align-items: center;
     width: 300px;
+    transition: scale $transition-timer ease-in-out;
+
+    &:hover{
+        scale: 1.05;
+        transition: scale $transition-timer ease-in-out;
+    }
 
     icon{
         margin-right: 32px;

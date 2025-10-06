@@ -34,17 +34,8 @@
     }
 
     @media screen and (max-width:1200px){
-        margin-left: auto;
-        margin-right: auto;
-        width: 300px;
-
-        icon{
-            font-size: 1.75rem;
-            padding: 8px;
-        }
+        display: none;
     }
-
-
 }
 
 .contact-box-wrapper{
@@ -53,6 +44,11 @@
     display: flex;
     flex-grow: 1;
     position: relative;
+
+    @media screen and (max-width:1200px){
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 
@@ -63,7 +59,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+     @media screen and (max-width:1200px){
+            width: 100%
+    }
 }
 
 .text-wrapper{
@@ -78,6 +76,8 @@
     @media screen and (max-width:1200px){
         padding-left: 0px;
         text-align: center;
+        width: 90%;
+        margin-bottom: 64px;
     }
 
 }
@@ -88,6 +88,9 @@
         color: $black-text-color;
     }
 }
+
+
+
 .flex-button{
 
     @media screen and (max-width:1200px){
@@ -108,3 +111,5 @@
         color:$red
     }
 }
+
+

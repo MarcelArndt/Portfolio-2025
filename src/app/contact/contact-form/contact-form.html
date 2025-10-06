@@ -1,8 +1,27 @@
-<form>
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
     <p>Send me a Message</p>
-    <input type="text" name="name" required pattern="^[A-Za-zÄÖÜäöüß\s'-]+$" placeholder="Full Name *">
-    <input type="text" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$" placeholder="E-Mail *">
+    <input formControlName="name" type="text" name="name" required pattern="^[A-Za-zÄÖÜäöüß\s'-]+$" placeholder="Full Name *">
+    <input  formControlName="email" type="text" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$" placeholder="E-Mail *">
     <p>Tell me more about your Idea</p>
-    <textarea value="" placeholder="Your Message"></textarea>
-    <button>Send Message</button>
+    <textarea formControlName="message" required placeholder="Your Message *"></textarea>
+
+    <div class="error-container">
+
+        @if (messageForm.get('name')?.invalid && messageForm.get('name')?.touched) {
+            <p>Name is invalid</p>
+        }
+
+         @else if (messageForm.get('email')?.invalid && messageForm.get('email')?.touched) {
+            <p>Email is invalid</p>
+        } 
+
+
+        @else if (messageForm.get('message')?.errors?.['minlength'] && messageForm.get('message')?.touched) {
+            <p>A message is need at least 5 characters</p>
+        }
+
+
+    </div>
+
+    <button [disabled]="messageForm.invalid">Send Message</button>
 </form>

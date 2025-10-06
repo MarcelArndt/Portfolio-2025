@@ -21,7 +21,7 @@ gsap.set(sections[2], { y: 250, yPercent:100});
      tl.to({}, {duration: 5,}) 
       .to(obj['skillSection'], {
       opacity:0,
-      duration: 0,
+      duration: 20,
       }) 
      .to(sections[0], { 
         xPercent:0,
@@ -74,7 +74,6 @@ gsap.set(sections[2], { y: 250, yPercent:100});
             endTrigger : obj['projectContainer'],
             end: '60% bottom', 
             scrub: 1,
-
         }
     });
 
