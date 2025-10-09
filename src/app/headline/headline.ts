@@ -1,5 +1,6 @@
 import { Component, HostListener, ViewChild, ElementRef} from '@angular/core';
 import { HambugerMenu } from '../utility/hambuger-menu/hambuger-menu';
+import { LanguageSwitch } from '../../service/language-switch';
 
 @Component({
   selector: 'app-headline',
@@ -8,10 +9,11 @@ import { HambugerMenu } from '../utility/hambuger-menu/hambuger-menu';
   styleUrl: './headline.scss'
 })
 export class Headline {
-
+  constructor(private languageService: LanguageSwitch){}
   lastScrollTop!:number
   @ViewChild('headline') headline!:ElementRef;
   deltaForTrigger:number = 3;
+  currentLanguage!: "ger" | "eng";
 
 
 @HostListener('window:scroll', [])
@@ -26,6 +28,17 @@ export class Headline {
     }
 
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; 
+  }
+
+  ngOnInit(){
+    this.languageService.currentLanguage.subscribe((newLangauge)=>{
+      this.currentLanguage = newLangauge;
+    });
+    }
+
+
+  switchLanguage() {
+    this.languageService.switchLanguage();
   }
 }
 

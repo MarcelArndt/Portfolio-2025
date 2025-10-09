@@ -1,6 +1,8 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, Input} from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, Input, HostListener, NgZone, } from '@angular/core';
 import { portfolioAnimation } from './gsap';
 import { ProjectTemplate } from '../project-template/project-template';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-portfolio',
@@ -9,7 +11,7 @@ import { ProjectTemplate } from '../project-template/project-template';
   styleUrl: './portfolio.scss'
 })
 export class Portfolio {
-constructor(public elementRef: ElementRef) {}
+constructor(public elementRef: ElementRef, private ngZone: NgZone) {}
 @Input()skillSection!:ElementRef;
 @Input()contactSection!:ElementRef;
 @ViewChild('projectContainer')projectContainer!:ElementRef;
@@ -22,8 +24,10 @@ constructor(public elementRef: ElementRef) {}
 @ViewChild('whiteOverlay')whiteOverlay!:ElementRef;
 @ViewChild('redOverlay')redOverlay!:ElementRef;
 
+gsapObj!:Record<string, HTMLElement>;
+
 ngAfterViewInit(){
-  const gsapObj={
+  this.gsapObj={
     'projectContainer': this.projectContainer.nativeElement,
     'contactSection': this.contactSection.nativeElement,
     'transistionTextBlock': this.transistionTextBlock.nativeElement,
@@ -37,11 +41,17 @@ ngAfterViewInit(){
     'redOverlay': this.redOverlay.nativeElement,
   }
 
-  portfolioAnimation(gsapObj);
+
+    setTimeout(()=>{
+      ScrollTrigger.refresh();
+      portfolioAnimation(this.gsapObj);
+    },500)
+
 }
 
   get nativeElement(): HTMLElement {
     return this.elementRef.nativeElement;
+
   }
 
 }

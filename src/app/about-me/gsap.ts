@@ -2,98 +2,49 @@ import gsap from 'gsap';
 export function whiteboxGrowAnimation(obj:Record<string, HTMLElement>){
 
 
-
-    gsap.set(obj['aboutMe'], { 
-        height: "+=30vh"
+    gsap.to((obj['textbox']),{
+        y:"+=300px",
     });
 
-    gsap.set(obj['skillSection'], { 
-        y:"-200px",
+     gsap.to((obj['blackTransition']),{
+        y:"+=100vh",
     });
 
     let tlOne = gsap.timeline({
         scrollTrigger: {
             trigger: obj['heroSection'],
-            start: 'top top',
-            endTrigger : obj['aboutMe'],
-            end: 'bottom center', 
+            start: '60% 50%',
+            endTrigger : obj['skillSection'],
+            end: '20% bottom', 
             scrub: 1,
         }
     });
-
-    tlOne.to(obj['whiteTransition'], {
-        y: "-70vh",
-        ease: "circle.out",
-        duration: 10,
-    });
-
-
-
-    let tlTow = gsap.timeline({
-        scrollTrigger: {
-            trigger: obj['heroSection'],
-            start: 'top top',
-            endTrigger : obj['aboutMe'],
-            end: 'top center', 
-            scrub: 1,
-        }
-    });
-
-    tlTow.to(obj['textbox'], {
-        y: "-70%",
-        ease: "power1.out"
-    });
-
-    let tlThree = gsap.timeline({
-        scrollTrigger: {
-            trigger: obj['aboutMe'],
-            start: '-10% center',
-            endTrigger : obj['aboutMe'],
-            end: 'bottom 60%', 
-            scrub: 1,
-        }
-    });
-
-    tlThree.to(obj['aboutMe'], {
-        height:"-=40vh",
-        ease: "power1.out"
+    tlOne.to((obj['textbox']),{
+        y:"-=500px",
+         
+    }).to(({}),{
     })
+    .to((obj['blackTransition']),{
+        y:"-=100vh",
+        ease:"circ.out",
+
+    }, "-=0.45")
 
 
-
-
-    let tlfour = gsap.timeline({
+    let tlMenu = gsap.timeline({
         scrollTrigger: {
             trigger: obj['heroSection'],
-            start: 'top top',
+            start: '75% center',
             endTrigger : obj['aboutMe'],
-            end: 'bottom center', 
+            end: '-40% center',
             scrub: 1,
         }
     });
-
-    tlfour.to(obj['redTransition'], {
-        y: "-=70vh",
-        ease: "power4.out",
-        duration: 10,
-    });
-
-
-    let tlfive = gsap.timeline({
-        scrollTrigger: {
-            trigger: obj['aboutMe'],
-            start: '0% 70%',
-            endTrigger : obj['aboutMe'],
-            end: '30% bottom', 
-            scrub: 1,
-        }
-    });
-
-
-    tlfive.from( document.querySelectorAll('.button-container button'),{
+    tlMenu.from( document.querySelectorAll('.button-container button'),{
         opacity:0,
         y:"+=50px",
-        stagger: 0.75,
-    });
+        stagger: 1,
+    })
+
 
 }

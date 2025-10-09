@@ -80,7 +80,4 @@ gsap.set(sections[2], { y: 250, yPercent:100});
     tlHeadline.to(obj['transistionTextBlock'],{
       height:"120vh",
     });
-
-
-
   }

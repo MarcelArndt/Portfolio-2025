@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, Input, NgZone, } from '@angular/core';
 import { IconComponent } from '../utility/icon/icon';
 import { CommonModule } from '@angular/common';
 import { whiteboxGrowAnimation } from './gsap';
@@ -11,28 +11,24 @@ import { whiteboxGrowAnimation } from './gsap';
   styleUrl: './about-me.scss'
 })
 export class AboutMe {
-  constructor(public elementRef: ElementRef) {}
+  constructor(public elementRef: ElementRef, private ngZone: NgZone) {}
   textIndex:number = 0;
   @ViewChild("aboutMe")aboutMe!:ElementRef;
   @ViewChild("textbox")textbox!:ElementRef;
   @ViewChild("blackTransition")blackTransition!:ElementRef;
-  @ViewChild("whiteTransition")whiteTransition!:ElementRef;
-  @ViewChild("redTransition")redTransition!:ElementRef;
   @Input()heroSection!:ElementRef;
   @Input()skillSection!:ElementRef;
+  gsapObj!:Record<string, HTMLElement>;
 
-  ngAfterViewInit(): void {
-    const gsapObj = {
-
+  ngAfterViewInit() {
+    this.gsapObj = {
       'aboutMe' : this.aboutMe.nativeElement,
       'heroSection' : this.heroSection.nativeElement,
       'textbox' : this.textbox.nativeElement,
       'skillSection' : this.skillSection.nativeElement,
       'blackTransition' : this.blackTransition.nativeElement,
-      'whiteTransition' : this.whiteTransition.nativeElement,
-      'redTransition' : this.redTransition.nativeElement,
     };
-    whiteboxGrowAnimation(gsapObj);
+    whiteboxGrowAnimation(this.gsapObj);
   }
 
   get nativeElement(): HTMLElement {

@@ -1,4 +1,4 @@
-import { Component, ViewChild, QueryList, ElementRef, Input, AfterViewInit, ViewChildren, HostListener } from '@angular/core';
+import { Component, ViewChild, QueryList, ElementRef, Input, AfterViewInit, ViewChildren, HostListener, NgZone, } from '@angular/core';
 import { SkillSectionAnimation } from './gsap';
 import gsap from 'gsap';
 
@@ -9,7 +9,7 @@ import gsap from 'gsap';
   styleUrl: './skills.scss'
 })
 export class Skills {
-  constructor(public elementRef: ElementRef) {}
+  constructor(public elementRef: ElementRef, private ngZone: NgZone) {}
   @Input()aboutMeSection!:ElementRef;
   @Input()portfolioSection!:ElementRef;
   @ViewChild('textbox')textbox!:ElementRef;
@@ -20,10 +20,8 @@ export class Skills {
   @ViewChildren('skillSectionBox') skillSections!: QueryList<ElementRef>;
   gsapObj!:Record<string, HTMLElement | HTMLElement[]>;
 
-
-
   ngAfterViewInit(){
-    const gsapObj = {
+    this.gsapObj = {
       'skillboxSection' : this.skillboxSection.nativeElement,
       'portfolioSection' : this.portfolioSection.nativeElement,
       'aboutMeSection' : this.aboutMeSection.nativeElement,
@@ -32,7 +30,7 @@ export class Skills {
       'pictureContainer' : this.pictureContainer.nativeElement,
       'skillSectionsArray' : this.skillSections.map(eachElement => eachElement.nativeElement)
     }
-    SkillSectionAnimation(gsapObj);
+    SkillSectionAnimation(this.gsapObj);
   }
 
   get nativeElement(): HTMLElement {

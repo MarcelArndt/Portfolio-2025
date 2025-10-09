@@ -1,0 +1,15 @@
+{
+    "navigation":["Startseite","Über Mich","Skills","Projekte","Kontak","Impressum","Datenschutz"],
+    "heroSection":{
+            "headline": "Web & App\nEntwickler",
+            "button": "Mehr über mich!",
+            "text" :"Mit Angular und Django setze ich meine Projekte in die Realität um. Dabei ist Programmieren längst mehr geworden als nur ein Hobby.",
+            "prefixText" : "Hi, ich bin Marcel Arndt"
+    },
+    "skills":{        
+            "headline": "Meinen Skills",
+            "text": "Du vermisst eine bestimmte Technologie in meinem Stack? Ich bin offen für neue Tools und lerne schnell dazu.",
+            "prefixText": "Ich arbeite immer",
+            "button": "Schreib mir"
+    }
+}

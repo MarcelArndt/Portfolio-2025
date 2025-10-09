@@ -1,6 +1,7 @@
 import { Component, signal, HostListener, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Headline } from './headline/headline';
+import { LanguageSwitch } from '../service/language-switch';
 import gsap from 'gsap';
 
 @Component({
@@ -10,6 +11,7 @@ import gsap from 'gsap';
   styleUrl: './app.scss'
 })
 export class App {
+  constructor(private languageService:LanguageSwitch){}
   protected readonly title = signal('Marcel Arndt Portfolio');
   @ViewChild('mainBody')mainBody!:ElementRef;
 
@@ -24,6 +26,9 @@ export class App {
     } else {
         this.mainBody.nativeElement.classList.remove('add-padding');
     }
+  }
+
+  async ngInit(){
   }
 
   ngAfterViewInit(){
