@@ -4,7 +4,7 @@
   <div #textbox class="about-me-content-wrapper" >
 
 
-        <div class="display-before">
+        <div class="display-before" id="about_me">
           <div class="button-container">
             <button (click)="changeTextIndex(0)" [ngClass]="{'active': textIndex === 0}"><icon>person_pin_circle</icon><span>I am Marcel</span></button>
             <button (click)="changeTextIndex(1)" [ngClass]="{'active': textIndex === 1}"><icon>cooking</icon><span>My interests</span></button>
@@ -12,7 +12,7 @@
           </div>
 
           <div class="text-container">
-            <p id="about_me">What do you need to know</p>
+            <p>What do you need to know</p>
             <h2>About me</h2>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
           </div>

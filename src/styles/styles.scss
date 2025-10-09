@@ -3,6 +3,8 @@
 
 *{
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
 }
 
 body{
@@ -14,6 +16,7 @@ body{
     background-attachment: fixed;
     background-size: cover; 
     font-weight: 350;
+    height: 100%;
 }
 
 .add-padding{
@@ -170,7 +173,7 @@ button{
 .buffer-box{
     height: 100vh;
     position: absolute;
-    bottom: calc(-100vh - 75px);
+    bottom: calc(-100vh - 72px);
     width: 100%;
     z-index: 302;
 }

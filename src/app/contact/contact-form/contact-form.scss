@@ -41,6 +41,10 @@ input{
     border-color:$button-color;
    }
 
+   @media screen and (max-width:1200px){
+        width: 92%;
+        max-width: 550px;
+   }
 }
 
 textarea, textarea:active, textarea:focus, textarea:hover{
@@ -74,6 +78,11 @@ textarea{
    &:active, &:focus{
     border-color:$button-color;
    }
+
+    @media screen and (max-width:1200px){
+        width: 92%;
+        max-width: 550px;
+   }
 }
 
 form{
@@ -91,6 +100,11 @@ form{
         margin: 16px 0pc;
         color: $black-text-color;
         padding: 0 0;
+    }
+
+    @media screen and (max-width:1200px){
+        display: flex;
+        align-items: center;
     }
 
     @media screen and (max-width:512px){
@@ -125,6 +139,5 @@ button:disabled
     p{
         margin: 0px;
         color: $red;
-    
     }
 }
