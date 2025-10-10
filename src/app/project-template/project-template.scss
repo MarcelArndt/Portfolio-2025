@@ -8,6 +8,44 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--box-color-background);
+    &::before{
+     background-color: var(--box-color-background);   
+    }
+
+     &.project-one::before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        left: -150px;
+        top: 0px;
+        height: 100%;
+        width: 300px;
+        transform: skewX(-5deg);
+        background-color: var(--box-color-background);
+    }
+    
+    &.project-two::before {
+        content: '';
+        position: absolute;
+        right: -150px;
+        top: 0px;
+        height: 100%;
+        width: 300px;
+        transform: skewX(-5deg);
+        background-color: var(--box-color-background);
+    }
+    
+    &.project-three::before {
+        content: '';
+        position: absolute;
+        right: 0px;
+        top: -150px;
+        height: 300px;
+        width: 100%;
+        transform: skewY(-5deg);
+        background-color: var(--box-color-background);
+    }
 }
 
 
@@ -20,26 +58,41 @@
     top: 0px;
     left: 50%;
     transform: translateX(-50%);
+    justify-content: center;
+    align-items: center;
     padding: 40px 40px;
     max-width: 1800px;
 
-    @media screen and (max-width:1200px){
-        padding: 0px 16px;
+    @media screen and (max-width:1650px){
+        padding: 36px 0px 0px 0px;
         height: calc(100% - $headline-height);
         top: $headline-height;
+        display: flex;
+        gap: min(3vw,2rem);
+        align-items: center;
+        flex-direction:column-reverse;
+        justify-content: start;
     }
 }
+    p{
+      padding: 0px;     
+    }
 
-h2{
-    color: $white-text-color;
 
-    @media screen and (max-width:1200px){
-        text-align: start;
-        padding: 0px;   
-     }
-}
+    h2{
+        color: $white-text-color;
+        padding: 0px;  
+
+        @media screen and (max-width:1650px){
+            text-align: start;
+            padding: 0px;   
+        }
+    }
+
+
 
 .project-info-wrapper{
+    padding-left: 80px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -47,12 +100,16 @@ h2{
     width: 100%;
     height: 100%;
     overflow-y: hidden;
-
+    position: relative;
     p{
         max-width: 55ch;
     }
 
-    @media screen and (max-width:1200px){
+    @media screen and (max-width:1650px){
+        width: 92%;
+        height: max-content;
+        justify-content: end;
+        padding-left: 0px;
         p{
             padding: 0px;
         }
@@ -69,20 +126,30 @@ h2{
     box-sizing: border-box;
     padding-right: 40px;
 
-    @media screen and (max-width:1200px){
-        display: none;
+    @media screen and (max-width:1650px){
+        height: max-content;
+        padding-right: 0px;
+        width: calc(90% - 20px);
+        max-height: 25%;
+
+        img{
+           height: 100%;
+            box-shadow: 20px -20px 0px #150815;
+
+        }
     }
 
     img{
-        box-shadow: -20px -20px 0px #490945;
-
+        box-shadow: -20px -20px 0px var(--box-color-shadow);
     }
 }
 
 button{
+    color:$white-text-color;
+    background-color: var(--box-color);
     padding: 12px 48px 12px 48px;
     margin-right: 40px;
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width:1650px) {
         padding: 12px 24px 12px 24px;
         margin-right: 24px;
     }
@@ -96,14 +163,13 @@ button{
 
 .used-tech{
     margin: 40px 0px 16px 0px;
-    padding-left: 40px;
     display: flex;
     list-style: none;
     li{
         margin-right: 32px;
     }
 
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width:1650px) {
         padding: 0px;
         margin: 24px 0px 0px 0px;
         padding-left: 0px;
@@ -113,4 +179,44 @@ button{
 .button-wrapper{
     display: flex;
     flex-wrap: nowrap;
+}
+
+.project-one{
+    &::before{
+        z-index: -1;
+        content: '';
+        position: absolute;
+        left: -150px;
+        top: 0px;
+        height: 100%;
+        width: 300px;
+        transform: skewx(-5deg);
+        background-color: var(--box-color-dark);
+    }
+}
+
+.project-two{
+        &::before{
+        content: '';
+        position: absolute;
+        right: -150px;
+        top: 0px;
+        height: 100%;
+        width: 300px;
+        transform: skewx(-5deg);
+        background-color: var(--box-color-dark);
+    }
+}
+
+.project-three{
+     &::before{
+        content: '';
+        position: absolute;
+        right: 0px;
+        top: -150px;
+        height: 300px;
+        width: 100%;
+        transform: skewY(-5deg);
+        background-color: var(--box-color-dark);
+    }
 }

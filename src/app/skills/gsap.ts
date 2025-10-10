@@ -4,83 +4,55 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function SkillSectionAnimation(obj:Record<string, HTMLElement | HTMLElement[]>) {
 
-    gsap.set(obj['skillboxSection'], { 
-        y: "+=20vh"
+
+    gsap.set((obj["textbox"]),{
+        y:"+=150",
     });
-
-    gsap.set(obj['pictureContainer'],{
-        y:"-=150px"
-    })
-
 
     let tlOne = gsap.timeline({
         scrollTrigger: {
             trigger: obj['skillboxSection'],
-            start: '0% 70%',
+            start: '20% 70%',
             endTrigger: obj['portfolioSection'],
-            end: 'center 80%',
+            end: 'bottom bottom',
             scrub: 1, 
         }
     });
 
-    tlOne.from(obj['skillSectionsArray'], {
-      opacity: 0,
-      y: 75,
-      stagger: 1.75,
-      duration: 1,
-      ease: "power2.out"
-    }, "-=0.3")
 
-    .to(obj['textbox'],{
-        y:"-=100",
-        duration: 5,
+    (obj['skillSectionsArray'] as HTMLElement[]).forEach((section, i) => {
+    tlOne.from(section, {
+        opacity: 0,
+        y: "+=70",
+        ease: "power2.out"
+    });
+
+    const lis = section.querySelectorAll('.skill-category-wrapper ul li');
+    if (lis.length > 0) {
+        tlOne.from(lis, {
+        opacity: 0,
+        y: "+=70",
+        stagger: 1,
+        ease: "power2.out"
+        }, ">");
+    }
     })
 
 
-    let tlTwo = gsap.timeline({
-        scrollTrigger: {
-            trigger: obj['skillboxSection'],
-            start: '0% 70%',
-            endTrigger: obj['skillboxSection'],
-            end: '85% bottom',
-            scrub:1,
-        }
-    });
 
-    tlTwo.from(
-      document.querySelectorAll('.skill-category-wrapper ul li'), 
-      {
-        opacity: 0,
-        y: 30,
-        stagger: 0.75,
-        duration: 1.25,
+    tlOne.from(obj['pictureContainer'],{
+        x:"+=1000",
+        duration:5
+    }, "0.35")
+    .to(obj['pictureContainer'],{
+        y:"+=350",
+        duration:25,
         ease: "power2.out"
-      }, "-=0.3");
-
-    
-    
-    let tlThree = gsap.timeline({
-        scrollTrigger: {
-            trigger: obj['skillboxSection'],
-            start: '0% center',
-            endTrigger: obj['portfolioSection'],
-            end: 'center 80%',
-            scrub:1,
-        }
-    });
-
-    tlThree.from(obj['picture'] ,  {
-        opacity: 0,
-        x:"+=300",
-        ease: "circle.out",
-        duration:0.25,
-      })
-
-      .to(obj['pictureContainer'],{
-        y:"+=220",
-        duration:1,
-      })
-
+    },"7.25")
+    .to((obj["textbox"]),{
+        duration:25,
+        y:"-=350",
+    },"10")
 
 
 

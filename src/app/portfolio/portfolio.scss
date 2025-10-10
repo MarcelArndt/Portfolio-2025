@@ -14,7 +14,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $grey;
 
     h2{
     color: $white-text-color;
@@ -50,57 +49,9 @@
 
 .red-color{
     z-index: 100;
- background-color: $red;
-  &::before{
     background-color: $red;
- }
-}
-
-
-.project-one{
-   
-    background-color: #240422;
     &::before{
-        z-index: -1;
-        content: '';
-        position: absolute;
-        left: -150px;
-        top: 0px;
-        height: 100%;
-        width: 300px;
-        background-color: #240422;
-        transform: skewx(-5deg);
-    }
-}
-
-.project-two{
- 
-    background-color: #040D24;
-        &::before{
-        content: '';
-        position: absolute;
-        right: -150px;
-        top: 0px;
-        height: 100%;
-        width: 300px;
-        background-color: #040D24;
-        transform: skewx(-5deg);
-    }
-}
-
-.project-three{
-  
-    background-color: #271705;
-
-     &::before{
-        content: '';
-        position: absolute;
-        right: 0px;
-        top: -150px;
-        height: 300px;
-        width: 100%;
-        background-color: #271705;
-        transform: skewY(-5deg);
+        background-color: $red;
     }
 }
 

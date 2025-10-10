@@ -18,7 +18,7 @@ gsap.set(sections[2], { y: 250, yPercent:100});
     }
   });
 
-     tl.to({}, {duration: 5,}) 
+     tl.to({}, {duration: 12,}) 
       .to(obj['skillSection'], {
       opacity:0,
       duration: 20,
@@ -29,14 +29,14 @@ gsap.set(sections[2], { y: 250, yPercent:100});
         duration: 20,
         ease: 'power1.Out'
     })
-    .to({}, { duration: 5 }) 
+    .to({}, { duration: 12 }) 
     .to(sections[1], { 
         xPercent:0,
         x: 0, 
         duration: 20,
         ease: 'power1.out'
     })
-    .to({}, { duration: 10 })
+    .to({}, { duration: 12 })
     .to(sections[2], { 
         y: 0, 
         yPercent:0,

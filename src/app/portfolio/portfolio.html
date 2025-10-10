@@ -13,16 +13,16 @@
     </div>
 
 
-<section #projectOne  class="project project-one">
-   <app-project-template [technology]="['angular', 'django', 'docker', ]"></app-project-template>
+<section #projectOne class="project project-one">
+   <app-project-template [color]="[280, 87, 60]" [projectClass]="'project-one'" [technology]="['angular', 'django', 'docker', ]"></app-project-template>
 </section>
 
 <section #projectTwo class="project project-two">
-<app-project-template [technology]="['javascript', 'sass', 'firebase', ]"></app-project-template>
+    <app-project-template [color]="[220, 93, 60]" [projectClass]="'project-two'" [technology]="['javascript', 'sass', 'firebase', ]"></app-project-template>
 </section>
 
 <section #projectThree class="project project-three">
-<app-project-template [technology]="['typescript', 'sass']"></app-project-template>
+    <app-project-template [color]="[4, 86, 60]" [projectClass]="'project-three'" [technology]="['typescript', 'sass']"></app-project-template>
 </section>
 
 </main>

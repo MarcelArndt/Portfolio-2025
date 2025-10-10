@@ -21,9 +21,16 @@ export function HeroSectionAnimation(obj:Record<string, HTMLElement>) {
     tlOne.to(obj['whiteTransition'], {
       y: "-=100vh",
       ease: "circle.out"
-    }).to(obj['redTransition'], {
+    })
+    .to(obj['redTransition'], {
       y: "-=100vh",
       ease: "power4.out"
+    }, "<")
+    .to((obj['headlineTextBox']),{
+      y: "+=300px",
+    }, "<")    
+    .to((obj['portrait']),{
+      y: "-=700px",
     }, "<");
     
 

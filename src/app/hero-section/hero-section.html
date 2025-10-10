@@ -3,17 +3,13 @@
 
 <section class="hero-section-container">
 
-    <div #heroSection #spotlightSection class="hero-section" (mousemove)="onMouseMove($event)" id="hero-section">
-        <app-following-spotlight [section]="spotlightSection"></app-following-spotlight>
-        <img class="background-element moveableObject" src="./assets/hero-background.png">
-        <img #moveableObject class="portrait moveableObject darken" src="./assets/person.png" data-speed="6">
-        <img #moveableObject class="portrait moveableObject" src="./assets/person.png" data-speed="16">
-        <div class="text-layer">
-            <div class="mobil-title">  
-                <h1>{{texts?.heroSection?.headline}}</h1>
-            </div>
+    <div #heroSection class="hero-section" id="hero-section">
 
-            <div #moveableObject class="text-column moveableObject" data-speed="4">
+        <img class="background-element" src="./assets/hero-background.png">
+        <img #portrait class="portrait" src="./assets/person.png">
+        <div class="text-layer">
+
+            <div #headlineTextBox class="text-column moveableObject">
                 <p>{{texts?.heroSection?.prefixText}}</p>
                 <h1>{{texts?.heroSection?.headline}}</h1>
                 <p class="discription">{{texts?.heroSection?.text}}</p>
