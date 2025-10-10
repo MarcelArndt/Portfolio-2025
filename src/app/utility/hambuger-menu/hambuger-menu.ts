@@ -1,14 +1,17 @@
 import { Component, HostListener, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 import { gsapScrollToSection } from './gsap';
 import { GsapScrollToSectionType } from './gsap';
+import { LanguageSwitch } from '../../../service/language-switch';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-hambuger-menu',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './hambuger-menu.html',
   styleUrl: './hambuger-menu.scss'
 })
 export class HambugerMenu {
+  constructor(public languageService:LanguageSwitch ){}
 @ViewChild('navigation', { static: true }) navigation!: ElementRef;
 @ViewChild('menuToggle', { static: true })menuToggle!: ElementRef<HTMLInputElement>;
 

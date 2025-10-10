@@ -7,18 +7,19 @@ import { Texts } from '../types/types';
   providedIn: 'root'
 })
 export class LanguageSwitch {
+  constructor(private http: HttpClient) {this.loadTexts("ger")}
 
   private isSwitchLanguage:boolean = true;
   private translations$ = new BehaviorSubject<Texts | null>(null);
-  public texts = this.translations$.asObservable();
   private currentLanguage$ =new BehaviorSubject<"ger" | "eng">("ger");
+
+  public texts = this.translations$.asObservable();
   public currentLanguage = this.currentLanguage$.asObservable();
-  constructor(private http: HttpClient) {this.loadTexts("ger")}
 
  switchLanguage(){
     this.isSwitchLanguage = !this.isSwitchLanguage;
     const newLanguage = this.isSwitchLanguage? "ger" : "eng";
-    this.currentLanguage$.next(newLanguage )
+    this.currentLanguage$.next(newLanguage);
     this.loadTexts(newLanguage);
   }
 
@@ -29,6 +30,4 @@ export class LanguageSwitch {
       error: (error) => console.log(error)
      });
   }
-
-
 }

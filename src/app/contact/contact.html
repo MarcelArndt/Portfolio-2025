@@ -1,21 +1,21 @@
-<section class="contact-wrapper">
-    <div class="contact-box-wrapper">
+<section  class="contact-wrapper">
+    <div #contactSection class="contact-box-wrapper">
 
         <div class="text-wrapper">
-            <div class="text-block" id="contact">
-                <p>Just get in</p>
-                <h2>Contact</h2>
-                <p>Lets Chat and talk about more Projects</p>
+            <div #textblock class="text-block" id="contact">
+                <p>{{ (languageService.texts | async)?.contact?.prefixText }}</p>
+                <h2>{{ (languageService.texts | async)?.contact?.headline }}</h2>
+                <p class="text">{{ (languageService.texts | async)?.contact?.text }}</p>
             </div>
-            <button class="email-button">
+            <a #button href="mailto:info@arndt-marcel.de" class="email-button"> 
                 <icon>mail</icon>
                 <div class="flex-button">
-                    <p>Mail me at</p>
+                    <p>{{ (languageService.texts | async)?.contact?.button }}</p>
                     <p><span>info@arndt-marcel.de</span></p>
                 </div>
-            </button>
+            </a>
         </div>
-        <div class="form-wrapper">
+        <div #form class="form-wrapper">
             <app-contact-form></app-contact-form>
         </div>
     </div>

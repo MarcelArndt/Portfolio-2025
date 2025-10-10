@@ -8,8 +8,24 @@
     },
     "skills":{       
             "headline": "My Skills",
-            "text": "Are you missing a specific technology in my stack? I'm open to new tools and a fast learner.",
-            "prefixText": "I always work on",
+            "text": "Are you missing a specific technology in my stack?\nI'm open to new tools and a fast learner.",
+            "prefixText": "These are",
             "button": "Send a Message"
-    }
+    },       
+
+        "contact": {        
+                "headline": "Contact",
+                "text": "Feel free to contact me if you need support with your web project or have any questions.\nI’m looking forward to your message.",
+                "prefixText": "Just get in",
+                "button": "Send me an email at",
+                "formHeadline": "Send me a message",
+                "formName": "Full name *",
+                "formEmail": "Your email *",
+                "formIdea": "Tell me more about your ideas",
+                "formText": "Your message *",
+                "formErrorName": "Please enter a valid name.",
+                "formErrorMail": "Please enter a valid email address.",
+                "formErrorText": "Please enter a message.",
+                "formErrorButton": "Send Message"
+        }
 }

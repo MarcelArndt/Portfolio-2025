@@ -10,6 +10,8 @@
 }
 
 .email-button{
+    text-decoration: none;
+    padding: 16px 16px;
     display: flex;
     align-items: center;
     background-color: $light-grey;
@@ -114,6 +116,10 @@
         white-space: nowrap;
         color:$red
     }
+}
+
+.text{
+    max-width:55ch;
 }
 
 

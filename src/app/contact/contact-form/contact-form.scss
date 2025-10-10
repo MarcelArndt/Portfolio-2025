@@ -117,6 +117,10 @@ form{
     }
 }
 
+.error{
+    border-color: $red;
+}
+
 button{
     color: $white-text-color;
     padding: 12px 32px;

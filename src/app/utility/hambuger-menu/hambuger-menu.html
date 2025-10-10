@@ -6,10 +6,10 @@
             <span></span>
         </label>
         <ul class="menu">
-            <li><a (click)="toScrollToSection({fixPoint:'500'})">About Me</a></li>
-            <li><a (click)="toScrollToSection({id:'skills', offset:'500'})">Skills</a></li>
-            <li><a (click)="toScrollToSection({id:'portfolio', offset:'-200'})">Projects</a></li>
-            <li><a (click)="toScrollToSection({id:'contact', offset:'100'})">Contact</a></li>
+            <li><a (click)="toScrollToSection({fixPoint:'500'})">{{ (languageService.texts | async)?.navigation?.[1] }}</a></li>
+            <li><a (click)="toScrollToSection({id:'skills', offset:'500'})">{{ (languageService.texts | async)?.navigation?.[2] }}</a></li>
+            <li><a (click)="toScrollToSection({id:'portfolio', offset:'-200'})">{{ (languageService.texts | async)?.navigation?.[3] }}</a></li>
+            <li><a (click)="toScrollToSection({id:'contact', offset:'100'})">{{ (languageService.texts | async)?.navigation?.[4] }}</a></li>
         </ul>
 
     </div>

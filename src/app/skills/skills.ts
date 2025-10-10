@@ -1,15 +1,17 @@
 import { Component, ViewChild, QueryList, ElementRef, Input, AfterViewInit, ViewChildren, HostListener, NgZone, } from '@angular/core';
 import { SkillSectionAnimation } from './gsap';
+import { LanguageSwitch } from '../../service/language-switch';
+import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
 
 @Component({
   selector: 'app-skills',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './skills.html',
   styleUrl: './skills.scss'
 })
 export class Skills {
-  constructor(public elementRef: ElementRef, private ngZone: NgZone) {}
+  constructor(public elementRef: ElementRef, public languageService: LanguageSwitch) {}
   @Input()aboutMeSection!:ElementRef;
   @Input()portfolioSection!:ElementRef;
   @ViewChild('textbox')textbox!:ElementRef;

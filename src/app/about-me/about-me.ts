@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Input, NgZone, } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, Input} from '@angular/core';
 import { IconComponent } from '../utility/icon/icon';
 import { CommonModule } from '@angular/common';
 import { whiteboxGrowAnimation } from './gsap';
@@ -11,7 +11,7 @@ import { whiteboxGrowAnimation } from './gsap';
   styleUrl: './about-me.scss'
 })
 export class AboutMe {
-  constructor(public elementRef: ElementRef, private ngZone: NgZone) {}
+  constructor(public elementRef: ElementRef) {}
   textIndex:number = 0;
   @ViewChild("aboutMe")aboutMe!:ElementRef;
   @ViewChild("textbox")textbox!:ElementRef;

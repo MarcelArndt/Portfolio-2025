@@ -10,10 +10,10 @@
         <div class="text-layer">
 
             <div #headlineTextBox class="text-column moveableObject">
-                <p>{{texts?.heroSection?.prefixText}}</p>
-                <h1>{{texts?.heroSection?.headline}}</h1>
-                <p class="discription">{{texts?.heroSection?.text}}</p>
-                <button>{{texts?.heroSection?.button}}</button>
+                <p>{{ (languageService.texts | async)?.heroSection?.prefixText }}</p>
+                <h1>{{ (languageService.texts | async)?.heroSection?.headline }}</h1>
+                <p class="discription">{{ (languageService.texts | async)?.heroSection?.text }}</p>
+                <button>{{ (languageService.texts | async)?.heroSection?.button }}</button>
                 <nav>
                     <ul>
                         <li><a href="https://www.linkedin.com/in/profil-marcel-arndt/" target="_blank"><img src="./assets/linkedIn.svg"></a></li>

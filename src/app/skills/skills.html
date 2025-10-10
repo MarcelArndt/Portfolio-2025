@@ -11,8 +11,8 @@
         <div #textbox class="skills-content-wrapper">
 
             <div #skillSectionBox id="skills">
-                <p>I work with</p>
-                <h2>My Skills</h2>
+                <p>{{ (languageService.texts | async)?.skills?.prefixText }}</p>
+                <h2>{{ (languageService.texts | async)?.skills?.headline }}</h2>
             </div>
 
             <div #skillSectionBox class="skill-category-wrapper">
@@ -62,10 +62,10 @@
 
             <div #skillSectionBox class="flex-box" id="portfolio">
             <p>
-            Doesn’t found your Skill your need?<br>No Problem, We can talk and discuss your Wishes.
+            {{ (languageService.texts | async)?.skills?.text }}
             </p>
 
-            <button>Contact me</button>   
+            <button>{{ (languageService.texts | async)?.skills?.button}}</button>   
             </div>
 
         </div>

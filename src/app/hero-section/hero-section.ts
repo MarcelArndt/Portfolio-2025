@@ -3,6 +3,7 @@ import { LanguageSwitch } from '../../service/language-switch';
 import { Texts } from '../../types/types';
 import { CommonModule } from '@angular/common';
 import { HeroSectionAnimation } from './gsap';
+
 @Component({
   selector: 'app-hero-section',
   imports: [ CommonModule ],
@@ -11,7 +12,7 @@ import { HeroSectionAnimation } from './gsap';
 })
 export class HeroSection {
 
-  constructor(public elementRef: ElementRef, private languageService:LanguageSwitch ){}
+  constructor(public elementRef: ElementRef, public languageService:LanguageSwitch){}
   @Input() aboutMeSection!:ElementRef;
   @ViewChild('spotlightSection') spotlightSection!: ElementRef;
   @ViewChild('heroSection') heroSection !: ElementRef;
@@ -21,13 +22,7 @@ export class HeroSection {
   @ViewChildren('moveableObject') moveableObjects!: QueryList<ElementRef<HTMLElement>>;
   @ViewChild('whiteTransition') whiteTransition!: ElementRef;
   texts!:Texts | null;
-
-
-ngAfterViewInit() {
-    this.languageService.texts.subscribe(textObj => {
-      this.texts = textObj
-    });
-
+  ngAfterViewInit() {
     const gsapObj = {
           'heroSection' : this.heroSection.nativeElement,
           'whiteTransition' : this.whiteTransition.nativeElement,
@@ -37,7 +32,6 @@ ngAfterViewInit() {
           'portrait' : this.portrait.nativeElement,
         }
         HeroSectionAnimation (gsapObj);
-
   }
 
   get nativeElement(): HTMLElement {

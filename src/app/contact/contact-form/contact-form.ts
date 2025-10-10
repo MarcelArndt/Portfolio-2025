@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import { LanguageSwitch } from '../../../service/language-switch';
 
 @Component({
   selector: 'app-contact-form',
-  imports: [ReactiveFormsModule,  CommonModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './contact-form.html',
   styleUrl: './contact-form.scss'
 })
 export class ContactForm {
+  constructor(public languageService:LanguageSwitch){}
   messageForm = new FormGroup({
     name: new FormControl('', [
       Validators.required,

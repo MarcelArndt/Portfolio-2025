@@ -9,9 +9,6 @@
     justify-content: center;
     align-items: center;
     background-color: var(--box-color-background);
-    &::before{
-     background-color: var(--box-color-background);   
-    }
 
      &.project-one::before {
         z-index: -1;
