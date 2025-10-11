@@ -1,20 +1,23 @@
 {
         "navigation":["Startseite","Über Mich","Skills","Projekte","Kontak","Impressum","Datenschutz"],
+        
         "heroSection":{
                 "headline": "Web & App\nEntwickler",
                 "button": "Mehr über mich!",
                 "text" :"Mit Angular und Django setze ich meine Projekte in die Realität um. Dabei ist Programmieren längst mehr geworden als nur ein Hobby.",
                 "prefixText" : "Hi, ich bin Marcel Arndt"
-    },
+        },
+
         "skills":{        
                 "headline": "Meine Skills",
                 "text": "Du vermisst eine bestimmte Technologie in meinem Stack?\nIch bin offen für neue Tools und lerne schnell dazu.",
                 "prefixText": "Dies sind",
                 "button": "Schreib mir"
-    },   
+        },
+
         "contact":{        
                 "headline": "Kontakt",
-                "text": "Kontaktiere mich gern, wenn du Unterstützung bei deinem Webprojektbrauchst oder Fragen hast.\nIch freue mich auf deine Nachricht.",
+                "text": "Kontaktiere mich gern, wenn du Unterstützung bei deinem Webprojektbrauchst oder Fragen hast.\n\nIch freue mich auf deine Nachricht.",
                 "prefixText": "Komm mit mir in",
                 "button": "Sende eine E-mail an",
                 "formHeadline": "Send mir eine Nachricht",
@@ -26,5 +29,17 @@
                 "formErrorMail": "Bitte gib eine gültige E-Mail ein.",
                 "formErrorText": "Bitte gib eine Nachricht ein.",
                 "formErrorButton": "Nachricht senden"
-    }
+         },  
+
+        "about_me":{
+                "prefixheadline": "Was muss man wissen",
+                "headline": "Über mich",
+                "textAboutMe" : "Ich bin Marcel Arndt und komme aus der Nähe von Bielefeld. Ich entwickle gerne Web-Apps, die Ideen greifbar machen und Menschen den Alltag erleichtern. Programmieren bedeutet für mich, dass ich aus kleinen Bausteinen etwas Eigenes erschaffen mit einer Prise Kreativität.",
+                "textInterests" : "Kochen und Programmieren haben viel gemeinsam: Beide verlangen Vorbereitung, Experimentierfreude und ein Gefühl für das richtige Zusammenspiel. In der Küche wie im Code bringe ich meine Unabhängigkeit zum Ausdruck. Ich kreiere etwas, das Freude macht und anderen gut tut.",
+                "textGoals": "Ich möchte mit meiner Arbeit anderen Menschen helfen, digitale Werkzeuge nutzen zu können. Mein Ziel ist es, Software zu entwickeln, die die Selbstständigkeit, Kreativität oder das ('let them cook') zu fördert.",
+                "buttonAboutMe": "Ich bin Marcel",
+                "buttonInterests": "Meine Interessen",
+                "buttonGoals": "Meine Ziele"
+        }
+
 }

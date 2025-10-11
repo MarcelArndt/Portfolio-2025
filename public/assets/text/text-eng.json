@@ -1,21 +1,23 @@
 {
-    "navigation":["Home","About Me","Skills","Projects","Contact","Imprint","Data-Protection"],
-    "heroSection":{
-            "headline": "Web & App\nDeveloper",
-            "button": "More about me!",
-            "text" :"With Angular and Django, I bring my projects to life. Programming has long since become more than just a hobby.",
-            "prefixText" : "Hi I'am Marcel Arndt"
-    },
-    "skills":{       
-            "headline": "My Skills",
-            "text": "Are you missing a specific technology in my stack?\nI'm open to new tools and a fast learner.",
-            "prefixText": "These are",
-            "button": "Send a Message"
-    },       
+        "navigation":["Home","About Me","Skills","Projects","Contact","Imprint","Data-Protection"],
+        
+        "heroSection":{
+                "headline": "Web & App\nDeveloper",
+                "button": "More about me!",
+                "text" :"With Angular and Django, I bring my projects to life. Programming has long since become more than just a hobby.",
+                "prefixText" : "Hi I'am Marcel Arndt"
+        },
+
+        "skills":{       
+                "headline": "My Skills",
+                "text": "Are you missing a specific technology in my stack?\nI'm open to new tools and a fast learner.",
+                "prefixText": "These are",
+                "button": "Send a Message"
+        },       
 
         "contact": {        
                 "headline": "Contact",
-                "text": "Feel free to contact me if you need support with your web project or have any questions.\nI’m looking forward to your message.",
+                "text": "Feel free to contact me if you need support with your web project or have any questions.\n\nI’m looking forward to your message.",
                 "prefixText": "Just get in",
                 "button": "Send me an email at",
                 "formHeadline": "Send me a message",
@@ -27,5 +29,16 @@
                 "formErrorMail": "Please enter a valid email address.",
                 "formErrorText": "Please enter a message.",
                 "formErrorButton": "Send Message"
+        },
+
+        "about_me": {
+                "prefixheadline": "What you should know",
+                "headline": "About me",
+                "textAboutMe": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
+                "textInterests": "Cooking and programming have a lot in common: both require preparation, curiosity, and a sense for the right mix. In the kitchen, as in code, I express my independence by creating something that works, brings joy, and does good for others.",
+                "textGoals": "I want to use my work to help people gain access to and use digital tools. My goal is to develop software that encourages independence, creativity, and the freedom to 'let them cook'.",
+                "buttonAboutMe": "I'm Marcel",
+                "buttonInterests": "My Interests",
+                "buttonGoals": "My Goals"
         }
 }

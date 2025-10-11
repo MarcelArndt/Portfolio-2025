@@ -22,13 +22,13 @@
 
 .about-me-content-wrapper{
     width: 100%;
-    height: max-content;
+    height: auto;
     z-index: 401;
     gap: max(42px, 5vw);
     display: flex;
     justify-content: center;
-    align-items: center;
     position: relative;
+
 
 
     @media screen and (max-width:1200px){
@@ -49,6 +49,7 @@
 
     @media screen and (max-width:1200px){
         padding: 0px 16px;
+        text-align: center;
     }
 }
 
@@ -71,7 +72,7 @@ button{
     border-radius: 0.5rem;
     white-space: nowrap;
     align-items: center;
-    width: 300px;
+    width: 326px;
     transition: scale $transition-timer ease-in-out;
 
     &:hover{
@@ -88,6 +89,7 @@ button{
 
     @media screen and (max-width:1200px){
         width: min-content;
+        margin: 0px;
     
         span{
             display: none;
@@ -119,6 +121,27 @@ button{
 
 .z-505{
     z-index: 505;
+}
+
+
+.transition{
+    position: absolute;
+    bottom: calc(-150px);
+}
+
+.textbox{
+    height: 175px;
+
+    @media screen and (max-width:1200px){
+        margin-top: -2rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        p{
+            max-width: 40ch;
+            text-align: center;
+        }
+    }
 }
 
 .display-before{

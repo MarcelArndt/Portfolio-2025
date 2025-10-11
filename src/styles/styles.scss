@@ -60,6 +60,7 @@ p{
 }
 
 h1{
+    pointer-events: none;
     white-space: pre-line;
     font-family: $font-set-one;
     line-height: 125%;
@@ -81,6 +82,7 @@ h1{
 }
 
 h2{
+    pointer-events: none;
     white-space: pre-line;
     font-family: $font-set-one;
     box-sizing: border-box;
@@ -97,6 +99,7 @@ h2{
 
 
 h3{
+    pointer-events: none;
     white-space: pre-line;
     font-family: $font-set-one;
     box-sizing: border-box;

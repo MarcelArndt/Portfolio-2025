@@ -23,7 +23,7 @@
     transition: opacity 0.25s ease-in-out, transform 0s ease-in-out;
 
     @media screen and (max-width:1200px) {
-        padding: 0px 16px;
+        padding: 0px 36px;
     }
 }
 
@@ -158,59 +158,6 @@ nav{
 
 @media screen and (max-width:1240px){
 
-    .mobil-menu-button {
-        display: flex;
-    }
 
-    .main-nav{
-        position: relative;
-    }
-
-    .main-nav{
-        ul{
-            display: block;
-            transform: scale(1, 0) translateX(-50%);
-            flex-direction: column;
-            list-style: none;
-            position: absolute;
-            top: 46px;
-            left: 50%;
-            background: $white;
-            color: $black-text-color;
-            width: 200px;
-            padding: 10px;
-            transition: transform 0.25s ease-in-out;
-            li{
-                margin: 12px 0px;
-            }
-        }
-    }
-
-    #mobil-menu-toggle:checked + .mobil-menu-button span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    #mobil-menu-toggle:checked + .mobil-menu-button span:nth-child(2) {
-    opacity: 0;
-    }
-
-    #mobil-menu-toggle:checked + .mobil-menu-button span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    .menu {
-    list-style: none;
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    width: 200px;
-    padding: 10px;
-    border-radius: 8px;
-    }
-
-    #mobil-menu-toggle:checked ~ .menu{
-        transform: scale(1, 1) translateX(-50%);
-        transition: transform 0.25s ease-in-out;
-    }
 
 }

@@ -49,8 +49,9 @@
 }
 
 .skills-content-wrapper{
+
     position: relative;
-    z-index: 505;
+    z-index: 305;
     padding: 0px;
     margin-left: calc($border-padding - 40px);
     @media screen and (max-width:1200px) {

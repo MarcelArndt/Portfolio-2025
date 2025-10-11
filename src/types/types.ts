@@ -3,6 +3,7 @@ export interface Texts {
     "heroSection": HeroSectionTexts,
     "skills": SkillsTexts,
     "contact": ContactSection,
+    "about_me": AboutMeSection;
 }
 
 export interface HeroSectionTexts{
@@ -33,4 +34,15 @@ export interface ContactSection {
     formErrorMail: string;
     formErrorText: string;
     formErrorButton: string;
+}
+
+export interface AboutMeSection {
+  prefixheadline: string;
+  headline: string;
+  textAboutMe: string;
+  textInterests: string;
+  textGoals: string;
+  buttonAboutMe: string;
+  buttonInterests: string;
+  buttonGoals: string;
 }

@@ -1,7 +1,8 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Input} from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, Input, ViewChildren, QueryList} from '@angular/core';
 import { IconComponent } from '../utility/icon/icon';
 import { CommonModule } from '@angular/common';
-import { whiteboxGrowAnimation } from './gsap';
+import { whiteboxGrowAnimation, aboutMeTextAnimation } from './gsap';
+import { LanguageSwitch } from '../../service/language-switch';
 
 
 @Component({
@@ -11,14 +12,15 @@ import { whiteboxGrowAnimation } from './gsap';
   styleUrl: './about-me.scss'
 })
 export class AboutMe {
-  constructor(public elementRef: ElementRef) {}
-  textIndex:number = 0;
+  constructor(public elementRef: ElementRef, public languageService: LanguageSwitch) {}
+  textCurrentIndex:number = 0;
   @ViewChild("aboutMe")aboutMe!:ElementRef;
   @ViewChild("textbox")textbox!:ElementRef;
   @ViewChild("blackTransition")blackTransition!:ElementRef;
+  @ViewChildren('textblock') textblockQuery!: QueryList<ElementRef>;
   @Input()heroSection!:ElementRef;
   @Input()skillSection!:ElementRef;
-  gsapObj!:Record<string, HTMLElement>;
+  gsapObj!:Record<string, HTMLElement | HTMLElement[]>;
 
   ngAfterViewInit() {
     this.gsapObj = {
@@ -27,8 +29,10 @@ export class AboutMe {
       'textbox' : this.textbox.nativeElement,
       'skillSection' : this.skillSection.nativeElement,
       'blackTransition' : this.blackTransition.nativeElement,
+      'textblockQuery' : this.textblockQuery.map(eachElement => eachElement.nativeElement)
     };
     whiteboxGrowAnimation(this.gsapObj);
+    aboutMeTextAnimation(this.gsapObj, this.textCurrentIndex)
   }
 
   get nativeElement(): HTMLElement {
@@ -36,7 +40,8 @@ export class AboutMe {
   }
 
   changeTextIndex(index:number){
-    this.textIndex = index;
+     this.textCurrentIndex = index;
+     aboutMeTextAnimation(this.gsapObj, this.textCurrentIndex)
   }
 
 

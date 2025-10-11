@@ -55,6 +55,7 @@
     @media screen and (max-width:1200px){
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
 }
 
@@ -92,6 +93,16 @@
     p{
         color: $black-text-color;
     }
+
+    @media screen and (max-width:1200px){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        p{
+           padding: 0px; 
+        }
+    }
 }
 
 
@@ -119,7 +130,7 @@
 }
 
 .text{
-    max-width:55ch;
+    max-width:48ch;
 }
 
 
