@@ -3,22 +3,22 @@
 
 <section class="hero-section-container">
 
-    <div #heroSection class="hero-section" id="hero-section">
+    <img class="background-element" src="./assets/hero-background.png">
+    <img #portrait class="portrait" src="./assets/person.png">
 
-        <img class="background-element" src="./assets/hero-background.png">
-        <img #portrait class="portrait" src="./assets/person.png">
+    <div #heroSection class="hero-section">
         <div class="text-layer">
 
-            <div #headlineTextBox class="text-column moveableObject">
-                <p>{{ (languageService.texts | async)?.heroSection?.prefixText }}</p>
+            <div #headlineTextBox class="text-column">
+                <p class="desktop-class">{{ (languageService.texts | async)?.heroSection?.prefixText }}</p>
                 <h1>{{ (languageService.texts | async)?.heroSection?.headline }}</h1>
-                <p class="discription">{{ (languageService.texts | async)?.heroSection?.text }}</p>
-                <button>{{ (languageService.texts | async)?.heroSection?.button }}</button>
-                <nav>
+                <p class="discription desktop-class">{{(languageService.texts | async)?.heroSection?.text}}</p>
+                <button class="desktop-class">{{(languageService.texts | async)?.heroSection?.button}}</button>
+                <nav class="social-navi">
                     <ul>
                         <li><a href="https://www.linkedin.com/in/profil-marcel-arndt/" target="_blank"><img src="./assets/linkedIn.svg"></a></li>
                         <li><a href="https://github.com/MarcelArndt" target="_blank"><img src="./assets/github.svg"></a></li>
-                        <li><a href="mailto:info@arndt-marcel.de">info@arndt-marcel.de</a></li>
+                        <li><a href="mailto:info@arndt-marcel.de"><img src="./assets/email.svg"></a></li>
                     </ul>
                 </nav>
             </div>

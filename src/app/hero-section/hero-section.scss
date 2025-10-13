@@ -7,6 +7,7 @@
     width: 100%;
     background-color: aqua;
     background-color: $hero-section-background;
+    overflow: hidden;
 }
 
 .hero-section{
@@ -14,32 +15,22 @@
     position: relative;
     width: 100%;
     min-height: calc( 100vh - $headline-height);
-
+    height: 100%;
     padding: $padding;
     overflow: hidden;
     z-index: 1;
 
-    &::after{
-        content: "";
-        position: absolute;
-        z-index: 100;
-        background-color: $white;
-        height: 15vh;
-        width: 100%;
-        bottom: -12vh;
-        left: 0px;
-        transform-origin: left top;
-    }
+
 }
 
 .background-element{
-    z-index: 1;
+
     pointer-events: none; 
     user-select: none;
     position: absolute;
     right: 0px;
     bottom: 0px;
-    z-index: 0;
+
 }
 
 p{
@@ -47,17 +38,30 @@ p{
 }
 
 .portrait{
-    z-index: 3;
     position: absolute;
     right: 120px;
     bottom:7vw;
     pointer-events: none; 
     user-select: none;
-    height: 70vh;
-    @media screen  and (max-width:1200px){
-        height: 70vh;
-        bottom:14vw;
+    width: auto;
+    height: 66vh;
+
+
+
+    @media screen  and (max-width:1442px){
+        bottom:auto;
+        bottom: 33vh;
         right: 50%;
+        transform: translateX(50%);
+        img{
+            width: 100%;
+        }
+    }
+
+    @media screen  and (max-width:400px){
+        width: 442px;
+        bottom:20vw;
+        right:47%;
         transform: translateX(50%);
         img{
             width: 100%;
@@ -68,50 +72,44 @@ p{
 
 .text-layer{
     box-sizing: border-box;
-    z-index: 4;
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0px;
     top: -40px;
-    z-index: 10; 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width:1442px) {
     justify-content: end;
     padding-bottom: 14vh;
     }
 }
 
+
 .text-column{
-    margin: calc($border-padding - 40px);
-    @media screen and (max-width:1200px) {
-    margin: 0;
-    display: none;
+        margin: calc($border-padding - 40px);
+    @media screen and (max-width:1442px) {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        .desktop-class{
+            display: none;
+        }
     }
 }
 
-.mobil-title{
-    display: none;
-    @media screen and (max-width:1200px) {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
 
-    h1{
-            font-size: clamp(1.5rem, 12vw, 3.75rem);
-    }
-    }
-}
 
 button{
     margin: 32px 40px
 }
 
-nav {
+.social-navi {
     margin-left: 40px;
 
     @media screen and (max-width:1200px) {
@@ -146,17 +144,84 @@ nav {
 
 }
 
-.moveableObject{
-    transition: transform 0.1s ease-out;
-}
-
-.darken{
-   filter: brightness(0.0) blur(12px);;
-}
-
 
 .z-300{
     z-index: 300;
+}
+
+@media screen and (max-width:1442px){
+    h1{
+        position: relative;
+        z-index: 404;
+        text-align: center;
+        font-size: clamp(1.5rem, 12vw, min(7rem, 33vh));
+        transform: skewY(5deg);
+        font-weight: 500;
+    }
+
+    .social-navi{
+        position: fixed;
+        right: 40px;
+        bottom: calc(33vh - 48px);
+        transform: skewY(5deg) translateY(-25%);
+        filter: invert(100%);
+
+        ul{
+
+        li{
+            margin: 0px;
+            margin-left: 16px;
+        }
+
+        }
+
+    }
+
+    .hero-section{
+        position: relative;
+        z-index: 403;
+        padding: 0px;
+        pointer-events: none;
+    }
+
+    .text-layer{
+        position: relative;
+        z-index: 403;
+        height: 100%;
+        padding: 0px;
+        pointer-events: none;
+    }   
+
+    .text-column{
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        height: calc( 33vh + 75px );
+        z-index: 404;
+        transform: skewY(-5deg);
+        pointer-events: none;
+    }
+
+    .transition{ 
+        position: absolute;
+        bottom: 33vh;
+        z-index: 102;
+        width: 100%;
+        height: max-content;
+        transform: translate(0px,0px);
+
+        .buffer-box{
+            height: 133vh;
+            position: absolute;
+            bottom: calc(-133vh - 72px);
+        }
+    }
+
+    .z-300{
+        z-index: 101;
+    }
+
+
 }
 
 

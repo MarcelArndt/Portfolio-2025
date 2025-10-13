@@ -8,7 +8,16 @@ export function HeroSectionAnimation(obj:Record<string, HTMLElement>) {
         y: "-=36px",
     });
 
-    let tlOne = gsap.timeline({
+    let mediaQuery = gsap.matchMedia();
+
+    mediaQuery.add({
+      isDesktop: "(min-width: 1443px)",
+      isMobile: "(max-width: 1442px)",
+    }, (context) => {
+
+    const { isDesktop, isMobile } = context.conditions as { isDesktop: boolean; isMobile: boolean; };
+
+      let tlOne = gsap.timeline({
         scrollTrigger: {
             trigger: obj['heroSection'],
             start: 'top top',
@@ -25,15 +34,27 @@ export function HeroSectionAnimation(obj:Record<string, HTMLElement>) {
     .to(obj['redTransition'], {
       y: "-=100vh",
       ease: "power4.out"
-    }, "<")
-    .to((obj['headlineTextBox']),{
+    }, "<");
+    
+    if (isDesktop) {
+    tlOne.to((obj['headlineTextBox']),{
       y: "+=300px",
     }, "<")    
     .to((obj['portrait']),{
       y: "-=700px",
     }, "<");
-    
+  } else {
+     tlOne.to((obj['headlineTextBox']),{
+      y: "-=75vh",
+      opacity:0,
+      duration:2,
+      ease: "power2.out"
+    }, "<")    
+    .to((obj['portrait']),{
+      y: "+=300px",
+    }, "<");
+  }
 
-
+    });
 
 }

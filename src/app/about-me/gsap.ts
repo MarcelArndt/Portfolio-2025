@@ -49,8 +49,6 @@ export function whiteboxGrowAnimation(obj:Record<string, HTMLElement | HTMLEleme
         y:"+=50px",
         stagger: 1,
     })
-
-
 }
 
 let currentTimeline: gsap.core.Timeline | null = null;
