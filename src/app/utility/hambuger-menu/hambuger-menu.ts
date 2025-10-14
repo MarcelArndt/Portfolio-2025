@@ -3,6 +3,7 @@ import { gsapScrollToSection } from './gsap';
 import { GsapScrollToSectionType } from './gsap';
 import { LanguageSwitch } from '../../../service/language-switch';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hambuger-menu',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './hambuger-menu.scss'
 })
 export class HambugerMenu {
-  constructor(public languageService:LanguageSwitch ){}
+  constructor(public languageService:LanguageSwitch , private router: Router,){}
 @ViewChild('navigation', { static: true }) navigation!: ElementRef;
 @ViewChild('menuToggle', { static: true })menuToggle!: ElementRef<HTMLInputElement>;
 
@@ -38,8 +39,17 @@ onDocumentClick(event: MouseEvent) {
   }
 
   toScrollToSection(obj:GsapScrollToSectionType){
-    gsapScrollToSection(obj);
-    this.closeMenu(null, true)
+    if (this.router.url !== '/' && this.router.url !== ''){
+          this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+            gsapScrollToSection(obj);
+            this.closeMenu(null, true);
+        }, 100);
+      })
+    }
+     else {
+        gsapScrollToSection(obj);
+       this.closeMenu(null, true);
+    }
   }
-
 }

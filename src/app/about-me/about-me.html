@@ -1,10 +1,10 @@
 
-<section #aboutMe class="about-me-wrapper" >
+<section #aboutMe class="about-me-wrapper">
 
   <div #textbox class="about-me-content-wrapper" >
 
 
-        <div class="display-before" id="about_me">
+        <div class="display-before">
           <div class="button-container">
             <button (click)="changeTextIndex(0)" [ngClass]="{'active': textCurrentIndex === 0}"><icon>person_pin_circle</icon>
               <span>{{(languageService.texts | async)?.about_me?.buttonAboutMe}}</span>

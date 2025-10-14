@@ -1,6 +1,7 @@
 import { Component, HostListener, ViewChild, ElementRef} from '@angular/core';
 import { HambugerMenu } from '../utility/hambuger-menu/hambuger-menu';
 import { LanguageSwitch } from '../../service/language-switch';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-headline',
@@ -9,7 +10,7 @@ import { LanguageSwitch } from '../../service/language-switch';
   styleUrl: './headline.scss'
 })
 export class Headline {
-  constructor(private languageService: LanguageSwitch){}
+  constructor(private languageService: LanguageSwitch, private router:Router){}
   lastScrollTop!:number
   @ViewChild('headline') headline!:ElementRef;
   deltaForTrigger:number = 3;
@@ -40,5 +41,18 @@ export class Headline {
   switchLanguage() {
     this.languageService.switchLanguage();
   }
+
+  scrollToTop(){
+    if (this.router.url !== '/' && this.router.url !== ''){
+              this.router.navigate(['/']).then(() => {
+            setTimeout(() => {
+              window.scrollTo(0, 0);
+            }, 500);
+          })
+        }
+         else {
+             window.scroll(0, 0);
+        }
+    }
 }
 

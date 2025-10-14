@@ -10,10 +10,10 @@
         <div class="text-layer">
 
             <div #headlineTextBox class="text-column">
-                <p class="desktop-class">{{ (languageService.texts | async)?.heroSection?.prefixText }}</p>
-                <h1>{{ (languageService.texts | async)?.heroSection?.headline }}</h1>
+                <p  class="desktop-class">{{ (languageService.texts | async)?.heroSection?.prefixText }}</p>
+                <h1  >{{ (languageService.texts | async)?.heroSection?.headline }}</h1>
                 <p class="discription desktop-class">{{(languageService.texts | async)?.heroSection?.text}}</p>
-                <button class="desktop-class">{{(languageService.texts | async)?.heroSection?.button}}</button>
+                <button (click)="scrollAboutMe()" class="desktop-class">{{(languageService.texts | async)?.heroSection?.button}}</button>
                 <nav class="social-navi">
                     <ul>
                         <li><a href="https://www.linkedin.com/in/profil-marcel-arndt/" target="_blank"><img src="./assets/linkedIn.svg"></a></li>

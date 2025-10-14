@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-footer',
@@ -8,5 +9,17 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer.scss'
 })
 export class Footer {
-
+  constructor(private router:Router){}
+  scrollToTop(){
+    if (this.router.url !== '/' && this.router.url !== ''){
+              this.router.navigate(['/']).then(() => {
+            setTimeout(() => {
+              window.scrollTo(0, 0);
+            }, 500);
+          })
+        }
+         else {
+             window.scroll(0, 0);
+        }
+      }
 }

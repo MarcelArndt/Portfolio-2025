@@ -34,6 +34,10 @@ export class HeroSection {
         HeroSectionAnimation (gsapObj);
   }
 
+  scrollAboutMe(){
+    window.scroll(0, 400);
+  }
+
   get nativeElement(): HTMLElement {
     return this.elementRef.nativeElement;
   }

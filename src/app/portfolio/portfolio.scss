@@ -1,10 +1,5 @@
 @use "./../../styles/index.scss" as *;
 
-::host{
-    background-color: $grey;
-    height: 100lvh;
-}
-
 .project{
     position: absolute;
     top: 0;

@@ -1,0 +1,75 @@
+@use "../../styles/index.scss" as *;
+
+:host{
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0px 80px;
+    @media screen and (max-width:1200px) {
+            padding: 0px 0px;
+    }
+}
+
+.icon{
+    background-color: $button-grey;
+    aspect-ratio:  1 / 1;
+    border-radius: 50%;
+}
+
+icon{
+    font-size: clamp(5rem, 12vw, 9rem);
+    color: $white;
+}
+
+p{
+    color:$grey;
+    max-width: 72ch;
+    padding: 0px;
+
+}
+
+h4{
+    word-break: break-word;
+    font-weight: 400;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color:$red;
+    max-width: min(25ch,92%);
+    font-size: clamp(1.5rem, 12vw, 2.625rem);
+}
+
+h2{
+    word-break: break-word;
+    margin: 0px;
+    text-align: left;
+    padding: 0px;
+}
+
+strong{
+    display: block;
+    margin-top: 2rem;
+    color:$red;
+    font-weight: 400;
+}
+
+ul{
+    font-size: $running-text;
+    list-style: none;
+     font-weight: 400;
+    li{
+        max-width: 70ch;
+    }
+}
+
+a{
+    word-break: break-word;
+    color:$button-color;
+    text-align: center;
+
+    &:hover{
+        color:$button-hover-color;
+    }
+}

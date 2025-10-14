@@ -1,0 +1,48 @@
+@use "../../styles/index.scss" as *;
+
+:host{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon{
+    background-color: $button-grey;
+    aspect-ratio:  1 / 1;
+    border-radius: 50%;
+}
+
+icon{
+    font-size: clamp(5rem, 12vw, 9rem);
+    color: $white;
+}
+
+p{
+    color:$grey;
+    max-width: 45ch;
+    text-align: center;
+}
+
+h2{
+    margin-top: 0px;
+}
+
+strong{
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: -1.75rem;
+    color:$red;
+    font-weight: 400;
+    text-align: center;
+}
+
+a{
+    color:$button-color;
+    text-align: center;
+
+    &:hover{
+        color:$button-hover-color;
+    }
+}
