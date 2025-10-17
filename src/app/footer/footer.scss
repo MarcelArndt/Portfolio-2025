@@ -19,6 +19,10 @@ footer{
     justify-content: space-between;
     align-items: end;
 
+    @media screen and (max-width:1422px){
+        padding: 0px;
+    }
+
     @media screen and (max-width:1200px){
         flex-direction: column;
         gap:16px;

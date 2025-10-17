@@ -188,10 +188,14 @@ button{
 
 ::-webkit-scrollbar-track{
     background-color: white;
+    padding-left: 3px;
+    border-left: 3px solid white;
+    outline: 3px solid $grey;
 }
 
 ::-webkit-scrollbar-thumb{
     background: linear-gradient(15deg, #a00053, #c9063d);
     border-radius: 90px;
     border: 2px solid  white;
+
 }

@@ -24,13 +24,11 @@
 }
 
 .background-element{
-
     pointer-events: none; 
     user-select: none;
     position: absolute;
     right: 0px;
     bottom: 0px;
-
 }
 
 p{
@@ -39,27 +37,27 @@ p{
 
 .portrait{
     position: absolute;
-    right: 120px;
+    right: 5vw;
     bottom:7vw;
     pointer-events: none; 
     user-select: none;
     width: auto;
     height: 66vh;
+    min-height: 80vh;
 
     @media screen  and (max-width:1442px){
+        min-height: auto;
+    }
+    
+
+    @media screen  and (max-width:1442px){
+        min-height: auto;
         bottom: 33vh;
         right: -2%;
         transform: translateX(0%);
     }
 
-    @media screen and (max-width:400px){
-        position: absolute;
-        width: auto;
-        height: 70vh;
-        top: 0%;
-        left: 50%;
-        transform: translate(50%, 0%);
-    }
+
 }
 
 
@@ -125,12 +123,48 @@ button{
     }
 
     a{
-    color: $white-text-color;  
-    text-decoration: none;
+        color: $white-text-color;  
+        text-decoration: none;
     }
 
 }
 
+.mouse-animation{
+    display: none;
+    pointer-events: none;
+    width: 2.25rem;
+    height: 3.75rem;
+    border-radius: 100vh;
+    border: 0.125rem solid $grey;
+    margin: 24px 0px;
+    position: absolute;
+    bottom: 12vh;
+    left: 50%;
+    transform: translate(-0px, 10%);
+    z-index: 333;
+
+    @media screen and (max-width:1422px) and (orientation: landscape) {
+         display: block;
+    }
+
+    @media screen and (max-width:1050px){
+        display: none;
+    }
+
+}
+
+.arrow{
+    width: 0.25rem;
+    height: 0.25rem;
+    border: solid $red;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
 
 .z-300{
     z-index: 300;
@@ -144,6 +178,7 @@ button{
 
     .hero-section{
         position: relative;
+        height: 100%;
         z-index: 101;
         padding: 0px;
         pointer-events: none;
@@ -151,13 +186,12 @@ button{
 
     .text-layer{
         z-index: 101;
-        height: 100%;
-        padding: 0px;
-        padding-left: 40px;
         pointer-events: none;
-        margin-top: 86px;
-        justify-content: start;
-        padding-bottom: 14vh;
+        justify-content: center;
+        position: absolute;
+        bottom: calc(15vh + 9px);
+        top: auto;
+        left: 0px;
     }   
 
     .text-column{
@@ -186,12 +220,81 @@ button{
     }
 }
 
-@media screen and (max-width:1024px){
-    .text-layer{
-        padding-left: 1vw;
-    }   
+.social-mobil-navi{
+    z-index: 111;
+    position: absolute;
+    bottom: 12vh;
+    filter: invert(100%);
+    right: 40px;
+}
+
+@media screen and (max-width:1024px){  
     .transition{ 
         bottom: 15vh;
+    }
+}
+
+@media screen and (max-width:1050px){  
+
+    .social-navi{
+        filter: invert(100%);
+        margin: 0px;
+    }
+
+    h1 {
+        font-size: clamp(1.5rem, 12vw, 6rem);
+        padding: 0px;
+    }
+
+    .social-mobil-navi{
+        display: none;
+    }
+
+    .transition{ 
+        bottom: 40vh;
+    }
+
+    .portrait{
+        position: absolute;
+        right: 50%;
+        transform: translate(50%,0px);
+        bottom: 36vh;
+    }
+    .mobil-off{
+        display: none;
+    }
+
+    .hero-section{
+        z-index: 333;
+    }
+
+    .text-layer{
+        position: absolute;
+        bottom: 48px;
+        top: auto;
+        height: 46vh;
+        transform: skewY(-5deg);
+
+    }
+
+    .text-column{
+        position: absolute;
+        bottom: 0px;
+        align-items: center;
+        transform: skewY(5deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        h1{
+            text-align: center;
+        }
+
+        p{
+            text-align: center;
+            color: $grey;
+        }
     }
 }
 
@@ -204,5 +307,24 @@ button{
         margin-top: 40px;
     }
 }
+
+@media screen and (orientation: landscape) and (max-width:1442px ) {
+    .horizontal-off{
+        display: none;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width:100px) {
+    .horizontal-off{
+        display: flex;
+    }
+}
+
+@media screen and (max-width:1050px){
+
+}
+
+
+
 
 

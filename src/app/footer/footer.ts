@@ -21,5 +21,5 @@ export class Footer {
          else {
              window.scroll(0, 0);
         }
-      }
+    }
 }

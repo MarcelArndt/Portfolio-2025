@@ -10,11 +10,11 @@
         <div class="text-layer">
 
             <div #headlineTextBox class="text-column">
-                <p class="vertical-off">{{ (languageService.texts | async)?.heroSection?.prefixText }}</p>
+                <p>{{ (languageService.texts | async)?.heroSection?.prefixText }}</p>
                 <h1  >{{ (languageService.texts | async)?.heroSection?.headline }}</h1>
-                <p class="discription">{{(languageService.texts | async)?.heroSection?.text}}</p>
-                <button (click)="scrollAboutMe()">{{(languageService.texts | async)?.heroSection?.button}}</button>
-                <nav class="social-navi">
+                <p class="discription mobil-off">{{(languageService.texts | async)?.heroSection?.text}}</p>
+                <button class="vertical-off mobil-off" (click)="scrollAboutMe()">{{(languageService.texts | async)?.heroSection?.button}}</button>
+                <nav class="social-navi horizontal-off ">
                     <ul>
                         <li><a href="https://www.linkedin.com/in/profil-marcel-arndt/" target="_blank"><img src="./assets/linkedIn.svg"></a></li>
                         <li><a href="https://github.com/MarcelArndt" target="_blank"><img src="./assets/github.svg"></a></li>
@@ -24,6 +24,20 @@
             </div>
         </div>
     </div>
+
+    <div class="scroll-animation">
+        <div #mouseSymbol class="mouse-animation">
+            <div #arrowSymbol class="arrow"></div>
+        </div>
+    </div>
+
+    <nav #mobilSocialNavi class="social-navi social-mobil-navi horizontal-on">
+        <ul>
+            <li><a href="https://www.linkedin.com/in/profil-marcel-arndt/" target="_blank"><img src="./assets/linkedIn.svg"></a></li>
+            <li><a href="https://github.com/MarcelArndt" target="_blank"><img src="./assets/github.svg"></a></li>
+            <li><a href="mailto:info@arndt-marcel.de"><img src="./assets/email.svg"></a></li>
+        </ul>
+    </nav>
 
     <div #whiteTransition class="transition">
         <div class="triangle-shape set-triangle-bottom white"></div>

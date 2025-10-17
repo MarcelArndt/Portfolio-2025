@@ -79,8 +79,11 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @media screen and (max-width:1200px){
+     @media screen and (max-width:1422px){
         padding-left: 0px;
+    }
+
+    @media screen and (max-width:1200px){
         text-align: center;
         width: 90%;
         margin-bottom: 64px;

@@ -22,9 +22,11 @@
     transform: translateY(0%);
     transition: opacity 0.25s ease-in-out, transform 0s ease-in-out;
 
-    @media screen and (max-width:1200px) {
-        padding: 0px 36px;
+    @media screen and (max-width:1442px) {
+        padding: 0px 40px;
     }
+
+    
 }
 
 
@@ -43,7 +45,7 @@
 
     @media screen and (max-width:1200px) {
         display: flex;
-        margin: 8px;
+        margin: 8px 0px 8px 0px;
         max-width: none;
         width: clamp(160px , 16vw, 220px);
         min-width: 160px;

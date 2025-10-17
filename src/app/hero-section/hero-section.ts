@@ -1,4 +1,4 @@
-import { Component,ViewChild,ElementRef, ViewChildren, QueryList, Input} from '@angular/core';
+import { Component,ViewChild,ElementRef, ViewChildren, QueryList, Input, viewChild} from '@angular/core';
 import { LanguageSwitch } from '../../service/language-switch';
 import { Texts } from '../../types/types';
 import { CommonModule } from '@angular/common';
@@ -21,9 +21,16 @@ export class HeroSection {
   @ViewChild('portrait') portrait !: ElementRef;
   @ViewChildren('moveableObject') moveableObjects!: QueryList<ElementRef<HTMLElement>>;
   @ViewChild('whiteTransition') whiteTransition!: ElementRef;
+  @ViewChild('mobilSocialNavi') mobilSocialNavi!:ElementRef;
+  @ViewChild('mouseSymbol') mouseSymbol!:ElementRef;
+  @ViewChild('arrowSymbol') arrowSymbol!:ElementRef;
+
   texts!:Texts | null;
   ngAfterViewInit() {
     const gsapObj = {
+          'arrowSymbol': this.arrowSymbol.nativeElement,
+          'mouseSymbol' : this.mouseSymbol.nativeElement,
+          'mobilSocialNavi': this.mobilSocialNavi.nativeElement,
           'heroSection' : this.heroSection.nativeElement,
           'whiteTransition' : this.whiteTransition.nativeElement,
           'aboutMeSection' : this.aboutMeSection.nativeElement,
