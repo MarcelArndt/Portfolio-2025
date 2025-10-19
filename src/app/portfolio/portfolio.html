@@ -14,15 +14,15 @@
 
 
 <section #projectOne class="project project-one">
-   <app-project-template [color]="[280, 87, 60]" [projectClass]="'project-one'" [technology]="['angular', 'django', 'docker', ]"></app-project-template>
+   <app-project-template [projectDetails]="(languageService.texts | async)?.projectOne" [projectClass]="'project-one'"></app-project-template>
 </section>
 
 <section #projectTwo class="project project-two">
-    <app-project-template [color]="[220, 93, 60]" [projectClass]="'project-two'" [technology]="['javascript', 'sass', 'firebase', ]"></app-project-template>
+    <app-project-template [projectDetails]="(languageService.texts | async)?.projectTwo"  [projectClass]="'project-two'"></app-project-template>
 </section>
 
 <section #projectThree class="project project-three">
-    <app-project-template [color]="[4, 86, 60]" [projectClass]="'project-three'" [technology]="['typescript', 'sass']"></app-project-template>
+    <app-project-template  [projectDetails]="(languageService.texts | async)?.projectThree" [projectClass]="'project-three'"></app-project-template>
 </section>
 
 </main>

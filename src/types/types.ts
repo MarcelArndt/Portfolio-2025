@@ -4,6 +4,9 @@ export interface Texts {
     "skills": SkillsTexts,
     "contact": ContactSection,
     "about_me": AboutMeSection;
+    "projectOne": Project;
+    "projectTwo": Project;
+    "projectThree": Project;
 }
 
 export interface HeroSectionTexts{
@@ -46,3 +49,17 @@ export interface AboutMeSection {
   buttonInterests: string;
   buttonGoals: string;
 }
+
+export interface Project {
+  prefixheadline: string;
+  headline: string;
+  projectText: string;
+  moreButton: string;
+  picture: string;
+  colorHSL: HSLTuple
+  technology: string[];
+  demoLink: string;
+  gitHubLink: string;
+}
+
+export type HSLTuple = [hue: number, saturation: number, lightness: number];

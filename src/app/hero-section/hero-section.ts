@@ -1,8 +1,10 @@
-import { Component,ViewChild,ElementRef, ViewChildren, QueryList, Input, viewChild} from '@angular/core';
+import { Component,ViewChild,ElementRef, ViewChildren, QueryList, Input, viewChild, HostListener} from '@angular/core';
 import { LanguageSwitch } from '../../service/language-switch';
 import { Texts } from '../../types/types';
 import { CommonModule } from '@angular/common';
 import { HeroSectionAnimation } from './gsap';
+import { gsapInitScrollFunktion } from './gsap';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-hero-section',
@@ -11,6 +13,7 @@ import { HeroSectionAnimation } from './gsap';
   styleUrl: './hero-section.scss'
 })
 export class HeroSection {
+
 
   constructor(public elementRef: ElementRef, public languageService:LanguageSwitch){}
   @Input() aboutMeSection!:ElementRef;
@@ -39,6 +42,16 @@ export class HeroSection {
           'portrait' : this.portrait.nativeElement,
         }
         HeroSectionAnimation (gsapObj);
+
+        gsapInitScrollFunktion(gsapObj);
+  }
+
+  startScrollAnimation(){
+     const gsapObj = {
+        'arrowSymbol': this.arrowSymbol.nativeElement,
+        'mouseSymbol' : this.mouseSymbol.nativeElement,
+     }
+    gsapInitScrollFunktion(gsapObj);
   }
 
   scrollAboutMe(){

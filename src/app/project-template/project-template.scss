@@ -60,6 +60,7 @@
     padding: 40px 40px;
     max-width: 1800px;
 
+
     @media screen and (max-width:1650px){
         padding: 36px 0px 0px 0px;
         height: calc(100% - $headline-height);
@@ -114,6 +115,28 @@
 
 }
 
+.text-wrapper{
+  display: -webkit-box;     
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;            
+  text-overflow: ellipsis;  
+}
+
+.more-button{
+    margin-top: 16px;
+    display: block;
+    width: max-content;
+    text-decoration: underline;
+
+    &:hover{
+        cursor: pointer;
+       color: var(--box-color);
+    }
+}
+
+
 .project-picture-wrapper{
     height: 100%;
     display: flex;
@@ -141,11 +164,22 @@
     }
 }
 
-button{
+a{
+    font-size: $running-text;
+    text-decoration: none;
     color:$white-text-color;
     background-color: var(--box-color);
     padding: 12px 48px 12px 48px;
     margin-right: 40px;
+    margin-top: 24px;
+    scale: 1.00;
+    transition: scale $transition-timer ease-in-out;
+
+    &:hover{
+        scale: 1.05;
+        transition: scale $transition-timer ease-in-out;
+    }
+
     @media screen and (max-width:1650px) {
         padding: 12px 24px 12px 24px;
         margin-right: 24px;

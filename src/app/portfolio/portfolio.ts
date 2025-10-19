@@ -2,16 +2,19 @@ import { Component, ViewChild, ElementRef, AfterViewInit, Input, HostListener, N
 import { portfolioAnimation } from './gsap';
 import { ProjectTemplate } from '../project-template/project-template';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { take } from 'rxjs/operators';
+import { Texts } from '../../types/types';
+import { LanguageSwitch } from '../../service/language-switch';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-portfolio',
-  imports: [ProjectTemplate],
+  imports: [ProjectTemplate, CommonModule ],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss'
 })
 export class Portfolio {
-constructor(public elementRef: ElementRef, private ngZone: NgZone) {}
+constructor(public elementRef: ElementRef, private ngZone: NgZone, public languageService:LanguageSwitch) {}
 @Input()skillSection!:ElementRef;
 @Input()contactSection!:ElementRef;
 @ViewChild('projectContainer')projectContainer!:ElementRef;

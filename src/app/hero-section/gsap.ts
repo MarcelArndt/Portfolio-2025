@@ -2,22 +2,27 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-export function HeroSectionAnimation(obj:Record<string, HTMLElement>) {
 
+export function gsapInitScrollFunktion(obj:Record<string, HTMLElement>){
     gsap.set(obj['redTransition'],{
         y: "-=36px",
     });
-    gsap.set((obj['arrowSymbol']),{
-      y: "+=7px", 
-    })
 
     gsap.to(obj['arrowSymbol'],{
-    y: "-=125%", 
-    yoyo: true, 
-    repeat: -1,
-    duration:1.25, 
-    ease:"cicle.out",
-    });
+      y: "-=125%", 
+      yoyo: true, 
+      repeat: -1,
+      duration:1.25, 
+      ease:"cicle.out",
+    })
+
+}
+
+
+export function HeroSectionAnimation(obj:Record<string, HTMLElement>) {
+
+
+
 
     let mediaQuery = gsap.matchMedia();
 

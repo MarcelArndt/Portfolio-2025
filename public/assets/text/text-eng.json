@@ -40,5 +40,41 @@
                 "buttonAboutMe": "I'm Marcel",
                 "buttonInterests": "My Interests",
                 "buttonGoals": "My Goals"
+        },
+
+        "projectOne": {
+                "prefixheadline": "Watch it first on",
+                "headline": "Videoflix",
+                "projectText": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
+                "moreButton": "read more...",
+                "picture": "./assets/projects/project_one/thumbnail.png",
+                "colorHSL": [280, 87, 60],
+                "technology": ["angular", "django", "docker"],
+                "demoLink": "https://videoflix.arndt-dev.de/",
+                "gitHubLink": "https://github.com/MarcelArndt/Videoflix-Frontend"
+        },
+
+        "projectTwo": {
+                "prefixheadline": "Watch it first on",
+                "headline": "Videoflix",
+                "projectText": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
+                "moreButton": "read more...",
+                "picture": "./assets/projects/project_one/thumbnail.png",
+                "colorHSL": [220, 93, 60],
+                "technology": ["angular", "django", "docker"],
+                "demoLink": "https://videoflix.arndt-dev.de/",
+                "gitHubLink": "https://github.com/MarcelArndt/Videoflix-Frontend"
+        },
+
+        "projectThree": {
+                "prefixheadline": "Watch it first on",
+                "headline": "Videoflix",
+                "projectText": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
+                "moreButton": "read more...",
+                "picture": "./assets/projects/project_one/thumbnail.png",
+                "colorHSL": [4, 86, 60],
+                "technology": ["angular", "django", "docker"],
+                "demoLink": "https://videoflix.arndt-dev.de/",
+                "gitHubLink": "https://github.com/MarcelArndt/Videoflix-Frontend"
         }
 }
