@@ -2,6 +2,7 @@ import { Component, HostListener, ViewChild, ElementRef} from '@angular/core';
 import { HambugerMenu } from '../utility/hambuger-menu/hambuger-menu';
 import { LanguageSwitch } from '../../service/language-switch';
 import { Router } from '@angular/router';
+import { LightboxService } from '../utility/lightbox/lightbox-service';
 
 @Component({
   selector: 'app-headline',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './headline.scss'
 })
 export class Headline {
-  constructor(private languageService: LanguageSwitch, private router:Router){}
+  constructor(private languageService: LanguageSwitch, private router:Router, private lightboxService:LightboxService ){}
   lastScrollTop!:number
   @ViewChild('headline') headline!:ElementRef;
   deltaForTrigger:number = 3;
@@ -40,6 +41,7 @@ export class Headline {
 
   switchLanguage() {
     this.languageService.switchLanguage();
+    this.lightboxService.close();
   }
 
   scrollToTop(){

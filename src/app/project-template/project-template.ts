@@ -2,6 +2,9 @@ import { Component, Input, HostBinding, SimpleChanges} from '@angular/core';
 import { LightboxService } from '../utility/lightbox/lightbox-service';
 import { Texts, Project, HSLTuple } from '../../types/types';
 import { ChangeDetectorRef } from '@angular/core'
+import { ProjectLightboxTemplate } from '../project-lightbox-template/project-lightbox-template';
+import { iconsUrlCatalog } from '../utility/iconsUrlCatalog';
+
 @Component({
   selector: 'app-project-template',
   imports: [],
@@ -14,23 +17,7 @@ constructor(private lightboxService:LightboxService, private cdr: ChangeDetector
 color!:HSLTuple | undefined;
 @Input({required:true}) projectClass!:'project-one' | 'project-two' | 'project-three' | '';
 @Input({required:true}) projectDetails!:Project | undefined;
-
-
-iconsUrlCatalog:Record<string, string> = {
-    'angular' : "./assets/technology/angular.svg",
-    'javascript' : "./assets/technology/javascript.svg",
-    'typescript' : "./assets/technology/typescript.svg",
-    'gsap' : "./assets/technology/gsap.png",
-    'sass' : "./assets/technology/sass.svg",
-    'django' : "./assets/technology/django.svg",
-    'python' : "./assets/technology/python.svg",
-    'firebase' : "./assets/technology/firebase.svg",
-    'figma' : "./assets/technology/figma.svg",
-    'csharp' : "./assets/technology/c_scharp.svg",
-    'git' : "./assets/technology/git.svg",
-    'docker' : "./assets/technology/docker.svg",
-    'unity' : "./assets/technology/unity.svg",
-  }
+icons = iconsUrlCatalog
 
   @HostBinding('style.--box-color')
   get boxColor() {
@@ -69,7 +56,7 @@ iconsUrlCatalog:Record<string, string> = {
   }
 
   openLightbox(){
-    this.lightboxService.open();
+    this.lightboxService.open(ProjectLightboxTemplate, {projectData: this.projectDetails});
   }
 
 }

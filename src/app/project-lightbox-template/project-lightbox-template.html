@@ -1,0 +1,21 @@
+<div class="lightbox-content-wrapper">
+    <div class="image-container"><img [src]="projectData.picture"></div>
+    <p class="prefix-headline">{{projectData.prefixheadline}}</p>
+    <h2>{{projectData.headline}}</h2>
+    <p>{{projectData.projectText}}</p>
+    <p>{{projectData.projectText}}</p>
+    <h3>Techstack:</h3>
+     <div class="icon-wrapper">
+            <ul class="used-tech">
+                @for(usedTech of projectData.technology; track usedTech){
+                    <li><img [src]="icons[usedTech]"></li>
+                }
+            </ul>
+    </div>
+    <div class="button-wrapper">
+        <a [href]="projectData.demoLink">Demo</a>
+        <a [href]="projectData.gitHubLink" class="github-button">GitHub</a>
+        <button (click)="closeLightbox()">Close</button>
+    </div>
+</div>
+

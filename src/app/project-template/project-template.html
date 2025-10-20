@@ -12,7 +12,7 @@
         <div class="icon-wrapper">
             <ul class="used-tech">
                 @for(usedTech of projectDetails?.technology; track usedTech){
-                    <li><img [src]="iconsUrlCatalog[usedTech]"></li>
+                    <li><img [src]="icons[usedTech]"></li>
                 }
             </ul>
         </div>

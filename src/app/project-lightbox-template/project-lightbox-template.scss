@@ -1,0 +1,129 @@
+@use "../../styles/index.scss" as *;
+
+.lightbox-content-wrapper{
+    padding: 36px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+button{
+    color: $white-text-color;
+    $running-text : 1.31rem;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding: 0px 36px;
+    background-color: $button-grey;
+}
+
+
+.image-container{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img{
+        width: 92%;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px $shadow;
+        border: 1px solid $shadow;;
+    }
+}
+
+h2{
+    padding: 0px 0px;
+    width: 100%;
+    text-align: start;
+}
+
+h3{
+    margin-top: 36px;
+    padding: 0px 0px;
+    color: $grey;
+    margin-bottom: 0px;
+}
+
+p{
+    padding: 0px 0px;
+    width: 100%;
+    text-align: start;
+    color: $grey;
+}
+
+
+.github-button{
+    background-color: $github-color ;
+    color:$white-text-color;
+    font-weight: 300;
+
+    &:hover{
+        background-color: $github-color;
+    }
+}
+
+a{
+    font-size: $running-text;
+    text-decoration: none;
+    color:$white-text-color;
+    background-color: $button-color;
+    padding: 12px 48px 12px 48px;
+    margin-right: 36px;
+    margin-top: 0px;
+    scale: 1.00;
+    transition: scale $transition-timer ease-in-out, color $transition-timer ease-in-out;
+
+    &:hover{
+        scale: 1.05;
+        background-color: $button-hover-color;
+        transition: scale $transition-timer ease-in-out, color $transition-timer ease-in-out;
+    }
+
+    @media screen and (max-width:1650px) {
+        padding: 12px 24px 12px 24px;
+        margin-right: 24px;
+    }
+}
+
+.button-wrapper{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 36px;
+    @media screen and (max-width:800px){
+      flex-wrap:wrap; 
+      row-gap: 16px;
+    }
+
+    a{
+       margin-right: 16px;  
+    }
+}
+
+.prefix-headline{
+    margin-top: 36px;
+}
+
+
+.used-tech{
+    margin: 40px 0px 16px 0px;
+    display: flex;
+    list-style: none;
+    li{
+        margin-right: 32px;
+    }
+
+    img{
+        filter: invert(100%);
+    }
+
+    @media screen and (max-width:1650px) {
+        padding: 0px;
+        margin: 24px 0px 0px 0px;
+        padding-left: 0px;
+    }
+}
+

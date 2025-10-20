@@ -1,0 +1,17 @@
+export const iconsUrlCatalog:Record<string, string> = {
+    'angular' : "./assets/technology/angular.svg",
+    'html' : "./assets/technology/html.svg",
+    'css' : "./assets/technology/css.svg",
+    'javascript' : "./assets/technology/javascript.svg",
+    'typescript' : "./assets/technology/typescript.svg",
+    'gsap' : "./assets/technology/gsap.png",
+    'sass' : "./assets/technology/sass.svg",
+    'django' : "./assets/technology/django.svg",
+    'python' : "./assets/technology/python.svg",
+    'firebase' : "./assets/technology/firebase.svg",
+    'figma' : "./assets/technology/figma.svg",
+    'csharp' : "./assets/technology/c_scharp.svg",
+    'git' : "./assets/technology/git.svg",
+    'docker' : "./assets/technology/docker.svg",
+    'unity' : "./assets/technology/unity.svg",
+  }

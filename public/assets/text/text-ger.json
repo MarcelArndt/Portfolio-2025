@@ -43,13 +43,13 @@
         },
 
         "projectOne": {
-                "prefixheadline": "Watch it first on",
-                "headline": "Videoflix",
+                "prefixheadline": "Write me at",
+                "headline": "DABubble",
                 "projectText": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
                 "moreButton": "erfahre mehr...",
-                "picture": "./assets/projects/project_one/thumbnail.png",
-                "colorHSL": [280, 87, 60],
-                "technology": ["angular", "django", "docker"],
+                "picture": "./assets/projects/project_three.jpg",
+                "colorHSL": [30, 87, 60],
+                "technology": ["angular", "firebase", "sass"],
                 "demoLink": "https://videoflix.arndt-dev.de/",
                 "gitHubLink": "https://github.com/MarcelArndt/Videoflix-Frontend"
         },
@@ -59,9 +59,9 @@
                 "headline": "Videoflix",
                 "projectText": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
                 "moreButton": "erfahre mehr...",
-                "picture": "./assets/projects/project_one/thumbnail.png",
-                "colorHSL": [220, 93, 60],
-                "technology": ["angular", "django", "docker"],
+                "picture": "./assets/projects/project_two.jpg",
+                "colorHSL": [230, 93, 60],
+                "technology": ["javascript", "html", "css"],
                 "demoLink": "https://videoflix.arndt-dev.de/",
                 "gitHubLink": "https://github.com/MarcelArndt/Videoflix-Frontend"
         },
@@ -71,11 +71,10 @@
                 "headline": "Videoflix",
                 "projectText": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
                 "moreButton": "erfahre mehr...",
-                "picture": "./assets/projects/project_one/thumbnail.png",
-                "colorHSL": [4, 86, 60],
+                "picture": "./assets/projects/project_one.png",
+                "colorHSL": [270, 85, 60],
                 "technology": ["angular", "django", "docker"],
                 "demoLink": "https://videoflix.arndt-dev.de/",
                 "gitHubLink": "https://github.com/MarcelArndt/Videoflix-Frontend"
         }
-
 }

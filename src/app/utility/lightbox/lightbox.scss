@@ -1,7 +1,7 @@
 $lightbox-backgound: rgba(16, 2, 26, 0.6);
 $lightbox-backdrop-blur: 5px;
 $lightbox-wrapper-background: #ffffff;
-$lightbox-border-radius: 24px;
+$lightbox-border-radius: 12px;
 $lightbox-border-thickness: 24px;
 $lightbox-vertical-padding: 140px;
 
@@ -32,11 +32,13 @@ $lightbox-vertical-padding: 140px;
     transform: translateY(calc(-50% + ($lightbox-vertical-padding / 4)));
     background-color: $lightbox-wrapper-background;
     min-width: calc(320px - $lightbox-border-thickness - 16px );
-    max-width: 92vw;
+    max-width: min(92vw, 1024px);
     min-height: calc(62vh - $lightbox-vertical-padding);
     max-height: calc(92vh - $lightbox-vertical-padding - $lightbox-border-thickness);
     display: flex;
     border-radius: $lightbox-border-radius;
+    position: relative;
+
 }
 
 ::-webkit-scrollbar-track{

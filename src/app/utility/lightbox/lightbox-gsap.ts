@@ -1,26 +1,32 @@
 import gsap from 'gsap';
 
 export function closeLightboxAnimtion(obj:Record<string, HTMLElement>){
-
-         const tlOne = gsap.timeline({
+        return new Promise<void>((resolve)=>{
+            const tlOne = gsap.timeline({
             onComplete: () => {
                 obj['backgound'].style.display = "none";
+                resolve()
             }
+            });
+
+            tlOne.to(obj['content'],{
+                opacity:0,
+                duration:0.25,
+                ease: "circ.out",
+            }).fromTo(
+                obj['wrapperBox'],
+                { y: "-50%", xPercent: -50 },
+                { y: "150%", duration: 0.5, ease: "power1.out" })
+            .to(obj['backgound'],{
+                opacity:0,
+                duration:0.25,
+                ease: "circ.out",
+            });
+            
         });
 
-        tlOne.to(obj['content'],{
-            opacity:0,
-            duration:0.25,
-            ease: "circ.out",
-        }).fromTo(
-            obj['wrapperBox'],
-            { y: "-50%", xPercent: -50 },
-            { y: "150%", duration: 0.5, ease: "power1.out" })
-        .to(obj['backgound'],{
-            opacity:0,
-            duration:0.25,
-            ease: "circ.out",
-        });
+
+
 }
 
 export function openLightboxAnimtion(obj:Record<string, HTMLElement>){
