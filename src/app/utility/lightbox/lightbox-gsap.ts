@@ -27,9 +27,10 @@ export function closeLightboxAnimtion(obj:Record<string, HTMLElement>){
 }
 
 
-export function fadeOutContent(obj:Record<string, HTMLElement>){
-    return new Promise<void>((resolve)=>{
+export function fadeOutContent(obj:Record<string, HTMLElement>, isforewards:boolean){
 
+    return new Promise<void>((resolve)=>{
+        const newXValue = isforewards? -100 : 100;
         const tlOne = gsap.timeline({
             onComplete: () => {
                 resolve()
@@ -40,16 +41,16 @@ export function fadeOutContent(obj:Record<string, HTMLElement>){
             opacity:1,
         })
         .to((obj['content']),{
-            xPercent:-100,
+            xPercent:newXValue,
             opacity:0,
         });
     });
 }
 
 
-export function fadeInContent(obj:Record<string, HTMLElement>){
+export function fadeInContent(obj:Record<string, HTMLElement>, isforewards:boolean){
     return new Promise<void>((resolve)=>{
-
+        const newXValue = isforewards ? 100: -100;
         const tlOne = gsap.timeline({
             onComplete: () => {
                 resolve()
@@ -57,7 +58,7 @@ export function fadeInContent(obj:Record<string, HTMLElement>){
         });
 
         tlOne.set((obj['content']),{
-            xPercent:+100,
+            xPercent:newXValue,
             opacity:0,
         })
         .to((obj['content']),{

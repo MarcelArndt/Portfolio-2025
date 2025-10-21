@@ -29,6 +29,7 @@
         aspect-ratio: 1 / 1;
         background-color: $button-color;
         scale: 1;
+        user-select: none;
         transition: scale $transition-timer ease-in-out, color $transition-timer ease-in-out;
 
         &:hover{
@@ -83,7 +84,7 @@ button{
     margin-top: 24px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
 
     img{
         width: 92%;
@@ -183,5 +184,9 @@ a{
         margin: 24px 0px 0px 0px;
         padding-left: 0px;
     }
+}
+
+.text{
+    max-width: 60ch;
 }
 

@@ -1,6 +1,7 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, ViewContainerRef, ComponentRef, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ElementRef, ViewContainerRef, ComponentRef, OnDestroy } from '@angular/core';
 import { LightboxService, LightboxContent } from './lightbox-service';
 import { closeLightboxAnimtion, fadeInContent, fadeOutContent, openLightboxAnimtion } from './lightbox-gsap';
+import { isSwitch } from './lightbox-service';
 
 
 @Component({
@@ -34,17 +35,15 @@ export class Lightbox {
       });
 
 
-    this.lightboxService.isSwitchContent$.subscribe((isSwitching)=>{
-      if (isSwitching){
-        this.fadeOutContentAnimation().then(() =>{
-          this.fadeInContentAnimation().then(()=>{
-            console.log('wieder da');
-          });
+    this.lightboxService.isSwitchContent$.subscribe((isSwitching:isSwitch)=>{
+      if (isSwitching.ok){
+
+        this.fadeOutContentAnimation(isSwitching.forwards).then(() =>{
+          
+        this.lightboxService.doSwitchContent();
+          this.fadeInContentAnimation(isSwitching.forwards).then(()=>{
         });
-      }
-
-      if (!isSwitching){
-
+        });
       }
     })
   }
@@ -97,12 +96,12 @@ export class Lightbox {
     await closeLightboxAnimtion(this.gsapObj);
   }
 
-  async fadeOutContentAnimation(){
-     await fadeOutContent(this.gsapObj);
+  async fadeOutContentAnimation(isforewards:boolean){
+     await fadeOutContent(this.gsapObj, isforewards);
   }
 
-  async fadeInContentAnimation(){
-     await fadeInContent(this.gsapObj);
+  async fadeInContentAnimation(isforewards:boolean){
+     await fadeInContent(this.gsapObj, isforewards);
   }
 
   openAnimtion(){

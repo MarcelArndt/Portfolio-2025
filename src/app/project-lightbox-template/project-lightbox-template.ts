@@ -7,6 +7,8 @@ import { Project } from '../../types/types';
 import { Texts } from '../../types/types';
 import { IconComponent } from '../utility/icon/icon';
 
+type ProjectKey = keyof Pick<Texts, 'projectOne' | 'projectTwo' | 'projectThree'>;
+
 @Component({
   selector: 'app-project-lightbox-template',
   imports: [CommonModule, IconComponent],
@@ -17,20 +19,28 @@ export class ProjectLightboxTemplate {
   constructor( public languageService: LanguageSwitch, private lightboxService :LightboxService ){}
 
   @Input() projectData!: Project;
-  @Input() projectID!: keyof Pick<Texts, 'projectOne' | 'projectTwo' | 'projectThree'>;
+  @Input() projectID!: ProjectKey;
+  private readonly projectOrder: ProjectKey[] = ['projectOne', 'projectTwo', 'projectThree'];
 
   icons = iconsUrlCatalog
 
-  ngOnInit(){
-    console.log(this.projectID)
-  }
+pickNextProjectID() {
+  const i = this.projectOrder.indexOf(this.projectID);
+  return {
+    nextId: this.projectOrder[(i + 1) % this.projectOrder.length],
+    lastId: this.projectOrder[(i - 1 + this.projectOrder.length) % this.projectOrder.length]
+  };
+}
 
   closeLightbox(){
     this.lightboxService.close()
   }
 
-  switchContent(){
-    this.lightboxService.prepareSwitchContent(ProjectLightboxTemplate, {'projectID': 'projectThree'});
+  switchContent(isforewards:boolean){
+    const newIds = this.pickNextProjectID()
+    const nextId = isforewards? newIds.nextId : newIds.lastId;
+    this.lightboxService.prepareSwitchContent(ProjectLightboxTemplate, {'projectID': nextId},isforewards );
   }
+
 
 }

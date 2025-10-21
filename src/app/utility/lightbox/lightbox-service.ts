@@ -7,6 +7,11 @@ export interface LightboxContent<T = any> {
   inputs?: { [key: string]: any };
 }
 
+export interface isSwitch {
+  ok:boolean,
+  forwards:boolean
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,36 +23,42 @@ export class LightboxService {
   private contentSubject = new BehaviorSubject<LightboxContent | null>(null);
   public content$ = this.contentSubject.asObservable();
 
-  private isSwitchContent = new BehaviorSubject<Boolean>(false);
+  private isSwitchContent = new BehaviorSubject<isSwitch>( 
+    {
+      ok:false,
+      forwards:true
+    }
+  );
+
   public isSwitchContent$ = this.isSwitchContent.asObservable();
 
   private nextComponent!:LightboxContent | null;
 
 
-  close() {
+  public close() {
     this.isOpenSubject.next(false);
   }
 
-  resetContent(){
+  public resetContent(){
     this.contentSubject.next(null);
   }
 
-  open<T>(component: Type<T>, inputs?: { [key: string]: any }){
+  public open<T>(component: Type<T>, inputs?: { [key: string]: any }){
     this.contentSubject.next({ component, inputs });
     this.isOpenSubject.next(true);
   }
 
 
-  prepareSwitchContent<T>(component: Type<T>, inputs?: { [key: string]: any }){
+  public prepareSwitchContent<T>(component: Type<T>, inputs?: { [key: string]: any }, isforewards:boolean = true){
     this.nextComponent = {
       'component' : component,
       'inputs' : inputs,
     }
-    this.isSwitchContent.next(true);
+    this.isSwitchContent.next({ok:true, forwards:isforewards});
   }
 
 
-  doSwitchContent(){
+  public doSwitchContent(){
     this.contentSubject.next(this.nextComponent);
   }
 
