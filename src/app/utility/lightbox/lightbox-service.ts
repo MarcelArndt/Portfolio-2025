@@ -18,6 +18,12 @@ export class LightboxService {
   private contentSubject = new BehaviorSubject<LightboxContent | null>(null);
   public content$ = this.contentSubject.asObservable();
 
+  private isSwitchContent = new BehaviorSubject<Boolean>(false);
+  public isSwitchContent$ = this.isSwitchContent.asObservable();
+
+  private nextComponent!:LightboxContent | null;
+
+
   close() {
     this.isOpenSubject.next(false);
   }
@@ -30,5 +36,20 @@ export class LightboxService {
     this.contentSubject.next({ component, inputs });
     this.isOpenSubject.next(true);
   }
+
+
+  prepareSwitchContent<T>(component: Type<T>, inputs?: { [key: string]: any }){
+    this.nextComponent = {
+      'component' : component,
+      'inputs' : inputs,
+    }
+    this.isSwitchContent.next(true);
+  }
+
+
+  doSwitchContent(){
+    this.contentSubject.next(this.nextComponent);
+  }
+
 
 }

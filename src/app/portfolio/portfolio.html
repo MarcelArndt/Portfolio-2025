@@ -14,15 +14,15 @@
 
 
 <section #projectOne class="project project-one">
-   <app-project-template [projectDetails]="(languageService.texts | async)?.projectOne" [projectClass]="'project-one'"></app-project-template>
+   <app-project-template [projectDetails]="(languageService.texts | async)?.projectOne" [projectID]="'projectOne'"></app-project-template>
 </section>
 
 <section #projectTwo class="project project-two">
-    <app-project-template [projectDetails]="(languageService.texts | async)?.projectTwo"  [projectClass]="'project-two'"></app-project-template>
+    <app-project-template [projectDetails]="(languageService.texts | async)?.projectTwo"  [projectID]="'projectTwo'"></app-project-template>
 </section>
 
 <section #projectThree class="project project-three">
-    <app-project-template  [projectDetails]="(languageService.texts | async)?.projectThree" [projectClass]="'project-three'"></app-project-template>
+    <app-project-template  [projectDetails]="(languageService.texts | async)?.projectThree" [projectID]="'projectThree'"></app-project-template>
 </section>
 
 </main>

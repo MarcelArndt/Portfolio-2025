@@ -1,20 +1,25 @@
 <div class="lightbox-content-wrapper">
-    <div class="image-container"><img [src]="projectData.picture"></div>
-    <p class="prefix-headline">{{projectData.prefixheadline}}</p>
-    <h2>{{projectData.headline}}</h2>
-    <p>{{projectData.projectText}}</p>
-    <p>{{projectData.projectText}}</p>
+    <div class="headline">
+        <div class="icon-container" (click)="switchContent()"><icon>chevron_left</icon></div>
+        <div (click)="closeLightbox()" class="icon-container close"><icon>close</icon></div>
+        <div class="icon-container" (click)="switchContent()"><icon>chevron_right</icon></div>
+    </div>
+    <div class="image-container"><img [src]="(languageService.texts | async)?.[projectID]?.picture"></div>
+    <p class="prefix-headline">{{(languageService.texts | async)?.[projectID]?.prefixheadline}}</p>
+    <h2>{{ (languageService.texts | async)?.[projectID]?.headline }}</h2>
+    <p>{{ (languageService.texts | async)?.[projectID]?.projectText }}</p>
+
     <h3>Techstack:</h3>
      <div class="icon-wrapper">
             <ul class="used-tech">
-                @for(usedTech of projectData.technology; track usedTech){
+                @for(usedTech of (languageService.texts | async)?.[projectID]?.technology; track usedTech){
                     <li><img [src]="icons[usedTech]"></li>
                 }
             </ul>
     </div>
     <div class="button-wrapper">
-        <a [href]="projectData.demoLink">Demo</a>
-        <a [href]="projectData.gitHubLink" class="github-button">GitHub</a>
+        <a [href]="(languageService.texts | async)?.[projectID]?.demoLink">Demo</a>
+        <a [href]="(languageService.texts | async)?.[projectID]?.gitHubLink" class="github-button">GitHub</a>
         <button (click)="closeLightbox()">Close</button>
     </div>
 </div>

@@ -15,9 +15,10 @@ export class ProjectTemplate {
 constructor(private lightboxService:LightboxService, private cdr: ChangeDetectorRef) {}
 
 color!:HSLTuple | undefined;
-@Input({required:true}) projectClass!:'project-one' | 'project-two' | 'project-three' | '';
+@Input({required:true}) projectID!:'projectOne' | 'projectTwo' | 'projectThree';
 @Input({required:true}) projectDetails!:Project | undefined;
 icons = iconsUrlCatalog
+
 
   @HostBinding('style.--box-color')
   get boxColor() {
@@ -36,7 +37,7 @@ icons = iconsUrlCatalog
 
   @HostBinding('class')
   get hostClasses() {
-    return this.projectClass || '';
+    return this.projectID;
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -45,6 +46,8 @@ icons = iconsUrlCatalog
     this.cdr.markForCheck();
   }
 }
+
+
 
   private adjustColor(hsl: HSLTuple, hueShift:number = 0, saturationShift:number = 0, lightnessShift:number = 0) {
     if(!hsl) return;
@@ -55,8 +58,8 @@ icons = iconsUrlCatalog
     return `hsl(${newH}deg ${newS}% ${newL}%)`;
   }
 
-  openLightbox(){
-    this.lightboxService.open(ProjectLightboxTemplate, {projectData: this.projectDetails});
+  openLightbox(projectindex:string){
+    this.lightboxService.open(ProjectLightboxTemplate, {projectData: this.projectDetails, projectID: projectindex});
   }
 
 }

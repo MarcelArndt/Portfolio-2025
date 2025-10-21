@@ -24,9 +24,47 @@ export function closeLightboxAnimtion(obj:Record<string, HTMLElement>){
             });
             
         });
+}
 
 
+export function fadeOutContent(obj:Record<string, HTMLElement>){
+    return new Promise<void>((resolve)=>{
 
+        const tlOne = gsap.timeline({
+            onComplete: () => {
+                resolve()
+            }
+        });
+        tlOne.set((obj['content']),{
+            xPercent:0,
+            opacity:1,
+        })
+        .to((obj['content']),{
+            xPercent:-100,
+            opacity:0,
+        });
+    });
+}
+
+
+export function fadeInContent(obj:Record<string, HTMLElement>){
+    return new Promise<void>((resolve)=>{
+
+        const tlOne = gsap.timeline({
+            onComplete: () => {
+                resolve()
+            }
+        });
+
+        tlOne.set((obj['content']),{
+            xPercent:+100,
+            opacity:0,
+        })
+        .to((obj['content']),{
+            xPercent:0,
+            opacity:1,
+        });
+    });
 }
 
 export function openLightboxAnimtion(obj:Record<string, HTMLElement>){

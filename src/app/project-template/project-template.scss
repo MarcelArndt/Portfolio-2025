@@ -10,7 +10,7 @@
     align-items: center;
     background-color: var(--box-color-background);
 
-     &.project-one::before {
+     &.projectOne::before {
         z-index: -1;
         content: '';
         position: absolute;
@@ -22,7 +22,7 @@
         background-color: var(--box-color-background);
     }
     
-    &.project-two::before {
+    &.projectTwo::before {
         content: '';
         position: absolute;
         right: -150px;
@@ -33,7 +33,7 @@
         background-color: var(--box-color-background);
     }
     
-    &.project-three::before {
+    &.projectThree::before {
         content: '';
         position: absolute;
         right: 0px;

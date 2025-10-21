@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, ViewContainerRef, ComponentRef, OnDestroy } from '@angular/core';
 import { LightboxService, LightboxContent } from './lightbox-service';
-import { closeLightboxAnimtion, openLightboxAnimtion } from './lightbox-gsap';
+import { closeLightboxAnimtion, fadeInContent, fadeOutContent, openLightboxAnimtion } from './lightbox-gsap';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class Lightbox {
   gsapObj = {};
 
 
-  async initLightBoxService(){
+  initLightBoxService(){
     this.lightboxService.isOpen$.subscribe((isOpen:boolean)=>{
         if(!isOpen){
           this.closeAnimtion().then(()=>{
@@ -32,10 +32,25 @@ export class Lightbox {
           this.openAnimtion();
         }
       });
+
+
+    this.lightboxService.isSwitchContent$.subscribe((isSwitching)=>{
+      if (isSwitching){
+        this.fadeOutContentAnimation().then(() =>{
+          this.fadeInContentAnimation().then(()=>{
+            console.log('wieder da');
+          });
+        });
+      }
+
+      if (!isSwitching){
+
+      }
+    })
   }
 
   initComponentService(){
-        this.lightboxService.content$.subscribe((content: LightboxContent | null) => {
+      this.lightboxService.content$.subscribe((content: LightboxContent | null) => {
       this.clearHost();
       if(content && this.host){
         const cmpRef = this.host.createComponent(content.component as any);
@@ -59,7 +74,7 @@ export class Lightbox {
         'backgound' : this.backgound.nativeElement,
         'content' : this.content.nativeElement,
       }
-     await this.initLightBoxService();
+     this.initLightBoxService();
      this.initComponentService()
   }
 
@@ -82,8 +97,20 @@ export class Lightbox {
     await closeLightboxAnimtion(this.gsapObj);
   }
 
+  async fadeOutContentAnimation(){
+     await fadeOutContent(this.gsapObj);
+  }
+
+  async fadeInContentAnimation(){
+     await fadeInContent(this.gsapObj);
+  }
+
   openAnimtion(){
     openLightboxAnimtion(this.gsapObj);
+  }
+
+  switchAnimtion(){
+
   }
 
   private clearHost(){

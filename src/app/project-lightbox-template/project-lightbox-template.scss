@@ -10,6 +10,64 @@
     padding: 8px;
 }
 
+.headline{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $shadow;
+    box-sizing: border-box;
+    padding: 16px 0px 32px 0px;
+    margin-bottom: 24px;
+
+    .icon-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 52px;
+        aspect-ratio: 1 / 1;
+        background-color: $button-color;
+        scale: 1;
+        transition: scale $transition-timer ease-in-out, color $transition-timer ease-in-out;
+
+        &:hover{
+            scale: 1.05;
+            cursor: pointer;
+            background-color: $button-hover-color;
+            transition: scale $transition-timer ease-in-out, color $transition-timer ease-in-out;
+        }
+    }
+
+    .icon-container:first-child > icon {
+        margin-left: -3px;
+    }
+
+    .icon-container:nth-child(2) > icon {
+        font-size: 1.75rem;
+    }
+
+    .icon-container:last-child > icon {
+        margin-left: 3px;
+    }
+
+    icon{
+        font-size: 2rem;
+        color: $white;
+    }
+
+    .close{
+        background-color: $button-grey;
+
+        &:hover{
+            background-color: $button-grey;
+        }
+    }
+
+
+}
+
+
 button{
     color: $white-text-color;
     $running-text : 1.31rem;
@@ -22,7 +80,7 @@ button{
 
 
 .image-container{
-
+    margin-top: 24px;
     width: 100%;
     display: flex;
     justify-content: center;
