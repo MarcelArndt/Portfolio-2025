@@ -41,7 +41,6 @@ export class Headline {
 
   switchLanguage() {
     this.languageService.switchLanguage();
-    this.lightboxService.close();
   }
 
   scrollToTop(){

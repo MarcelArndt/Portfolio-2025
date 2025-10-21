@@ -39,6 +39,12 @@ $lightbox-vertical-padding: 140px;
     border-radius: $lightbox-border-radius;
     position: relative;
 
+    @media screen and (max-width:1000px){
+        max-height: 92vh;
+        height: calc(100vh - ($lightbox-vertical-padding ));
+        top: calc(50% + 35px);
+    }
+
 }
 
 ::-webkit-scrollbar-track{

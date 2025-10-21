@@ -85,6 +85,10 @@
             text-align: start;
             padding: 0px;   
         }
+
+        @media screen and (max-width:1367px) and (orientation: landscape) {
+            font-size: 5.5rem;
+        }
     }
 
 
@@ -105,9 +109,13 @@
 
     @media screen and (max-width:1650px){
         width: 92%;
+        box-sizing: border-box;
         height: max-content;
+        padding-bottom: 32px;
         justify-content: end;
         padding-left: 0px;
+        flex-grow: 1;
+        justify-content: space-around;
         p{
             padding: 0px;
         }

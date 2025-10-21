@@ -1,17 +1,10 @@
 <div class="lightbox-content-wrapper">
-    <div class="headline">
-        <div class="icon-container" (click)="switchContent(false)"><icon>chevron_left</icon></div>
-        <div (click)="closeLightbox()" class="icon-container close"><icon>close</icon></div>
-        <div class="icon-container" (click)="switchContent(true)"><icon>chevron_right</icon></div>
-    </div>
 
     <p class="prefix-headline">{{(languageService.texts | async)?.[projectID]?.prefixheadline}}</p>
     <h2>{{ (languageService.texts | async)?.[projectID]?.headline }}</h2>
      <p class="text">{{ (languageService.texts | async)?.[projectID]?.projectText }}</p>
 
     <div class="image-container"><img [src]="(languageService.texts | async)?.[projectID]?.picture"></div>
-
-   
 
     <h3>Techstack:</h3>
      <div class="icon-wrapper">
@@ -24,7 +17,13 @@
     <div class="button-wrapper">
         <a [href]="(languageService.texts | async)?.[projectID]?.demoLink">Demo</a>
         <a [href]="(languageService.texts | async)?.[projectID]?.gitHubLink" class="github-button">GitHub</a>
-        <button (click)="closeLightbox()">Close</button>
+    </div>
+
+
+    <div class="headline">
+        <div class="icon-container" (click)="switchContent(false)"><icon>chevron_left</icon></div>
+        <div (click)="closeLightbox()" class="icon-container close"><icon>close</icon></div>
+        <div class="icon-container" (click)="switchContent(true)"><icon>chevron_right</icon></div>
     </div>
 </div>
 

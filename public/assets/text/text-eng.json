@@ -69,7 +69,7 @@
         "projectThree": {
                 "prefixheadline": "Watch it first on",
                 "headline": "Videoflix",
-                "projectText": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
+                "projectText": "Videoflix is a streaming or media library clone – similar to Netflix or Jellyfin. Users can not only watch and stream their own videos but also upload them directly through the web interface. The server automatically converts uploaded files into streamable formats.\nIt was important to me that the platform could be fully managed through the frontend, without having to manually add content via the backend\n\nHowever, getting there wasn’t easy.\nVideoflix confronted me with numerous challenges – from handling large datasets with PostgreSQL, integrating Simple JWT and HTTPS cookies, to diving deep into the inner workings of Django. It was tough, it was long – but ultimately more thrilling than any documentary about the Mariana Trench.\n\nIn the end, the project turned out to be something I’m truly proud of:\nI learned to use Docker for deployment, implemented Redis for caching, built a complete authentication system, and combined several modern technologies into one cohesive platform.\n\n",
                 "moreButton": "read more...",
                 "picture": "./assets/projects/project_one.png",
                 "colorHSL": [270, 85, 60],
