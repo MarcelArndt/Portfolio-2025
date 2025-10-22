@@ -20,7 +20,11 @@
     </div>         
 
     <div class="project-picture-wrapper">
-        <img [src]="projectDetails?.picture">
+        <picture>
+            <source media="(min-width: 1600px)" [srcset]="projectDetails?.picture">
+            <source media="(max-width: 1660px) and (orientation: landscape)" [srcset]="projectDetails?.pictureSmall">
+            <img [src]="projectDetails?.picture">
+        </picture>
     </div>
 
 

@@ -56,6 +56,7 @@ export interface Project {
   projectText: string;
   moreButton: string;
   picture: string;
+  pictureSmall: string;
   colorHSL: HSLTuple
   technology: string[];
   demoLink: string;
