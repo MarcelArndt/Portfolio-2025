@@ -28,6 +28,7 @@
                 "formErrorName": "Bitte gib einen gültigen Namen ein.",
                 "formErrorMail": "Bitte gib eine gültige E-Mail ein.",
                 "formErrorText": "Bitte gib eine Nachricht ein.",
+                "formErrorDataProtection": "Bitte überprüfe das Häckchen bei Datenschutz.",
                 "formErrorButton": "Nachricht senden"
          },  
 

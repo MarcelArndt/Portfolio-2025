@@ -1,9 +1,19 @@
 <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
     <p>{{(languageService.texts | async)?.contact?.formHeadline}}</p>
-    <input [ngClass]="{'error': messageForm.get('name')?.invalid && messageForm.get('name')?.touched}" formControlName="name" type="text" name="name" required pattern="^[A-Za-zÄÖÜäöüß\s'-]+$" [placeholder]="(languageService.texts | async)?.contact?.formName" minlength="3">
-    <input [ngClass]="{'error': messageForm.get('email')?.invalid && messageForm.get('email')?.touched}" formControlName="email" type="text" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$" [placeholder]="(languageService.texts | async)?.contact?.formEmail" minlength="3">
+    <input [ngClass]="{'error': messageForm.get('name')?.invalid && messageForm.get('name')?.touched}" formControlName="name" type="text" name="name" required [placeholder]="(languageService.texts | async)?.contact?.formName" minlength="3">
+    <input [ngClass]="{'error': messageForm.get('email')?.invalid && messageForm.get('email')?.touched}" formControlName="email" type="text" name="email" required [placeholder]="(languageService.texts | async)?.contact?.formEmail" minlength="3">
     <p>{{(languageService.texts | async)?.contact?.formIdea}}</p>
-    <textarea [ngClass]="{'error': messageForm.get('message')?.errors?.['minlength'] && messageForm.get('message')?.touched}" formControlName="message" required [placeholder]="(languageService.texts | async)?.contact?.formText" minlength="3"></textarea>
+    <textarea [ngClass]="{'error': messageForm.get('message')?.errors?.['minlength'] && messageForm.get('message')?.touched || messageForm.get('message')?.invalid && messageForm.get('message')?.touched}" formControlName="message" required [placeholder]="(languageService.texts | async)?.contact?.formText" minlength="3"></textarea>
+    <div class="data-protection-checkbox">
+            <div class="custom-checkbox"><input type="checkbox" name="data-protection" required formControlName="dataProtection"><div class="checkmark" [ngClass]="{'error': messageForm.get('dataProtection')?.invalid && messageForm.get('dataProtection')?.touched}"><icon>check</icon></div></div>
+            @if((languageService.currentLanguage | async) == "ger"){
+                <p>Ich habe die <span class="lightbox-link" (click)="openDateProtection()">Datenschutzerklärung</span> gelesen und stimme der darin beschriebenen Verarbeitung meiner Daten zu.</p>
+            } @else {
+                <p>I've read the <span class="lightbox-link" (click)="openDateProtection()">Data-Protection</span> and agree to the processing of my data as outlined.</p>
+            }
+        </div>
+
+    
     <div class="error-container">
         @if (messageForm.get('name')?.invalid && messageForm.get('name')?.touched) {
             <p>{{(languageService.texts | async)?.contact?.formErrorName}}</p>
@@ -11,8 +21,11 @@
         @else if (messageForm.get('email')?.invalid && messageForm.get('email')?.touched) {
             <p>{{(languageService.texts | async)?.contact?.formErrorMail}}</p>
         } 
-        @else if (messageForm.get('message')?.errors?.['minlength'] && messageForm.get('message')?.touched) {
+        @else if (messageForm.get('message')?.errors?.['minlength'] && messageForm.get('message')?.touched || messageForm.get('message')?.invalid && messageForm.get('message')?.touched) {
             <p>{{(languageService.texts | async)?.contact?.formErrorText}}</p>
+        }
+        @else if (messageForm.get('dataProtection')?.invalid  && messageForm.get('dataProtection')?.touched) {
+            <p>{{(languageService.texts | async)?.contact?.formErrorDataProtection}}</p>
         }
     </div>
     <button [disabled]="messageForm.invalid">{{(languageService.texts | async)?.contact?.formErrorButton}}</button>

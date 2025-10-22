@@ -28,6 +28,7 @@
                 "formErrorName": "Please enter a valid name.",
                 "formErrorMail": "Please enter a valid email address.",
                 "formErrorText": "Please enter a message.",
+                "formErrorDataProtection": "Please check the Checkbox at data protection.",
                 "formErrorButton": "Send Message"
         },
 

@@ -42,7 +42,7 @@ gsap.set(sections[2], { y: 250, yPercent:100});
         yPercent:0,
         duration: 20,
         ease: 'power1.out'
-    }).to({}, { duration: 5 })
+    }).to({}, { duration: 12 })
     .to(obj['whiteOverlay'], { 
       height:"+=150vh", 
       duration: 10 ,

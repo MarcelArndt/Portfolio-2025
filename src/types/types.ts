@@ -37,6 +37,7 @@ export interface ContactSection {
     formErrorMail: string;
     formErrorText: string;
     formErrorButton: string;
+    formErrorDataProtection: string;
 }
 
 export interface AboutMeSection {

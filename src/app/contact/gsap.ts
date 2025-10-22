@@ -1,10 +1,13 @@
 import gsap from 'gsap';
 export function contactAnimation(obj:Record<string, HTMLElement>){
 
+    gsap.set(obj['textblock'],{
+        pointerEvents:'none',
+    });
 
     obj['button'].addEventListener('mouseenter', () => {
-        const timeline = gsap.timeline();
-        timeline   
+        const buttonTl  = gsap.timeline();
+        buttonTl 
         .to(obj['button'], {
             scale: 0.8,
             duration: 0.2,
@@ -32,10 +35,18 @@ export function contactAnimation(obj:Record<string, HTMLElement>){
         }
     });
 
-    tlOne.from((obj['textblock']),{
+
+    tlOne
+    .set((obj['textblock']),{
+        pointerEvents:'none',
+    })
+    .from((obj['textblock']),{
         y:"-=300",
         opacity:0,
         duration:15,
+    })
+    .set((obj['textblock']),{
+        pointerEvents:'auto',
     })
     .from((obj['button']),{
         scale:0.05,

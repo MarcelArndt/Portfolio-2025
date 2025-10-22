@@ -4,7 +4,13 @@
     <h2>{{ (languageService.texts | async)?.[projectID]?.headline }}</h2>
      <p class="text">{{ (languageService.texts | async)?.[projectID]?.projectText }}</p>
 
-    <div class="image-container"><img [src]="(languageService.texts | async)?.[projectID]?.picture"></div>
+    <div class="image-container">
+        <picture>
+            <source media="(orientation: portrait)" [srcset]="(languageService.texts | async)?.[projectID]?.pictureSmall">
+            <source [srcset]="(languageService.texts | async)?.[projectID]?.picture">
+            <img [src]="(languageService.texts | async)?.[projectID]?.picture" alt="Projektbild">
+        </picture>
+    </div>
 
     <h3>Techstack:</h3>
      <div class="icon-wrapper">
