@@ -41,15 +41,12 @@ export class ContactForm {
                 email: this.messageForm.value.email!, 
                 message: this.messageForm.value.message!
               }
-        
         const result = await firstValueFrom(this.contactService.sendMessage(data));
-
         if (result.success){
           await this.openToast(true);
         } else{
           await this.openToast(false);
         }
-        
     } else {
       console.error("form is invalid!")
     }
@@ -66,7 +63,6 @@ export class ContactForm {
     const texts = await firstValueFrom(this.languageService.texts);
     this.toastTexts = texts?.toast!;
   
-
       if (emailWasSuccessfully) {
         this.infoToast.setTypeOfMessage("info");
         this.infoToast.open(this.toastTexts.emailSuccessful);

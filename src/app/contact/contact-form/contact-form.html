@@ -30,6 +30,3 @@
     </div>
     <button [disabled]="messageForm.invalid">{{(languageService.texts | async)?.contact?.formErrorButton}}</button>
 </form>
-
-    <button (click)="openToast(false)">test</button>
-    <button (click)="openToast(true)">test</button>
