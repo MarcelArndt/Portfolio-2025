@@ -7,6 +7,7 @@ export interface Texts {
     "projectOne": Project;
     "projectTwo": Project;
     "projectThree": Project;
+    "toast": Toast;
 }
 
 export interface HeroSectionTexts{
@@ -62,6 +63,11 @@ export interface Project {
   technology: string[];
   demoLink: string;
   gitHubLink: string;
+}
+
+export interface Toast{
+    "emailSuccessful": string,
+    "emailError": string,
 }
 
 export type HSLTuple = [hue: number, saturation: number, lightness: number];

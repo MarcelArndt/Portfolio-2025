@@ -8,6 +8,10 @@
                 "prefixText" : "Hi, ich bin Marcel Arndt"
         },
 
+        "toast":{
+                "emailSuccessful" : "E-Mail konnte erfolgreich versendet werden",
+                "emailError" : "Ops! Email konnte nicht versendet werden."
+        },
         "skills":{        
                 "headline": "Meine Skills",
                 "text": "Du vermisst eine bestimmte Technologie in meinem Stack?\nIch bin offen für neue Tools und lerne schnell dazu.",

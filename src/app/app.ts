@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { Headline } from './headline/headline';
 import { LanguageSwitch } from '../service/language-switch';
 import gsap from 'gsap';
+import { InfoToast } from './utility/info-toast/info-toast';
 import { Lightbox } from './utility/lightbox/lightbox';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Headline, Lightbox],
+  imports: [RouterOutlet, Headline, Lightbox, InfoToast ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

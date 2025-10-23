@@ -7,6 +7,10 @@
                 "text" :"With Angular and Django, I bring my projects to life. Programming has long since become more than just a hobby.",
                 "prefixText" : "Hi I'am Marcel Arndt"
         },
+        "toast":{
+                "emailSuccessful" : "Email could be sent successfully.",
+                "emailError" : "Ops! Something went wrong, Email could not be sent."
+        },
 
         "skills":{       
                 "headline": "My Skills",

@@ -1,0 +1,8 @@
+<div #toast class="toast-wrapper" [ngClass]="{'error': infoToast.getCurrentTypeOfMessage() == 'error'}">
+    <div #toastContent class="float">
+        <div class="icon">i</div>
+        <p>{{(infoToast.message | async)}}</p>
+        <div class="flex-grow"></div>
+        <div (click)="closeToast()" class="close-button">x</div>
+    </div>
+</div>
