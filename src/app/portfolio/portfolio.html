@@ -5,8 +5,9 @@
 
 
      <div #transistionTextBlock class="transistionTextBlock">
+        <p>{{(languageService.texts | async)?.portfolio?.prefixheadline}}</p>
         <h2>Portfolio</h2>
-        <p>Some random text over here.</p>
+        <p class="text">{{(languageService.texts | async)?.portfolio?.text}}</p>
         <div #mouseSymbol class="mouse-animation">
             <div #arrowSymbol class="arrow"></div>
         </div>

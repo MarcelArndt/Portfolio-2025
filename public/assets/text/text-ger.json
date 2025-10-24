@@ -47,30 +47,35 @@
                 "buttonGoals": "Meine Ziele"
         },
 
+        "portfolio":{
+                "prefixheadline": "Werf ein Blick auf mein",
+                "text": "Eine Auswahl meiner Projekte, die meinen Weg sowie meine Leidenschaft für das Programmieren zeigt."
+        },
+
         "projectOne": {
-                "prefixheadline": "Write me at",
+                "prefixheadline": "Schreib mir auf",
                 "headline": "DABubble",
-                "projectText": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
+                "projectText": "DABubble ist eine Echtzeit-hat-Webanwendung, die sich an Plattformen wie Slack oder Discord orientiert. Nutzer können Gruppen beitreten und gemeinsam in verschiedenen Channels chatten.\n\nMeine Hauptaufgabe in diesem Projekt war die Implementierung des gesamten Login-und Registrierungsprozesses. Dafür arbeitete ich intensiv mit Firebase und dessen umfangreicher Dokumentation. Das Ergebnis: Nutzer können sich entweder mit ihrem Google-Account anmelden oder einen eigenen Account registrieren - inklusive sicherer Datenverifizierung und Kommunikation über die Firebase API.\n\nIm Laufe des Projekts konnte ich außerdem mein Verständnis für Angular deutlich vertiefen. Besonders spannend war der Vergleich zwischen Template-driven Forms und Reactive Forms. Letztlich entschied ich mich für die Reactive-Form-Variante, da sie mehr Flexibilität bietet – etwa beim Einbinden eigener Validatoren und beim Umgang mit asynchronen Daten.\n\nZum Abschluss habe ich die Benutzererfahrung noch durch fließende Animationen verfeinert. Beim Navigieren durch den Anmeldeprozess bewegen sich die Fenster sanft in die jeweilige Richtung, was den Ablauf für den Nutzer natürlicher und angenehmer wirken lässt.",
                 "moreButton": "erfahre mehr...",
                 "picture": "./assets/projects/project_three.jpg",
                 "pictureSmall": "./assets/projects/project_three-mobil.jpg",
                 "colorHSL": [30, 87, 60],
                 "technology": ["angular", "firebase", "sass"],
-                "demoLink": "https://videoflix.arndt-dev.de/",
-                "gitHubLink": "https://github.com/MarcelArndt/Videoflix-Frontend"
+                "demoLink": "https://arndt-marcel.de/dabubble",
+                "gitHubLink": "https://github.com/MarcelArndt/DABubble"
         },
         
         "projectTwo": {
-                "prefixheadline": "Watch it first on",
-                "headline": "Videoflix",
-                "projectText": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
+                "prefixheadline": "Verwalte Aufgaben in",
+                "headline": "Join",
+                "projectText": "Join ist ein selbst entwickeltes Kanban-Board-System, mit dem sich Aufgaben und Kontakte effizient verwalten lassen. Das Projekt wurde vollständig in Vanilla JavaScript umgesetzt. Ohne Frameworks oder Bibliotheken und war für mich eine meiner bisher größten Herausforderungen.\n\nMeine Hauptaufgabe bestand darin, das Board selbst zu entwickeln, inklusive der Darstellung, der Interaktionslogik und der Datenverarbeitung. Überraschenderweise waren nicht die Drag-and-Drop- oder Touch-Funktionen die schwierigsten Teile, sondern vielmehr das aktualisieren der Benutzeroberfläche und der Umgang mit asynchronen Daten. Oft war es sprichwörtlich die „Nadel im Heuhaufen“, um den entscheidenden Fehler zu finden.\n\nOptisch zählt Join bis heute zu meinen Lieblingsprojekten. Nicht nur wegen des klaren Designs, sondern auch, weil es eines meiner ersten großen Softwareprojekte war. Dadurch verbinde ich mit ihm eine besondere persönliche Bedeutung und viele lehrreiche Momente.",
                 "moreButton": "erfahre mehr...",
                 "picture": "./assets/projects/project_two.jpg",
                 "pictureSmall": "./assets/projects/project_two-mobil.jpg",
                 "colorHSL": [230, 93, 60],
                 "technology": ["javascript", "html", "css"],
-                "demoLink": "https://videoflix.arndt-dev.de/",
-                "gitHubLink": "https://github.com/MarcelArndt/Videoflix-Frontend"
+                "demoLink": "https://arndt-marcel.de/join/",
+                "gitHubLink": "https://github.com/MarcelArndt/Project-Join"
         },
 
         "projectThree": {

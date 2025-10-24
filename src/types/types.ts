@@ -4,6 +4,7 @@ export interface Texts {
     "skills": SkillsTexts,
     "contact": ContactSection,
     "about_me": AboutMeSection;
+    "portfolio": Portfolio;
     "projectOne": Project;
     "projectTwo": Project;
     "projectThree": Project;
@@ -50,6 +51,11 @@ export interface AboutMeSection {
   buttonAboutMe: string;
   buttonInterests: string;
   buttonGoals: string;
+}
+
+export interface Portfolio{
+    prefixheadline:string;
+    text:string;
 }
 
 export interface Project {

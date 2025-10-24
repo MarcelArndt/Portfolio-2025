@@ -47,30 +47,35 @@
                 "buttonGoals": "My Goals"
         },
 
+        "portfolio":{
+                "prefixheadline": "Take a look at my",
+                "text": "A selection of projects that reflect my journey and passion for web development."
+        },
+
         "projectOne": {
                 "prefixheadline": "Write me at",
                 "headline": "DABubble",
-                "projectText": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
+                "projectText": "DABubble is a real-time chat web application inspired by platforms like Slack or Discord. Users can join groups and chat together in different channels.\n\nMy main task in this project was to implement the entire login and registration process. For that, I worked extensively with Firebase and its comprehensive documentation. The result: users can either sign in with their Google account or create their own account – including secure data verification and communication with the Firebase API.\n\nThroughout the project, I was also able to deepen my understanding of Angular. One particularly interesting aspect was comparing template-driven forms and reactive forms. In the end, I chose the reactive approach because it offers more flexibility – for example, when adding custom validators or working with asynchronous data.\n\nFinally, I refined the user experience with smooth animations. When navigating through the registration process, the windows slide gently in the corresponding direction, making the flow feel more natural and user-friendly.",
                 "moreButton": "read more...",
                 "picture": "./assets/projects/project_three.jpg",
                 "pictureSmall": "./assets/projects/project_one-mobil.jpg",
                 "colorHSL": [30, 87, 60],
                 "technology": ["angular", "firebase", "sass"],
-                "demoLink": "https://videoflix.arndt-dev.de/",
-                "gitHubLink": "https://github.com/MarcelArndt/Videoflix-Frontend"
+                "demoLink": "https://arndt-marcel.de/dabubble",
+                "gitHubLink": "https://github.com/MarcelArndt/DABubble"
         },
 
         "projectTwo": {
-                "prefixheadline": "Watch it first on",
-                "headline": "Videoflix",
-                "projectText": "I'm Marcel Arndt and I live near Bielefeld. I enjoy developing web apps that make ideas tangible and make everyday life easier for people. Programming, to me, means creating something of my own from small building blocks together with a touch of creativity.",
+                "prefixheadline": "Manage your Task in",
+                "headline": "Join",
+                "projectText": "Join is a self-developed Kanban board system that allows tasks and contacts to be managed efficiently. The project was built entirely in vanilla JavaScript — without any frameworks or libraries — and was one of my biggest challenges so far.\n\nMy main task was to develop the board itself, including the layout, interaction logic, and data handling. Surprisingly, the most difficult parts weren’t implementing the drag-and-drop or touch functionality, but rather updating the user interf",
                 "moreButton": "read more...",
                 "picture": "./assets/projects/project_two.jpg",
                 "pictureSmall": "./assets/projects/project_two-mobil.jpg",
                 "colorHSL": [230, 93, 60],
                 "technology": ["javascript", "html", "css"],
-                "demoLink": "https://videoflix.arndt-dev.de/",
-                "gitHubLink": "https://github.com/MarcelArndt/Videoflix-Frontend"
+                "demoLink": "https://arndt-marcel.de/join/",
+                "gitHubLink": "https://github.com/MarcelArndt/Project-Join"
         },
 
         "projectThree": {

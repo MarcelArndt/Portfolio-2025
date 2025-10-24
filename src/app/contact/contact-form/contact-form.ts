@@ -50,19 +50,20 @@ export class ContactForm {
     } else {
       console.error("form is invalid!")
     }
+    this.messageForm.reset();
   }
 
   openDateProtection(){
     this.lightboxService.open(DataProtection);
   }
 
-
+  ngOnInit(){
+    this.languageService.texts.subscribe((texts)=>{
+      this.toastTexts = texts?.toast!;
+    });
+  }
 
   async openToast(emailWasSuccessfully: boolean) {
-
-    const texts = await firstValueFrom(this.languageService.texts);
-    this.toastTexts = texts?.toast!;
-  
       if (emailWasSuccessfully) {
         this.infoToast.setTypeOfMessage("info");
         this.infoToast.open(this.toastTexts.emailSuccessful);
