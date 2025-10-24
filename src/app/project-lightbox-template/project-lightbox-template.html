@@ -12,7 +12,7 @@
         </picture>
     </div>
 
-    <h3>Techstack:</h3>
+    <h3>{{ (languageService.currentLanguage | async) == 'ger' ? 'Techstack' : 'Teckstack' }}</h3>
      <div class="icon-wrapper">
             <ul class="used-tech">
                 @for(usedTech of (languageService.texts | async)?.[projectID]?.technology; track usedTech){
@@ -26,7 +26,7 @@
     </div>
 
 
-    <div class="headline">
+    <div class="footer">
         <div class="icon-container" (click)="switchContent(false)"><icon>chevron_left</icon></div>
         <div (click)="closeLightbox()" class="icon-container close"><icon>close</icon></div>
         <div class="icon-container" (click)="switchContent(true)"><icon>chevron_right</icon></div>

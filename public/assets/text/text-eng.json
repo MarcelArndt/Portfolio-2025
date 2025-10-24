@@ -68,7 +68,7 @@
         "projectTwo": {
                 "prefixheadline": "Manage your Task in",
                 "headline": "Join",
-                "projectText": "Join is a self-developed Kanban board system that allows tasks and contacts to be managed efficiently. The project was built entirely in vanilla JavaScript — without any frameworks or libraries — and was one of my biggest challenges so far.\n\nMy main task was to develop the board itself, including the layout, interaction logic, and data handling. Surprisingly, the most difficult parts weren’t implementing the drag-and-drop or touch functionality, but rather updating the user interf",
+                "projectText": "Join is a self-developed Kanban board system that allows tasks and contacts to be managed efficiently. The project was built entirely in vanilla JavaScript — without any frameworks or libraries — and was one of my biggest challenges so far.\n\nMy main task was to develop the board itself, including the layout, interaction logic, and data handling. Surprisingly, the most difficult parts weren’t implementing the drag-and-drop or touch functionality, but rather updating the user interface and dealing with asynchronous data. It often felt like searching for a needle in a haystack to find the one issue that prevented elements from re-rendering correctly.\n\nVisually, Join is still one of my favorite projects — not only because of its clean design, but also because it was one of my first large-scale software projects. That gives it a special personal significance and many valuable learning experiences.",
                 "moreButton": "read more...",
                 "picture": "./assets/projects/project_two.jpg",
                 "pictureSmall": "./assets/projects/project_two-mobil.jpg",
