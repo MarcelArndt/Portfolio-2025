@@ -83,7 +83,7 @@
                 "headline": "Videoflix",
                 "projectText": "Videoflix is a streaming or media library clone which is similar to Netflix or Jellyfin. Users can not only watch and stream their own videos but also upload them directly through the web interface. The server automatically converts uploaded files into streamable formats.\nIt was important to me that the platform could be fully managed through the frontend, without having to manually add content via the backend\n\nHowever, getting there wasn't easy.\nVideoflix confronted me with numerous challenges. From handling large datasets with PostgreSQL, integrating Simple JWT and HTTPS cookies, to diving deep into the inner workings of Django. It was tough, it was long. But ultimately more thrilling than any documentary about the Mariana Trench.\n\nIn the end, the project turned out to be something I'm truly proud of:\nI learned to use Docker for deployment, implemented Redis for caching, built a complete authentication system, and combined several modern technologies into one cohesive platform.\n\n",
                 "moreButton": "read more...",
-                "picture": "./assets/projects/project_one.png",
+                "picture": "./assets/projects/project_one.jpg",
                 "colorHSL": [270, 85, 60],
                 "technology": ["angular", "django", "docker"],
                 "demoLink": "https://videoflix.arndt-dev.de/",

@@ -20,11 +20,13 @@
     </div>         
 
     <div class="project-picture-wrapper">
-        <picture>
-            <source media="(min-width: 1600px)" [srcset]="projectDetails?.picture">
-            <source media="(max-width: 1660px) and (orientation: landscape)" [srcset]="projectDetails?.pictureSmall">
-            <img [src]="projectDetails?.picture">
-        </picture>
+        @if(projectDetails?.picture){
+            <picture>
+                <source media="(min-width: 1600px)" [srcset]="projectDetails?.picture">
+                <source media="(max-width: 1660px) and (orientation: landscape)" [srcset]="projectDetails?.pictureSmall">
+                <img [src]="projectDetails?.picture">
+            </picture>
+        }
     </div>
 
 
