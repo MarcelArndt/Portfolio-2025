@@ -5,10 +5,11 @@ import { LanguageSwitch } from '../service/language-switch';
 import gsap from 'gsap';
 import { InfoToast } from './utility/info-toast/info-toast';
 import { Lightbox } from './utility/lightbox/lightbox';
+import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Headline, Lightbox, InfoToast ],
+  imports: [RouterOutlet, Headline, Lightbox, InfoToast, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

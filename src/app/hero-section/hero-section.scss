@@ -16,6 +16,8 @@
     padding: $padding;
     overflow: hidden;
     z-index: 1;
+    display: flex;
+    align-items: center;
 }
 
 .background-element{
@@ -51,18 +53,17 @@ p{
 .text-layer{
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
     position: absolute;
     left: 0px;
-    top: -40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 60px;
 }
 
 
 .text-column{
-        margin: calc($border-padding - 40px);
+        margin: 0px calc($border-padding - 40px);
     @media screen and (max-width:1442px) {
         margin: 0;
         display: flex;

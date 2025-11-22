@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-side-content',
-  imports: [RouterOutlet, Footer ],
+  imports: [RouterOutlet],
   templateUrl: './side-content.html',
   styleUrl: './side-content.scss'
 })

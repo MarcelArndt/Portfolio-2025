@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef, ViewContainerRef, ComponentRef, OnDestroy } from '@angular/core';
 import { LightboxService, LightboxContent } from './lightbox-service';
-import { closeLightboxAnimtion, fadeInContent, fadeOutContent, openLightboxAnimtion } from './lightbox-gsap';
+import { closeLightboxAnimation, fadeInContent, fadeOutContent, openLightboxAnimation } from './lightbox-gsap';
 import { isSwitch } from './lightbox-service';
 
 
@@ -23,14 +23,17 @@ export class Lightbox {
 
 
   initLightBoxService(){
+
+
     this.lightboxService.isOpen$.subscribe((isOpen:boolean)=>{
+      
         if(!isOpen){
-          this.closeAnimtion().then(()=>{
+          this.closeAnimation().then(()=>{
             this.clearHost();
           });
         }
         if(isOpen){
-          this.openAnimtion();
+          this.openAnimation();
         }
       });
 
@@ -86,14 +89,16 @@ export class Lightbox {
   }
 
   async close(){
+    const isAnimating = this.lightboxService.getIsAnimating();
+    if(isAnimating) return;
     this.lightboxService.close()
-    await closeLightboxAnimtion(this.gsapObj);
+    await closeLightboxAnimation(this.gsapObj);
     this.clearHost();
     this.lightboxService.resetContent();
   }
 
-  async closeAnimtion(){
-    await closeLightboxAnimtion(this.gsapObj);
+  async closeAnimation(){
+    await closeLightboxAnimation(this.gsapObj);
   }
 
   async fadeOutContentAnimation(isforewards:boolean){
@@ -104,12 +109,10 @@ export class Lightbox {
      await fadeInContent(this.gsapObj, isforewards);
   }
 
-  openAnimtion(){
-    openLightboxAnimtion(this.gsapObj);
-  }
-
-  switchAnimtion(){
-
+  openAnimation(){
+    const isAnimating = this.lightboxService.getIsAnimating();
+    if(isAnimating) return;
+    openLightboxAnimation(this.gsapObj);
   }
 
   private clearHost(){

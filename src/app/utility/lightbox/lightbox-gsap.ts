@@ -1,11 +1,15 @@
 import gsap from 'gsap';
 
-export function closeLightboxAnimtion(obj:Record<string, HTMLElement>){
+export function closeLightboxAnimation(obj:Record<string, HTMLElement>){
+
+        document.dispatchEvent(new CustomEvent('lightbox:animating', { detail: true }));
+
         return new Promise<void>((resolve)=>{
             const tlOne = gsap.timeline({
             onComplete: () => {
                 obj['backgound'].style.display = "none";
-                resolve()
+                document.dispatchEvent(new CustomEvent('lightbox:animating', { detail: false }));
+                resolve();
             }
             });
 
@@ -29,11 +33,14 @@ export function closeLightboxAnimtion(obj:Record<string, HTMLElement>){
 
 export function fadeOutContent(obj:Record<string, HTMLElement>, isforewards:boolean){
 
+    document.dispatchEvent(new CustomEvent('lightbox:animating', { detail: true }));
+
     return new Promise<void>((resolve)=>{
         const newXValue = isforewards? -100 : 100;
         const tlOne = gsap.timeline({
             onComplete: () => {
-                resolve()
+                document.dispatchEvent(new CustomEvent('lightbox:animating', { detail: false }));
+                resolve();
             }
         });
         tlOne.set((obj['content']),{
@@ -49,11 +56,15 @@ export function fadeOutContent(obj:Record<string, HTMLElement>, isforewards:bool
 
 
 export function fadeInContent(obj:Record<string, HTMLElement>, isforewards:boolean){
+
+    document.dispatchEvent(new CustomEvent('lightbox:animating', { detail: true }));
+
     return new Promise<void>((resolve)=>{
         const newXValue = isforewards ? 100: -100;
         const tlOne = gsap.timeline({
             onComplete: () => {
-                resolve()
+                document.dispatchEvent(new CustomEvent('lightbox:animating', { detail: false }));
+                resolve();
             }
         });
 
@@ -68,9 +79,15 @@ export function fadeInContent(obj:Record<string, HTMLElement>, isforewards:boole
     });
 }
 
-export function openLightboxAnimtion(obj:Record<string, HTMLElement>){
+export function openLightboxAnimation(obj:Record<string, HTMLElement>){
 
-        const tlOne = gsap.timeline();
+    document.dispatchEvent(new CustomEvent('lightbox:animating', { detail: true }));
+
+        const tlOne = gsap.timeline({
+            onComplete: () => {
+                document.dispatchEvent(new CustomEvent('lightbox:animating', { detail: false }));
+            }
+        });
     
         tlOne
         .set(([obj['backgound'], obj['wrapperBox'], obj['content']]),{
