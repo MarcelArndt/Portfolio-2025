@@ -43,8 +43,8 @@
 }
 
 .logo{
-    max-width: $logo-max-width;
-
+    width: clamp(160px , 48vw, 220px);
+    flex-shrink: 0;
     &:hover{
         cursor: pointer;
     }
@@ -53,8 +53,6 @@
         display: flex;
         margin: 8px 0px 8px 0px;
         max-width: none;
-        width: clamp(160px , 16vw, 220px);
-        min-width: 200px;
 
         overflow: hidden;
         img{
@@ -107,7 +105,6 @@ nav{
         transform-origin: top center;
 
         li{
-
             margin: 0px 24px;
             display: flex;
             position: relative;
@@ -162,10 +159,4 @@ nav{
             }
 
         }
-}
-
-@media screen and (max-width:1240px){
-
-
-
 }

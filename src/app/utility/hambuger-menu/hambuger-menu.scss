@@ -46,7 +46,6 @@ nav{
         transform-origin: top center;
 
         li{
-
             margin: 0px 24px;
             display: flex;
             position: relative;
@@ -95,7 +94,7 @@ nav{
     }
 
     #mobil-menu-toggle:checked + .mobil-menu-button span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(6px, 6px);
     }
 
     #mobil-menu-toggle:checked + .mobil-menu-button span:nth-child(2) {
@@ -124,4 +123,21 @@ nav{
         transition: transform 0.25s ease-in-out;
     }
 
+}
+
+@media screen and (max-width:500px) {
+
+  .menu {
+    position: fixed;
+    top: 72px;
+    bottom: auto;
+    right: -30%;
+    left: auto;
+  }  
+}
+
+@media screen  and (max-width:350px){
+    .main-nav{
+        margin: 0px 1.5rem 0px 0px;
+    }
 }
