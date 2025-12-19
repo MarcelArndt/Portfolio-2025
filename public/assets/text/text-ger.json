@@ -86,7 +86,7 @@
                 "picture": "./assets/projects/project_one.jpg",
                 "pictureSmall": "./assets/projects/project_one-mobil.jpg",
                 "colorHSL": [270, 85, 60],
-                "technology": ["angular", "django", "docker"],
+                "technology": ["python", "django", "docker"],
                 "demoLink": "https://arndt-marcel.de/da_videoflix/",
                 "gitHubLink": "https://github.com/MarcelArndt/DAVideoflix"
         }
